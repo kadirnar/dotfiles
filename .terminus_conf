@@ -1,0 +1,66 @@
+terminal:
+  colorScheme:
+    name: Pro
+    foreground: '#f2f2f2'
+    background: '#000000'
+    cursor: '#4d4d4d'
+    colors:
+      - '#000000'
+      - '#990000'
+      - '#00a600'
+      - '#999900'
+      - '#2009db'
+      - '#b200b2'
+      - '#00a6b2'
+      - '#bfbfbf'
+      - '#666666'
+      - '#e50000'
+      - '#00d900'
+      - '#e5e500'
+      - '#0000ff'
+      - '#e500e5'
+      - '#00e5e5'
+      - '#e5e5e5'
+  environment: {}
+  fontSize: 17
+  font: Cascadia Code
+  bell: visual
+  background: colorScheme
+  ligatures: true
+  customColorSchemes:
+    - name: VibrantInk
+      foreground: '#00ff00'
+      background: '#000000'
+      cursor: '#ffffff'
+      colors:
+        - '#878787'
+        - '#ff6600'
+        - '#ccff04'
+        - '#ffcc00'
+        - '#44b4cc'
+        - '#9933cc'
+        - '#44b4cc'
+        - '#f5f5f5'
+        - '#555555'
+        - '#ff0000'
+        - '#045a7d'
+        - '#ffff00'
+        - '#0000ff'
+        - '#ff00ff'
+        - '#009100'
+        - '#e5e5e5'
+hotkeys:
+  profile: {}
+  shell: {}
+serial: {}
+ssh: {}
+appearance:
+  vibrancy: false
+  opacity: 1
+  frame: thin
+  theme: Standard
+  css: ''
+enableAnalytics: false
+enableWelcomeTab: false
+pluginBlacklist: []
+
