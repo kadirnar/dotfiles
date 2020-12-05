@@ -52,6 +52,8 @@ terminal:
 hotkeys:
   profile: {}
   shell: {}
+  toggle-window:
+    - - Ctrl-Shift-Space
 serial: {}
 ssh: {}
 appearance:
@@ -63,4 +65,3 @@ appearance:
 enableAnalytics: false
 enableWelcomeTab: false
 pluginBlacklist: []
-
