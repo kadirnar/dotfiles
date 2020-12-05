@@ -1,3 +1,5 @@
 # _configs
-backup for own configuration
-include: zsh, terminus
+own configuration for : {
+* zsh,
+* terminus
+}
