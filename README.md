@@ -1,5 +1,6 @@
 # _configs
-own configuration for : {
+own configurations for : 
+{
 * zsh,
 * terminus
 }
