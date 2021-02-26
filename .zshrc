@@ -1,14 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#PATHS
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/msa/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/msa/.flutter/bin
+
+path+=('/home/msa/msa/tools')
+
 # Path to your oh-my-zsh installation.
-export ZSH="/home/msa/.ohmyzsh/"
+export ZSH="/home/msa/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# robbyrussell
 ZSH_THEME="junkfood"
 
 # Set list of themes to pick from when loading at random
@@ -43,10 +47,12 @@ ZSH_THEME="junkfood"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -69,10 +75,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  debian
-)
+plugins=(z git zsh-syntax-highlighting zsh-autosuggestions lol thefuck debian colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,6 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias help="tldr"
+alias xammp="sudo /opt/lampp/manager-linux-x64.run"
+alias http-folder="cd /opt/lampp/htdocs"
+alias spoti="ncspot"
+alias hidemyass="nordvpn c Switzerland"
+alias up="bash /home/msa/msa/tools/up.sh"
