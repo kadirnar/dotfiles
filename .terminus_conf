@@ -26,7 +26,7 @@ terminal:
   font: Cascadia Code
   bell: visual
   background: colorScheme
-  ligatures: true
+  ligatures: false
   customColorSchemes:
     - name: VibrantInk
       foreground: '#00ff00'
@@ -49,19 +49,39 @@ terminal:
         - '#ff00ff'
         - '#009100'
         - '#e5e5e5'
+  wordSeparator: ' ()[]{}''"'''''
+  searchOptions: {}
+  frontend: xterm
+  hideTabIndex: false
+  hideCloseButton: false
+  cursorBlink: true
 hotkeys:
   profile: {}
   shell: {}
   toggle-window:
     - - Ctrl-Shift-Space
+  close-pane:
+    - - Ctrl-Shift-W
+  close-tab: []
+  split-right:
+    - - Ctrl-Shift-L
+  previous-word: []
+  next-word: []
+  delete-previous-word:
+    - - Ctrl-Backspace
+  delete-next-word: []
 serial: {}
 ssh: {}
 appearance:
-  vibrancy: false
+  vibrancy: true
   opacity: 1
   frame: thin
   theme: Standard
   css: ''
+  dock: 'off'
+  tabsLocation: top
 enableAnalytics: false
 enableWelcomeTab: false
-pluginBlacklist: []
+pluginBlacklist:
+  - theme-hype
+enableAutomaticUpdates: true
