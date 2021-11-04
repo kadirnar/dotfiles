@@ -1,5 +1,0 @@
-# _configs
-
-* zsh
-* terminus
-
