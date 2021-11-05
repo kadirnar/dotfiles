@@ -166,8 +166,8 @@ IFS=$SAVEIFS
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias em="/usr/bin/emacs -nw"
 #alias emacs="emacs -c -a 'emacs'"
+alias emac="emacs -nw"
 alias doomsync="~/.emacs.d/bin/doom sync"
 alias doomdoctor="~/.emacs.d/bin/doom doctor"
 alias doomupgrade="~/.emacs.d/bin/doom upgrade"
@@ -316,7 +316,6 @@ export PATH="$PATH:/home/msa/Applications/flutter/bin"
 zplug "dracula/zsh", as:theme
 zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/git",   from:oh-my-zsh
-zplug "marlonrichert/zsh-autocomplete"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -333,8 +332,5 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
-bindkey '\e[2~'   overwrite-mode     # Linux console, xterm, gnome-terminal
-bindkey '\e[3~'   delete-char        # Linux console, xterm, gnome-terminal
-bindkey "^[[H" beginning-of-line
-bindkey "^[[4~" end-of-line
-bindkey "^[[P" delete-char
+bindkey "\033[1~" beginning-of-line
+bindkey "\033[4~" end-of-line
