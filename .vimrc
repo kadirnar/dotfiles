@@ -1,7 +1,30 @@
+"          ____                           
+"        ,'  , `.                         
+"     ,-+-,.' _ |                         
+"  ,-+-. ;   , ||  .--.--.                
+" ,--.'|'   |  || /  /    '    ,--.--.    
+"|   |  ,', |  |,|  :  /`./   /       \   
+"|   | /  | |--' |  :  ;_    .--.  .-. |  
+"|   : |  | ,     \  \    `.  \__\/: . .  
+"|   : |  |/       `----.   \ ," .--.; |  
+"|   | |`-'       /  /`--'  //  /  ,.  |  
+"|   ;/          '--'.     /;  :   .'   \ 
+"'---'             `--'---' |  ,     .-./ 
+"                            `--`---'     
+" http://www.msakg.com/
+" http://www.github.com/imsakg/
+"
 " A customized init.vim for neovim (https://neovim.io/)     
+
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+syntax on
+
+set guifont=Monospace\ 12
+set colorcolumn=80 " Draw line at 80 columns
+
+let maplocalleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle For Managing Plugins
@@ -14,6 +37,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
     Plug 'frazrepo/vim-rainbow'
+    Plug 'nanotech/jellybeans.vim'                     " Colorscheme
+    Plug 'ervandew/supertab'
+    Plug 'yggdroot/indentline'
+    Plug 'bronson/vim-trailing-whitespace'
+    Plug 'unblevable/quick-scope'
+    Plug 'editorconfig/editorconfig-vim'
 "{{ File management }}
     Plug 'vifm/vifm.vim'                               " Vifm
     Plug 'scrooloose/nerdtree'                         " Nerdtree
@@ -23,6 +52,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vimwiki/vimwiki'                             " VimWiki 
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
     Plug 'tpope/vim-fugitive'
+    Plug 'jceb/vim-orgmode'
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "{{ Tim Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
@@ -31,6 +62,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
+    Plug 'rust-lang/rust.vim'
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
@@ -63,6 +95,7 @@ set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
 set number relativenumber       " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
+set cursorline " Highlight the cursor line
 syntax enable
 let g:rehash256 = 1
 
@@ -99,7 +132,7 @@ set tabstop=4                   " One tab == four spaces.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Uncomment to autostart the NERDTree
 " autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-k> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeShowLineNumbers=1
@@ -218,6 +251,53 @@ let g:python_highlight_all = 1
 
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
 au BufEnter *.org            call org#SetOrgFileType()
+
+xnoremap ""y y:call system("wl-copy", @")<cr>
+nnoremap ""p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
+
+set lazyredraw
+
+set tabstop=4 shiftwidth=4 expandtab " Tabs -> 4 spaces
+
+colorscheme jellybeans " Load the color scheme
+
+" Search tweaks
+set incsearch " Search before pressing enter, incremental search
+set ignorecase smartcase " Ignore case when searching, unless capital letters are used
+
+set linebreak " Only break at words
+
+imap <C-x><C-f> <Esc>:Explore<Enter>
+nmap <C-x><C-f> :Explore<Enter>
+
+" Unmap Ex mode
+nnoremap Q <Nop>
+
+nmap <F2> :bnext<Enter>
+nmap <F3> :bprev<Enter>
+
+" Open file explorer
+map <C-k> :NERDTreeToggle<CR>
+nmap - :Explore<CR>
+
+" Hard-break paragraph
+nmap <M-q> gwip
+imap <M-q> <Esc>gwipa
+
+" Tab keymaps
+nmap tt :tabnew<Enter>
+nmap t<Left> :tabprevious<Enter>
+nmap t<Right> :tabnext<Enter>
+nmap tq :tabclose<Enter>
+
+" Move in wrapped lines
+nmap <Up> gk
+nmap <Down> gj
+imap <Up> <C-o>gk
+imap <Down> <C-o>gj
+
+" Place regular tab
+imap <S-Tab> <C-V><Tab>
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar

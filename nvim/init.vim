@@ -16,8 +16,15 @@
 "
 " A customized init.vim for neovim (https://neovim.io/)     
 
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
+syntax on
+
+set guifont=Monospace\ 12
+set colorcolumn=80 " Draw line at 80 columns
+
+let maplocalleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vundle For Managing Plugins
@@ -30,6 +37,12 @@ call plug#begin('~/.vim/plugged')
     Plug 'itchyny/lightline.vim'                       " Lightline statusbar
     Plug 'suan/vim-instant-markdown', {'rtp': 'after'} " Markdown Preview
     Plug 'frazrepo/vim-rainbow'
+    Plug 'nanotech/jellybeans.vim'                     " Colorscheme
+    Plug 'ervandew/supertab'
+    Plug 'yggdroot/indentline'
+    Plug 'bronson/vim-trailing-whitespace'
+    Plug 'unblevable/quick-scope'
+    Plug 'editorconfig/editorconfig-vim'
 "{{ File management }}
     Plug 'vifm/vifm.vim'                               " Vifm
     Plug 'scrooloose/nerdtree'                         " Nerdtree
@@ -39,6 +52,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vimwiki/vimwiki'                             " VimWiki 
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
     Plug 'tpope/vim-fugitive'
+    Plug 'jceb/vim-orgmode'
+
 "{{ Tim Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
 "{{ Syntax Highlighting and Colors }}
@@ -46,6 +61,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
     Plug 'vim-python/python-syntax'                    " Python highlighting
     Plug 'ap/vim-css-color'                            " Color previews for CSS
+    Plug 'rust-lang/rust.vim'
 "{{ Junegunn Choi Plugins }}
     Plug 'junegunn/goyo.vim'                           " Distraction-free viewing
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
@@ -78,6 +94,7 @@ set noswapfile                  " No swap
 set t_Co=256                    " Set if term supports 256 colors.
 set number relativenumber       " Display line numbers
 set clipboard=unnamedplus       " Copy/paste between vim and other programs.
+set cursorline " Highlight the cursor line
 syntax enable
 let g:rehash256 = 1
 
@@ -125,26 +142,23 @@ let g:NERDTreeWinSize=38
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Theming
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-highlight Normal           guifg=#dfdfdf ctermfg=15   guibg=#282c34 ctermbg=none  cterm=none
-highlight LineNr           guifg=#5b6268 ctermfg=8    guibg=#282c34 ctermbg=none  cterm=none
-highlight CursorLineNr     guifg=#202328 ctermfg=7    guifg=#5b6268 ctermbg=8     cterm=none
-highlight VertSplit        guifg=#1c1f24 ctermfg=0    guifg=#5b6268 ctermbg=8     cterm=none
-highlight Statement        guifg=#98be65 ctermfg=2    guibg=none    ctermbg=none  cterm=none
-highlight Directory        guifg=#51afef ctermfg=4    guibg=none    ctermbg=none  cterm=none
-highlight StatusLine       guifg=#202328 ctermfg=7    guifg=#5b6268 ctermbg=8     cterm=none
-highlight StatusLineNC     guifg=#202328 ctermfg=7    guifg=#5b6268 ctermbg=8     cterm=none
-highlight NERDTreeClosable guifg=#98be65 ctermfg=2
-highlight NERDTreeOpenable guifg=#5b6268 ctermfg=8
-highlight Comment          guifg=#51afef ctermfg=4    guibg=none    ctermbg=none  cterm=italic
-highlight Constant         guifg=#3071db ctermfg=12   guibg=none    ctermbg=none  cterm=none
-highlight Special          guifg=#51afef ctermfg=4    guibg=none    ctermbg=none  cterm=none
-highlight Identifier       guifg=#5699af ctermfg=6    guibg=none    ctermbg=none  cterm=none
-highlight PreProc          guifg=#c678dd ctermfg=5    guibg=none    ctermbg=none  cterm=none
-highlight String           guifg=#3071db ctermfg=12   guibg=none    ctermbg=none  cterm=none
-highlight Number           guifg=#ff6c6b ctermfg=1    guibg=none    ctermbg=none  cterm=none
-highlight Function         guifg=#ff6c6b ctermfg=1    guibg=none    ctermbg=none  cterm=none
-highlight Visual           guifg=#dfdfdf ctermfg=1    guibg=#1c1f24 ctermbg=none  cterm=none
-
+highlight LineNr           ctermfg=8    ctermbg=none    cterm=none
+highlight CursorLineNr     ctermfg=7    ctermbg=8       cterm=none
+highlight VertSplit        ctermfg=0    ctermbg=8       cterm=none
+highlight Statement        ctermfg=2    ctermbg=none    cterm=none
+highlight Directory        ctermfg=4    ctermbg=none    cterm=none
+highlight StatusLine       ctermfg=7    ctermbg=8       cterm=none
+highlight StatusLineNC     ctermfg=7    ctermbg=8       cterm=none
+highlight NERDTreeClosable ctermfg=2
+highlight NERDTreeOpenable ctermfg=8
+highlight Comment          ctermfg=4    ctermbg=none    cterm=italic
+highlight Constant         ctermfg=12   ctermbg=none    cterm=none
+highlight Special          ctermfg=4    ctermbg=none    cterm=none
+highlight Identifier       ctermfg=6    ctermbg=none    cterm=none
+highlight PreProc          ctermfg=5    ctermbg=none    cterm=none
+highlight String           ctermfg=12   ctermbg=none    cterm=none
+highlight Number           ctermfg=1    ctermbg=none    cterm=none
+highlight Function         ctermfg=1    ctermbg=none    cterm=none
 " highlight WildMenu         ctermfg=0       ctermbg=80      cterm=none
 " highlight Folded           ctermfg=103     ctermbg=234     cterm=none
 " highlight FoldColumn       ctermfg=103     ctermbg=234     cterm=none
@@ -204,12 +218,6 @@ map <Leader>tt :vnew term://fish<CR>
 " => Mouse Scrolling
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=nicr
-set mouse=a
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Fix Sizing Bug With Alacritty Terminal
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Splits and Tabbed Files
@@ -243,13 +251,55 @@ let g:python_highlight_all = 1
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
 au BufEnter *.org            call org#SetOrgFileType()
 
+xnoremap ""y y:call system("wl-copy", @")<cr>
+nnoremap ""p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
+
+set lazyredraw
+
+set tabstop=4 shiftwidth=4 expandtab " Tabs -> 4 spaces
+
+colorscheme jellybeans " Load the color scheme
+
+" Search tweaks
+set incsearch " Search before pressing enter, incremental search
+set ignorecase smartcase " Ignore case when searching, unless capital letters are used
+
+set linebreak " Only break at words
+
+imap <C-x><C-f> <Esc>:Explore<Enter>
+nmap <C-x><C-f> :Explore<Enter>
+
+" Unmap Ex mode
+nnoremap Q <Nop>
+
+nmap <F2> :bnext<Enter>
+nmap <F3> :bprev<Enter>
+
+" Open file explorer
+map <C-n> :NERDTreeToggle<CR>
+nmap - :Explore<CR>
+
+" Hard-break paragraph
+nmap <M-q> gwip
+imap <M-q> <Esc>gwipa
+
+" Tab keymaps
+nmap tt :tabnew<Enter>
+nmap t<Left> :tabprevious<Enter>
+nmap t<Right> :tabnext<Enter>
+nmap tq :tabclose<Enter>
+
+" Move in wrapped lines
+nmap <Up> gk
+nmap <Down> gj
+imap <Up> <C-o>gk
+imap <Down> <C-o>gj
+
+" Place regular tab
+imap <S-Tab> <C-V><Tab>
+
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-set guifont=SauceCodePro\ Nerd\ Font:h15
-"set guifont=Mononoki\ Nerd\ Font:h15
-"set guifont=JetBrains\ Mono:h15
-
-"let g:neovide_transparency=0.95
 
