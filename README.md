@@ -1,8 +1,9 @@
 msa's dotfiles
 ============
 
-### Appearance
 Will be some fancy text here.
+
+### Appearance
 
 #### Desktop
 ![](st.png)
