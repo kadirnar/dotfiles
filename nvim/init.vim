@@ -53,6 +53,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'jreybert/vimagit'                            " Magit-like plugin for vim
     Plug 'tpope/vim-fugitive'
     Plug 'jceb/vim-orgmode'
+    Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 "{{ Tim Pope Plugins }}
     Plug 'tpope/vim-surround'                          " Change surrounding marks
@@ -131,7 +132,7 @@ set tabstop=4                   " One tab == four spaces.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Uncomment to autostart the NERDTree
 " autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-k> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '►'
 let g:NERDTreeDirArrowCollapsible = '▼'
 let NERDTreeShowLineNumbers=1
@@ -276,7 +277,7 @@ nmap <F2> :bnext<Enter>
 nmap <F3> :bprev<Enter>
 
 " Open file explorer
-map <C-n> :NERDTreeToggle<CR>
+map <C-k> :NERDTreeToggle<CR>
 nmap - :Explore<CR>
 
 " Hard-break paragraph
