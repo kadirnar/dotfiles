@@ -11,6 +11,8 @@ msa's dotfiles
 ![](nvim.png)
 #### Emacs
 ![](emacs.png)
+#### Ncspot
+![](ncspot.png)
 
 ##### TODOs
 * Wiki
