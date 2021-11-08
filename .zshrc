@@ -297,6 +297,10 @@ alias xfcedit="nvim ~/.config/xfce4/xfconf/xfce-perchannel-xml/"
 
 alias cryptDrive="rclone mount cryptDrive: /home/msa/Drive --daemon --user-agent mydrive --copy-links --no-gzip-encoding --no-check-certificate --vfs-cache-mode full --dir-cache-time 24h --poll-interval 10s --cache-dir=/home/msa/temp/cache/ --drive-pacer-min-sleep 10ms --drive-pacer-burst 1000 --vfs-cache-max-size 1G --vfs-cache-poll-interval 5m --vfs-read-ahead 2G --bwlimit-file 32M --umask 000"
 
+expandTemp() {
+    sudo mount -o remount,size="$1"G,noatime /tmp
+}
+
 # java compile & run
 # alias javar="javac Main.java & java Main"
 
@@ -311,6 +315,12 @@ export PATH=/home/msa/.local/bin:/home/msa/.local/bin:/usr/local/bin:/usr/bin:/b
 export PATH=$PATH:~/.platformio/penv/bin
 # Flutter
 export PATH="$PATH:/home/msa/Applications/flutter/bin"
+
+# OpenFOAM
+export FOAM_INST_DIR='$HOME/.OpenFOAM'
+alias of20x='source $FOAM_INST_DIR/OpenFOAM-2.0.x/etc/bashrc'
+alias paraFoam='paraFoam -builtin'
+
 #home/msa/.emacs.d/bin
 
 zplug "dracula/zsh", as:theme
