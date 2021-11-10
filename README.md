@@ -7,7 +7,7 @@ Will be some fancy text here.
 
 #### Desktop
 ![](st.png)
-#### I3-VM
+#### I3
 ![](i3.png)
 #### VIm
 ![](nvim.png)
