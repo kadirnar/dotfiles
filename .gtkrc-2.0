@@ -3,9 +3,9 @@
 
 include "/home/msa/.gtkrc-2.0.mine"
 gtk-theme-name="Dracula"
-gtk-icon-theme-name="Papirus-Dark"
-gtk-font-name="Monospace 11"
-gtk-cursor-theme-name="Fluent-cursors"
+gtk-icon-theme-name="ePapirus-Dark"
+gtk-font-name="Cantarell 11"
+gtk-cursor-theme-name="phinger-cursors"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
@@ -16,4 +16,3 @@ gtk-enable-input-feedback-sounds=1
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
-gtk-xft-rgba="none"
