@@ -1,16 +1,20 @@
-# msa's .zshrc config file
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# POWER10K
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# OHMYZSH
+export ZSH="$HOME/.oh-my-zsh"
 
-# Path to your oh-my-zsh installation.
+# PATHs
+
+# STATICs
+export PATH=/home/msa/.local/bin:/home/msa/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:/home/msa/.local/bin:/home/msa/.platformio/penv/bin
+
+# DYNAMICs
+export PATH="$PATH:/home/msa/Applications/flutter/bin"
+
+# EXPORTS
 export ZSH="/home/msa/.oh-my-zsh"
 export TERM="xterm-256color"                      # getting proper colors
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
@@ -21,97 +25,28 @@ export MESA_GL_VERSION_OVERRIDE=4.6
 export CHROME_EXECUTABLE="/usr/bin/brave"
 GCM_CREDENTIAL_STORE=secretservice
 
+# MISC
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.zplug/init.zsh
 source /etc/profile
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f .aliases ] && source .aliases
 [ -f .env ] && source .env
+
 autoload -Uz compinit promptinit
 compinit
 promptinit
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# THEME
+ZSH_THEME="robbyrussell"
 
-ZSH_THEME="junkfood"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
-# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# HIST_STAMPS="mm/dd/yyyy"
-
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(z history git zsh-syntax-highlighting zsh-autosuggestions lol thefuck colored-man-pages)
+# ZSHs PLUGINS
+plugins=(z history git zsh-syntax-highlighting zsh-autosuggestions lol colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# FUNCTIONS
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
+# EXTRACT
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
@@ -152,21 +87,19 @@ function extract {
 fi
 }
 
+
+# EXPANDTEMP
+
+# expandes temp for big-size compiling
+expandTemp() {
+    sudo mount -o remount,size="$1"G,noatime /tmp
+}
+
+
 IFS=$SAVEIFS
 
 
-
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#alias emacs="emacs -c -a 'emacs'"
+# ALIASes
 alias emac="emacs -nw"
 alias doomsync="~/.emacs.d/bin/doom sync"
 alias doomdoctor="~/.emacs.d/bin/doom doctor"
@@ -293,16 +226,8 @@ alias kakd="/usr/bin/kak -d -s mysession &"
 alias vim=nvim
 alias cd..="cd .."
 alias xfcedit="nvim ~/.config/xfce4/xfconf/xfce-perchannel-xml/"
-#source /usr/share/gazebo/setup.sh
 
 alias cryptDrive="rclone mount cryptDrive: /home/msa/Drive --daemon --user-agent mydrive --copy-links --no-gzip-encoding --no-check-certificate --vfs-cache-mode full --dir-cache-time 24h --poll-interval 10s --cache-dir=/home/msa/temp/cache/ --drive-pacer-min-sleep 10ms --drive-pacer-burst 1000 --vfs-cache-max-size 1G --vfs-cache-poll-interval 5m --vfs-read-ahead 2G --bwlimit-file 32M --umask 000"
-
-expandTemp() {
-    sudo mount -o remount,size="$1"G,noatime /tmp
-}
-
-# java compile & run
-# alias javar="javac Main.java & java Main"
 
 # xClip
 alias setclip="xclip -selection c"
@@ -311,17 +236,8 @@ alias getclip="xclip -selection c -o"
 # Shity ohMyZSH aliases
 unalias tldr
 
-export PATH=/home/msa/.local/bin:/home/msa/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:/home/msa/.local/bin
-export PATH=$PATH:~/.platformio/penv/bin
-# Flutter
-export PATH="$PATH:/home/msa/Applications/flutter/bin"
 
-# OpenFOAM
-export FOAM_INST_DIR='$HOME/.OpenFOAM'
-alias of20x='source $FOAM_INST_DIR/OpenFOAM-2.0.x/etc/bashrc'
-alias paraFoam='paraFoam -builtin'
-
-#home/msa/.emacs.d/bin
+# ZPLUG
 
 zplug "dracula/zsh", as:theme
 zplug "zsh-users/zsh-history-substring-search"
@@ -336,11 +252,14 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
+# FIXes
+
+# Suckless Terminal Sucks
 bindkey "\033[1~" beginning-of-line
 bindkey "\033[4~" end-of-line
+
