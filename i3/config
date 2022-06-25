@@ -231,6 +231,7 @@ for_window [class="spotify"] fullscreen enable
 for_window [class="brave"] fullscreen enable
 # for_window [class="tabby"] floating enable
 for_window [title="nomacs"] floating enable
+for_window [title="Calculator"] floating enable
 for_window [class="Yad"] floating enable
 for_window [class="Telegram"] floating enable
 for_window [class="Discord"] floating enable
