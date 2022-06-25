@@ -422,6 +422,7 @@ bindsym $mod+Ctrl+KP_Page_Up exec $myTerm -e wopr report.xml
 # Custom Shortcuts
 bindsym $mod+$alt+z exec boomer
 bindsym $mod+Shift+f exec thunar
+bindsym $mod+Shift+o exec emacsclient -c --no-wait -a 'emacs'
 
 gaps inner 10
 gaps outer -4
