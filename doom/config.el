@@ -1,185 +1,14 @@
-;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets. It is optional.
-(setq user-full-name "Mert Sefa AKGUN"
-      user-mail-address "msa@msakg.com")
-
-;; Doom exposes five (optional) variables for controlling fonts in Doom:
-;;
-;; - `doom-font' -- the primary font to use
-;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
-;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;; - `doom-unicode-font' -- for unicode glyphs
-;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
-;;
-;; See 'C-h v doom-font' for documentation and more examples of what they
-;; accept. For example:
-;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-;;
-;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
-;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
-;; refresh your font settings. If Emacs still can't find your font, it likely
-;; wasn't installed correctly. Font issues are rarely Doom issues!
-
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
-
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
-
-;; Whenever you reconfigure a package, make sure to wrap your config in an
-;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
-;;
-;;   (after! PACKAGE
-;;     (setq x y))
-;;
-;; The exceptions to this rule:
-;;
-;;   - Setting file/directory variables (like `org-directory')
-;;   - Setting variables which explicitly tell you to set them before their
-;;     package is loaded (see 'C-h v VARIABLE' to look up their documentation).
-;;   - Setting doom variables (which start with 'doom-' or '+').
-;;
-;; Here are some additional functions/macros that will help you configure Doom.
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
-;;
-;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;; Alternatively, use `C-h o' to look up a symbol (functions, variables, faces,
-;; etc).
-;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-;; they are implemented.
-
-;; # Beacon
-
-;; Never lose your cursor.  When you scroll, your cursor will shine!  This is a
-;; global minor-mode. Turn it on everywhere with:
-
 (beacon-mode 1)
 
-
-;; # Bookmarks
-
-;; Doom Emacs uses ‘SPC b’ for keybindings related to bookmarks and buffers.
-;; Bookmarks are somewhat like registers in that they record positions you can
-;; jump to.  Unlike registers, they have long names, and they persist
-;; automatically from one Emacs session to the next. The prototypical use of
-;; bookmarks is to record where you were reading in various files.
+(setq which-key-idle-delay 0)
 
 (map! :leader
       (:prefix ("b". "buffer")
        :desc "List bookmarks" "L" #'list-bookmarks
        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 
-;; # Buffers
-
-;; Regarding buffers, the text you are editing in Emacs resides in an object
-;; called a buffer. Each time you visit a file, a buffer is used to hold the
-;; file’s text. Each time you invoke Dired, a buffer is used to hold the
-;; directory listing.  Ibuffer is a program that lists all of your Emacs
-;; buffers, allowing you to navigate between them and filter them.
-
-;; ibuffer
-;; Launch ibuffer
-;; SPC b i
-
-;; kill-buffer
-;; Kill current buffer
-;; SPC b k
-
-;; next-buffer
-;; Goto next buffer
-;; SPC b n
-
-;; previous-buffer
-;; Goto previous buffer
-;; SPC b p
-
-;; save-buffer
-;; Save curre;; nt buffer
-;; SPC b s
-
-;; # Global Auto Revert
-
-;; A buffer can get out of sync with respect to its visited file on disk if
-;; that file is changed by another program. To keep it up to date, you can
-;; enable Auto Revert mode by typing M-x auto-revert-mode, or you can set it to
-;; be turned on globally with ‘global-auto-revert-mode’.  I have also turned on
-;; Global Auto Revert on non-file buffers, which is especially useful for ‘dired’ buffers.
-
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
-
-;; # Keybindings within ibuffer mode
-
-;; ibuffer-mark-forward
-;; Mark the buffer
-;; m
-
-;; ibuffer-unmark-forward
-;; Unmark the buffer
-;; u
-
-;; ibuffer-do-kill-on-deletion-marks
-;; Kill the marked buffers
-;; x
-
-;; ibuffer-filter-by-content
-;; Ibuffer filter by content
-;; f c
-
-;; ibuffer-filter-by-directory
-;; Ibuffer filter by directory
-;; f d
-
-;; ibuffer-filter-by-filename
-;; Ibuffer filter by filename (full path)
-;; f f
-
-;; ibuffer-filter-by-mode
-;; Ibuffer filter by mode
-;; f m
-
-;; ibuffer-filter-by-name
-;; Ibuffer filter by name
-;; f n
-
-;; ibuffer-filter-disable
-;; Disable ibuffer filter
-;; f x
-
-;; ibuffer-do-kill-lines
-;; Hide marked buffers
-;; g h
-
-;; ibuffer-update
-;; Restore hidden buffers
-;; g H
 
 (evil-define-key 'normal ibuffer-mode-map
   (kbd "f c") 'ibuffer-filter-by-content
@@ -191,45 +20,67 @@
   (kbd "g h") 'ibuffer-do-kill-lines
   (kbd "g H") 'ibuffer-update)
 
-;; CENTAUR-TABS
-;; To use tabs in Doom Emacs, be sure to uncomment “tabs” in Doom’s init.el.
-;; Displays tabs at the top of the window similar to tabbed web browsers such
-;; as Firefox.  I don’t actually use tabs in Emacs.  I placed this in my config
-;; to help others who may want tabs.  In the default configuration of Doom
-;; Emacs, ‘SPC t’ is used for “toggle” keybindings, so I choose ‘SPC t c’ to
-;; toggle centaur-tabs.  The “g” prefix for keybindings is used for a bunch of
-;; evil keybindings in Doom, but “g” plus the arrow keys were not used, so I
-;; thought I would bind those for tab navigation.  But I did leave the default
-;; “g t” and “g T” intact if you prefer to use those for centaur-tabs-forward/backward.
+;; https://stackoverflow.com/questions/9547912/emacs-calendar-show-more-than-3-months
+(defun dt/year-calendar (&optional year)
+  (interactive)
+  (require 'calendar)
+  (let* (
+      (current-year (number-to-string (nth 5 (decode-time (current-time)))))
+      (month 0)
+      (year (if year year (string-to-number (format-time-string "%Y" (current-time))))))
+    (switch-to-buffer (get-buffer-create calendar-buffer))
+    (when (not (eq major-mode 'calendar-mode))
+      (calendar-mode))
+    (setq displayed-month month)
+    (setq displayed-year year)
+    (setq buffer-read-only nil)
+    (erase-buffer)
+    ;; horizontal rows
+    (dotimes (j 4)
+      ;; vertical columns
+      (dotimes (i 3)
+        (calendar-generate-month
+          (setq month (+ month 1))
+          year
+          ;; indentation / spacing between months
+          (+ 5 (* 25 i))))
+      (goto-char (point-max))
+      (insert (make-string (- 10 (count-lines (point-min) (point-max))) ?\n))
+      (widen)
+      (goto-char (point-max))
+      (narrow-to-region (point-max) (point-max)))
+    (widen)
+    (goto-char (point-min))
+    (setq buffer-read-only t)))
 
-;; COMMAND
-;; DESCRIPTION
-;; KEYBINDING
+(defun dt/scroll-year-calendar-forward (&optional arg event)
+  "Scroll the yearly calendar by year in a forward direction."
+  (interactive (list (prefix-numeric-value current-prefix-arg)
+                     last-nonmenu-event))
+  (unless arg (setq arg 0))
+  (save-selected-window
+    (if (setq event (event-start event)) (select-window (posn-window event)))
+    (unless (zerop arg)
+      (let* (
+              (year (+ displayed-year arg)))
+        (dt/year-calendar year)))
+    (goto-char (point-min))
+    (run-hooks 'calendar-move-hook)))
 
-;; centaur-tabs-mode
-;; Toggle tabs globally
-;; SPC t c
+(defun dt/scroll-year-calendar-backward (&optional arg event)
+  "Scroll the yearly calendar by year in a backward direction."
+  (interactive (list (prefix-numeric-value current-prefix-arg)
+                     last-nonmenu-event))
+  (dt/scroll-year-calendar-forward (- (or arg 1)) event))
 
-;; centaur-tabs-local-mode
-;; Toggle tabs local display
-;; SPC t C
+(map! :leader
+      :desc "Scroll year calendar backward" "<left>" #'dt/scroll-year-calendar-backward
+      :desc "Scroll year calendar forward" "<right>" #'dt/scroll-year-calendar-forward)
 
-;; centaur-tabs-forward
-;; Next tab
-;; g <right> or g t
+(defalias 'year-calendar 'dt/year-calendar)
 
-;; centaur-tabs-backward
-;; Previous tab
-;; g <left> or g T
-
-;; centaur-tabs-forward-group
-;; Next tab group
-;; g <down>
-
-;; centaur-tabs-backward-group
-;; Previous tab group
-;; g <up>
-
+(use-package! calfw)
+(use-package! calfw-org)
 
 (setq centaur-tabs-set-bar 'over
       centaur-tabs-set-icons t
@@ -246,36 +97,10 @@
                                                (kbd "g <down>")  'centaur-tabs-forward-group
                                                (kbd "g <up>")    'centaur-tabs-backward-group)
 
-;; # CLIPPY
-
-;; Gives us a popup box with “Clippy, the paper clip”. You can make him say
-;; various things by calling ‘clippy-say’ function.  But the more useful
-;; functions of clippy are the two describe functions provided:
-;; ‘clippy-describe-function’ and ‘clippy-describe-variable’.  Hit the
-;; appropriate keybinding while the point is over a function/variable to call
-;; it.  A popup with helpful clippy will appear, telling you about the
-;; function/variable (using describe-function and describe-variable respectively).
-
-
-;; clippy-describe-function
-;; Clippy describes function under point
-;; SPC c h f
-
-;; clippy-describe-variable
-;; Clippy describes variable under point
-;; SPC c h v
-
-
 (map! :leader
       (:prefix ("c h" . "Help info from Clippy")
        :desc "Clippy describes function under point" "f" #'clippy-describe-function
        :desc "Clippy describes variable under point" "v" #'clippy-describe-variable))
-
-;; # Dashboard
-
-;; Emacs Dashboard is an extensible startup screen showing you recent files,
-;; bookmarks, agenda items and an Emacs banner.
-
 
 (use-package dashboard
   :init      ;; tweak dashboard config before loading it
@@ -301,132 +126,7 @@ List of keybindings (SPC h b b)")
   (dashboard-modify-heading-icons '((recents . "file-text")
                                     (bookmarks . "book"))))
 
-;; This setting ensures that emacsclient always opens on dashboard rather than
-;; scratch.
-
 (setq doom-fallback-buffer-name "*dashboard*")
-
-
-;; DIRED
-;; Dired is the file manager within Emacs.  Below, I setup keybindings for image previews (peep-dired).  Doom Emacs does not use ‘SPC d’ for any of its keybindings, so I’ve chosen the format of ‘SPC d’ plus ‘key’.
-;; Keybindings To Open Dired
-
-;; COMMAND
-;; DESCRIPTION
-;; KEYBINDING
-
-;; dired
-;; Open dired file manager
-;; SPC d d
-
-;; dired-jump
-;; Jump to current directory in dired
-;; SPC d j
-
-;; Keybindings Within Dired
-
-;; Basic dired commands
-;; COMMAND
-;; DESCRIPTION
-;; KEYBINDING
-
-
-;; dired-view-file
-;; View file in dired
-;; SPC d v
-
-;; dired-up-directory
-;; Go up in directory tree
-;; h
-
-;; dired-find-file
-;; Go down in directory tree (or open if file)
-;; l
-
-;; dired-next-line
-;; Move down to next line
-;; j
-
-;; dired-previous-line
-;; Move up to previous line
-;; k
-
-;; dired-mark
-;; Mark file at point
-;; m
-
-;; dired-unmark
-;; Unmark file at point
-;; u
-
-;; dired-do-copy
-;; Copy current file or marked files
-;; C
-
-;; dired-do-rename
-;; Rename current file or marked files
-;; R
-
-;; dired-hide-details
-;; Toggle detailed listings on/off
-;; (
-
-;; dired-git-info-mode
-;; Toggle git information on/off
-;; )
-
-;; dired-create-directory
-;; Create new empty directory
-;; +
-
-;; dired-diff
-;; Compare file at point with another
-;; =
-
-;; dired-subtree-toggle
-;; Toggle viewing subtree at point
-;; TAB
-
-;; Dired commands using regex
-;; COMMAND
-;; DESCRIPTION
-;; KEYBINDING
-
-;; dired-mark-files-regexp
-;; Mark files using regex
-;; % m
-
-;; dired-do-copy-regexp
-;; Copy files using regex
-;; % C
-
-;; dired-do-rename-regexp
-;; Rename files using regex
-;; % R
-
-;; dired-mark-files-regexp
-;; Mark all files using regex
-;; * %
-
-;; File permissions and ownership
-;; COMMAND
-;; DESCRIPTION
-;; KEYBINDING
-
-;; dired-do-chgrp
-;; Change the group of marked files
-;; g G
-
-;; dired-do-chmod
-;; Change the mode of marked files
-;; M
-;; dired-do-chown
-;; Change the owner of marked files
-;; O
-
-;; dired-do-rename
-;; Rename file or all marked files
-;; R
 
 (map! :leader
       (:prefix ("d" . "dired")
@@ -481,6 +181,16 @@ List of keybindings (SPC h b b)")
 (map! :leader
       :desc "Load new theme" "h t" #'counsel-load-theme)
 
+;; Add all your customizations prior to loading the themes
+(setq modus-themes-italic-constructs t
+      modus-themes-bold-constructs nil
+      modus-themes-region '(bg-only no-extend))
+
+;; Load the theme of your choice:
+(load-theme 'modus-operandi) ;; OR (load-theme 'modus-vivendi)
+
+(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
+
 (use-package! elfeed-goodies)
 (elfeed-goodies/setup)
 (setq elfeed-goodies/entry-pane-size 0.5)
@@ -510,7 +220,6 @@ List of keybindings (SPC h b b)")
                      ("https://betanews.com/feed" betanews linux)
                      ("http://lxer.com/module/newswire/headlines.rss" lxer linux)
                      ("https://distrowatch.com/news/dwd.xml" distrowatch linux))))
-
 
 (use-package emojify
   :hook (after-init . global-emojify-mode))
@@ -549,7 +258,7 @@ List of keybindings (SPC h b b)")
        :desc "Eww reload page" "R" #'eww-reload))
 
 (setq doom-font (font-spec :family "Source Code Pro" :size 15)
-      doom-variable-pitch-font (font-spec :family "Cascadia Mono" :size 15)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
       doom-big-font (font-spec :family "Source Code Pro" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
@@ -620,7 +329,7 @@ List of keybindings (SPC h b b)")
       (:prefix ("t" . "toggle")
        :desc "Toggle minimap-mode" "m" #'minimap-mode))
 
-(set-face-attribute 'mode-line nil :font "Cascadia Mono-13")
+(set-face-attribute 'mode-line nil :font "Ubuntu Mono-13")
 (setq doom-modeline-height 30     ;; sets modeline height
       doom-modeline-bar-width 5   ;; sets right bar width
       doom-modeline-persp-name t  ;; adds perspective name to modeline
@@ -842,7 +551,7 @@ List of keybindings (SPC h b b)")
        :desc "Increment register" "+" #'increment-register
        :desc "Point to register" "SPC" #'point-to-register))
 
-(setq shell-file-name "/bin/fish"
+(setq shell-file-name "/bin/zsh"
       vterm-max-scrollback 5000)
 (setq eshell-rc-script "~/.config/doom/eshell/profile"
       eshell-aliases-file "~/.config/doom/eshell/aliases"
@@ -851,7 +560,7 @@ List of keybindings (SPC h b b)")
       eshell-hist-ignoredups t
       eshell-scroll-to-bottom-on-input t
       eshell-destroy-buffer-when-process-dies t
-      eshell-visual-commands'("bash" "fish" "htop" "ssh" "top" "zsh"))
+      eshell-visual-commands'("zsh" "bash" "htop" "ssh" "top" "fish"))
 (map! :leader
       :desc "Eshell" "e s" #'eshell
       :desc "Eshell popup toggle" "e t" #'+eshell/toggle
@@ -873,18 +582,3 @@ List of keybindings (SPC h b b)")
 (map! :leader
       :desc "Zap to char" "z" #'zap-to-char
       :desc "Zap up to char" "Z" #'zap-up-to-char)
-
-;; Space Delay
-(setq which-key-idle-delay 0)
-
-;; Modus Theme
-
-;; Add all your customizations prior to loading the themes
-(setq modus-themes-italic-constructs t
-      modus-themes-bold-constructs nil
-      modus-themes-region '(bg-only no-extend))
-
-;; Load the theme of your choice:
-(load-theme 'modus-operandi) ;; OR (load-theme 'modus-vivendi)
-
-(define-key global-map (kbd "<f5>") #'modus-themes-toggle)
