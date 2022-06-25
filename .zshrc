@@ -10,11 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-# STATICs
-export PATH=/home/msa/.local/bin:/home/msa/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:/home/msa/.local/bin:/home/msa/.platformio/penv/bin
-
-# DYNAMICs
-export PATH="$PATH:/home/msa/Applications/flutter/bin"
+export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.platformio/penv/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin"
 
 # EXPORTS
 export ZSH="/home/msa/.oh-my-zsh"
@@ -102,7 +98,8 @@ IFS=$SAVEIFS
 
 
 # ALIASes
-alias emac="emacs -nw"
+alias emacs="emacsclient -c -a 'emacs'"
+alias emac="emacsclient -nw"
 alias doomsync="~/.emacs.d/bin/doom sync"
 alias doomdoctor="~/.emacs.d/bin/doom doctor"
 alias doomupgrade="~/.emacs.d/bin/doom upgrade"
@@ -275,3 +272,52 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 bindkey "\033[1~" beginning-of-line
 bindkey "\033[4~" end-of-line
 
+
+export QSYS_ROOTDIR="/home/msa/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+
+#! flutter completion
+
+
+if type complete &>/dev/null; then
+  __flutter_completion() {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           flutter completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -F __flutter_completion flutter
+elif type compdef &>/dev/null; then
+  __flutter_completion() {
+    si=$IFS
+    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
+                 COMP_LINE=$BUFFER \
+                 COMP_POINT=0 \
+                 flutter completion -- "${words[@]}" \
+                 2>/dev/null)
+    IFS=$si
+  }
+  compdef __flutter_completion flutter
+elif type compctl &>/dev/null; then
+  __flutter_completion() {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       flutter completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K __flutter_completion flutter
+fi
+
+
+#! end of the flutter completion
