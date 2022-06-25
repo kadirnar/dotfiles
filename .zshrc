@@ -98,7 +98,7 @@ IFS=$SAVEIFS
 
 
 # ALIASes
-alias emacs="emacsclient -c -a 'emacs'"
+alias emacs="emacsclient -c --no-wait -a 'emacs'"
 alias emac="emacsclient -nw"
 alias doomsync="~/.emacs.d/bin/doom sync"
 alias doomdoctor="~/.emacs.d/bin/doom doctor"
