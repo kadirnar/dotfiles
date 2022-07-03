@@ -1,3 +1,6 @@
+!! Hi-DPI
+Xft.dpi: 80
+
 !! Transparency (0-1):
 st.alpha: 0.92
 st.alphaOffset: 0.3
