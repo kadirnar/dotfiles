@@ -12,7 +12,7 @@
 set $mod Mod4
 set $alt Mod1
 
-exec --no-startup-id setxkbmap tr
+exec --no-startup-id setxkbmap us
 exec --no-startup-id dunst
 exec_always --no-startup-id picom
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
