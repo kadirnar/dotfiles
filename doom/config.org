@@ -15,6 +15,7 @@
 - [[#calendar][CALENDAR]]
 - [[#centaur-tabs][CENTAUR-TABS]]
 - [[#clippy][CLIPPY]]
+- [[#copilot][COPILOT]]
 - [[#dashboard][DASHBOARD]]
   - [[#configuring-dashboard][Configuring Dashboard]]
   - [[#dashboard-in-emacsclient][Dashboard in Emacsclient]]
@@ -223,7 +224,7 @@ To use tabs in Doom Emacs, be sure to uncomment "tabs" in Doom's init.el.  Displ
 (setq centaur-tabs-set-bar 'over
       centaur-tabs-set-icons t
       centaur-tabs-gray-out-icons 'buffer
-      centaur-tabs-height 24
+      centaur-tabs-height 12
       centaur-tabs-set-modified-marker t
       centaur-tabs-style "bar"
       centaur-tabs-modified-marker "•")
@@ -234,10 +235,11 @@ To use tabs in Doom Emacs, be sure to uncomment "tabs" in Doom's init.el.  Displ
                                                (kbd "g <left>")  'centaur-tabs-backward       ; default Doom binding is 'g T'
                                                (kbd "g <down>")  'centaur-tabs-forward-group
                                                (kbd "g <up>")    'centaur-tabs-backward-group)
+
 #+END_SRC
 
 * CLIPPY
-Gives us a popup box with "Clippy, the paper clip". You can make him say various things by calling 'clippy-say' function.  But the more useful functions of clippy are the two describe functions provided: 'clippy-describe-function' and 'clippy-describe-variable'.  Hit the appropriate keybinding while the point is over a function/variable to call it.  A popup with helpful clippy will appear, telling you about the function/variable (using describe-function and describe-variable respectively).
+# Gives us a popup box with "Clippy, the paper clip". You can make him say various things by calling 'clippy-say' function.  But the more useful functions of clippy are the two describe functions provided: 'clippy-describe-function' and 'clippy-describe-variable'.  Hit the appropriate keybinding while the point is over a function/variable to call it.  A popup with helpful clippy will appear, telling you about the function/variable (using describe-function and describe-variable respectively).
 
 | COMMAND                  | DESCRIPTION                           | KEYBINDING |
 |--------------------------+---------------------------------------+------------|
@@ -252,6 +254,26 @@ Gives us a popup box with "Clippy, the paper clip". You can make him say various
 
 #+end_src
 
+* COPILOT
+Copilot is AI based code completion & suggestion service.
+#+begin_src emacs-lisp
+;; accept completion from copilot and fallback to company
+(defun my-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (company-indent-or-complete-common nil)))
+
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
+         ("C-<tab>" . 'copilot-accept-completion-by-word)
+         :map company-active-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)
+         :map company-mode-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)))
+#+end_src
 * DASHBOARD
 Emacs Dashboard is an extensible startup screen showing you recent files, bookmarks, agenda items and an Emacs banner.
 
@@ -417,7 +439,7 @@ Setting the theme to doom-one.  To try out new themes, I set a keybinding for co
       modus-themes-region '(bg-only no-extend))
 
 ;; Load the theme of your choice:
-(load-theme 'modus-operandi) ;; OR (load-theme 'modus-vivendi)
+;; (load-theme 'modus-operandi) ;; OR (load-theme 'modus-vivendi)
 
 (define-key global-map (kbd "<f5>") #'modus-themes-toggle)
 #+END_SRC
@@ -564,9 +586,9 @@ Settings related to fonts within Doom Emacs:
 + 'font-lock-keyword-face' -- for keywords with special significance like 'setq' in elisp.
 
 #+BEGIN_SRC emacs-lisp
-(setq doom-font (font-spec :family "Source Code Pro" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
-      doom-big-font (font-spec :family "Source Code Pro" :size 24))
+(setq doom-font (font-spec :family "Source Code Pro" :size 12)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 11)
+      doom-big-font (font-spec :family "Source Code Pro" :size 20))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -706,7 +728,7 @@ The modeline is the bottom status bar that appears in Emacs windows.  For more i
 https://github.com/seagle0128/doom-modeline
 
 #+begin_src emacs-lisp
-(set-face-attribute 'mode-line nil :font "Ubuntu Mono-13")
+(set-face-attribute 'mode-line nil :font "Ubuntu Mono-12")
 (setq doom-modeline-height 30     ;; sets modeline height
       doom-modeline-bar-width 5   ;; sets right bar width
       doom-modeline-persp-name t  ;; adds perspective name to modeline

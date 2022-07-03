@@ -81,3 +81,5 @@
 (package! minimap)
 (package! olivetti)
 (package! tldr)
+(package! copilot
+  :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))

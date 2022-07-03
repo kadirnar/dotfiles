@@ -85,7 +85,7 @@
 (setq centaur-tabs-set-bar 'over
       centaur-tabs-set-icons t
       centaur-tabs-gray-out-icons 'buffer
-      centaur-tabs-height 24
+      centaur-tabs-height 12
       centaur-tabs-set-modified-marker t
       centaur-tabs-style "bar"
       centaur-tabs-modified-marker "•")
@@ -101,6 +101,23 @@
       (:prefix ("c h" . "Help info from Clippy")
        :desc "Clippy describes function under point" "f" #'clippy-describe-function
        :desc "Clippy describes variable under point" "v" #'clippy-describe-variable))
+
+;; accept completion from copilot and fallback to company
+(defun my-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (company-indent-or-complete-common nil)))
+
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
+         ("C-<tab>" . 'copilot-accept-completion-by-word)
+         :map company-active-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)
+         :map company-mode-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)))
 
 (use-package dashboard
   :init      ;; tweak dashboard config before loading it
@@ -187,7 +204,7 @@ List of keybindings (SPC h b b)")
       modus-themes-region '(bg-only no-extend))
 
 ;; Load the theme of your choice:
-(load-theme 'modus-operandi) ;; OR (load-theme 'modus-vivendi)
+;; (load-theme 'modus-operandi) ;; OR (load-theme 'modus-vivendi)
 
 (define-key global-map (kbd "<f5>") #'modus-themes-toggle)
 
@@ -257,9 +274,9 @@ List of keybindings (SPC h b b)")
        :desc "Eww web browser" "w" #'eww
        :desc "Eww reload page" "R" #'eww-reload))
 
-(setq doom-font (font-spec :family "Source Code Pro" :size 15)
-      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 15)
-      doom-big-font (font-spec :family "Source Code Pro" :size 24))
+(setq doom-font (font-spec :family "Source Code Pro" :size 12)
+      doom-variable-pitch-font (font-spec :family "Ubuntu" :size 11)
+      doom-big-font (font-spec :family "Source Code Pro" :size 20))
 (after! doom-themes
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t))
@@ -329,7 +346,7 @@ List of keybindings (SPC h b b)")
       (:prefix ("t" . "toggle")
        :desc "Toggle minimap-mode" "m" #'minimap-mode))
 
-(set-face-attribute 'mode-line nil :font "Ubuntu Mono-13")
+(set-face-attribute 'mode-line nil :font "Ubuntu Mono-12")
 (setq doom-modeline-height 30     ;; sets modeline height
       doom-modeline-bar-width 5   ;; sets right bar width
       doom-modeline-persp-name t  ;; adds perspective name to modeline
