@@ -32,6 +32,7 @@
 - [[#evaluate-elisp-expressions][EVALUATE ELISP EXPRESSIONS]]
 - [[#eww][EWW]]
 - [[#fonts][FONTS]]
+- [[#hydra][HYDRA]]
 - [[#insert-date][INSERT DATE]]
 - [[#ivy][IVY]]
   - [[#ivy-posframe][IVY-POSFRAME]]
@@ -597,6 +598,29 @@ Settings related to fonts within Doom Emacs:
   '(font-lock-keyword-face :slant italic))
 #+END_SRC
 
+* HYDRA
+Hydra configurations for escaping lot of key sequences.
+
+- Evil Resize
+
+#+BEGIN_SRC emacs-lisp
+(defhydra doom-window-resize-hydra (:hint nil)
+  "
+             _k_ increase height
+_h_ decrease width    _l_ increase width
+             _j_ decrease height
+"
+  ("h" evil-window-decrease-width)
+  ("j" evil-window-increase-height)
+  ("k" evil-window-decrease-height)
+  ("l" evil-window-increase-width)
+
+  ("q" nil))
+
+(map!
+    (:prefix "w"
+      :desc "Hydra resize" :n "SPC" #'doom-window-resize-hydra/body))
+#+END_SRC
 * INSERT DATE
 Some custom functions to insert the date.  The function 'insert-todays-date' can be used one of three different ways: (1) just the keybinding without the universal argument prefix, (2) with one universal argument prefix, or (3) with two universal argument prefixes.  The universal argument prefix is 'SPC-u' in Doom Emacs (C-u in standard GNU Emacs).  The function 'insert-any-date' only outputs to one format, which is the same format as 'insert-todays-date' without a prefix.
 
