@@ -1,0 +1,6 @@
+[user]
+	email = msa@msakg.com
+	name = 'Mert Sefa Akgun'
+[core]
+	editor = nvim
+	bare = false
