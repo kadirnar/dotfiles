@@ -10,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.platformio/penv/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin"
+export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.platformio/penv/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools"
 
 # EXPORTS
 export ZSH="/home/msa/.oh-my-zsh"
@@ -21,9 +21,11 @@ export VISUAL="nvim"           # $VISUAL use Emacs in GUI mode
 export LIBGL_ALWAYS_SOFTWARE=1
 export MESA_GL_VERSION_OVERRIDE=4.6
 export CHROME_EXECUTABLE="/usr/bin/brave"
-GCM_CREDENTIAL_STORE=secretservice
 
+GCM_CREDENTIAL_STORE=secretservice
+DOTNET_CLI_TELEMETRY_OPTOUT=1
 # MISC
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.zplug/init.zsh
 source /etc/profile
