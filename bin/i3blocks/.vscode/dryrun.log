@@ -1,0 +1,197 @@
+ cd . && /bin/sh /home/msa/Applications/i3blocks/build-aux/missing automake-1.16 --foreign
+ 
+CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/sh '/home/msa/Applications/i3blocks/build-aux/missing' autoconf
+ 
+/bin/sh ./config.status --recheck
+ 
+running CONFIG_SHELL=/bin/sh /bin/sh ./configure --no-create --no-recursion
+ 
+checking for a BSD-compatible install...  
+/usr/bin/install -c
+ 
+checking whether build environment is sane...  
+yes
+ 
+checking for a race-free mkdir -p...  
+/usr/bin/mkdir -p
+ 
+checking for gawk...  
+gawk
+ 
+checking whether make sets $(MAKE)...  
+yes
+ 
+checking whether make supports nested variables...  
+yes
+ 
+checking for gcc...  
+gcc
+ 
+checking whether the C compiler works...  
+yes
+ 
+checking for C compiler default output file name... a.out
+ 
+checking for suffix of executables...  
+
+ 
+checking whether we are cross compiling...  
+no
+ 
+checking for suffix of object files...  
+o
+ 
+checking whether the compiler supports GNU C...  
+yes
+ 
+checking whether gcc accepts -g...  
+yes
+ 
+checking for gcc option to enable C11 features...  
+none needed
+ 
+checking whether gcc understands -c and -o together...  
+yes
+checking whether make supports the include directive...  
+yes (GNU style)
+ 
+checking dependency style of gcc...  
+gcc3
+ 
+checking for pkg-config...  
+/usr/bin/pkg-config
+ 
+checking pkg-config is at least version 0.9.0...  
+yes
+ 
+checking for BASH_COMPLETION...  
+yes
+ 
+checking that generated files are newer than configure...  
+done
+configure: creating ./config.status
+ 
+ /bin/sh ./config.status
+ 
+config.status: creating Makefile
+ 
+config.status: creating i3blocks-config.h
+config.status: i3blocks-config.h is unchanged
+config.status: executing depfiles commands
+ 
+(CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/sh '/home/msa/Applications/i3blocks/build-aux/missing' autoheader)
+rm -f stamp-h1
+touch i3blocks-config.h.in
+rm -f stamp-h1
+cd . && /bin/sh ./config.status i3blocks-config.h
+test -f i3blocks-config.h || rm -f stamp-h1
+test -f i3blocks-config.h || make  stamp-h1
+ 
+make  all-am
+ 
+make[1]: Entering directory '/home/msa/Applications/i3blocks'
+ 
+CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/sh '/home/msa/Applications/i3blocks/build-aux/missing' aclocal-1.16 
+ 
+ cd . && /bin/sh /home/msa/Applications/i3blocks/build-aux/missing automake-1.16 --foreign
+ 
+CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/sh '/home/msa/Applications/i3blocks/build-aux/missing' autoconf
+ 
+/bin/sh ./config.status --recheck
+ 
+running CONFIG_SHELL=/bin/sh /bin/sh ./configure --no-create --no-recursion
+ 
+checking for a BSD-compatible install...  
+/usr/bin/install -c
+ 
+checking whether build environment is sane...  
+yes
+ 
+checking for a race-free mkdir -p...  
+/usr/bin/mkdir -p
+ 
+checking for gawk...  
+gawk
+ 
+checking whether make sets $(MAKE)...  
+yes
+ 
+checking whether make supports nested variables...  
+yes
+ 
+checking for gcc...  
+gcc
+ 
+checking whether the C compiler works...  
+yes
+ 
+checking for C compiler default output file name... a.out
+ 
+checking for suffix of executables...  
+
+ 
+checking whether we are cross compiling...  
+no
+ 
+checking for suffix of object files...  
+o
+ 
+checking whether the compiler supports GNU C...  
+yes
+ 
+checking whether gcc accepts -g...  
+yes
+ 
+checking for gcc option to enable C11 features...  
+none needed
+ 
+checking whether gcc understands -c and -o together...  
+yes
+checking whether make supports the include directive...  
+yes (GNU style)
+checking dependency style of gcc...  
+gcc3
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for BASH_COMPLETION...  
+yes
+checking that generated files are newer than configure...  
+done
+configure: creating ./config.status
+ /bin/sh ./config.status
+config.status: creating Makefile
+config.status: creating i3blocks-config.h
+config.status: i3blocks-config.h is unchanged
+config.status: executing depfiles commands
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT bar.o -MD -MP -MF .deps/bar.Tpo -c -o bar.o bar.c
+mv -f .deps/bar.Tpo .deps/bar.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT block.o -MD -MP -MF .deps/block.Tpo -c -o block.o block.c
+mv -f .deps/block.Tpo .deps/block.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT config.o -MD -MP -MF .deps/config.Tpo -c -o config.o config.c
+mv -f .deps/config.Tpo .deps/config.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT i3bar.o -MD -MP -MF .deps/i3bar.Tpo -c -o i3bar.o i3bar.c
+mv -f .deps/i3bar.Tpo .deps/i3bar.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT ini.o -MD -MP -MF .deps/ini.Tpo -c -o ini.o ini.c
+mv -f .deps/ini.Tpo .deps/ini.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT json.o -MD -MP -MF .deps/json.Tpo -c -o json.o json.c
+mv -f .deps/json.Tpo .deps/json.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT line.o -MD -MP -MF .deps/line.Tpo -c -o line.o line.c
+mv -f .deps/line.Tpo .deps/line.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.c
+mv -f .deps/main.Tpo .deps/main.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT map.o -MD -MP -MF .deps/map.Tpo -c -o map.o map.c
+mv -f .deps/map.Tpo .deps/map.Po
+gcc -DHAVE_CONFIG_H -DSYSCONFDIR=\"/usr/local/etc\" -I.     -g -O2 -MT sys.o -MD -MP -MF .deps/sys.Tpo -c -o sys.o sys.c
+mv -f .deps/sys.Tpo .deps/sys.Po
+rm -f i3blocks
+gcc  -g -O2   -o i3blocks bar.o block.o config.o i3bar.o ini.o json.o line.o main.o map.o sys.o  
+(CDPATH="${ZSH_VERSION+.}:" && cd . && /bin/sh '/home/msa/Applications/i3blocks/build-aux/missing' autoheader)
+rm -f stamp-h1
+touch i3blocks-config.h.in
+rm -f stamp-h1
+cd . && /bin/sh ./config.status i3blocks-config.h
+test -f i3blocks-config.h || rm -f stamp-h1
+test -f i3blocks-config.h || make  stamp-h1
+make[1]: Leaving directory '/home/msa/Applications/i3blocks'
+make: Leaving directory '/home/msa/Applications/i3blocks'
+ 

@@ -1,0 +1,2249 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Fri Jan  7 14:22:34 2022
+ 
+
+# Variables
+
+# makefile (from 'Makefile', line 303)
+localstatedir = ${prefix}/var
+# makefile (from 'Makefile', line 74)
+pkgdatadir = $(datadir)/i3blocks
+# makefile (from 'Makefile', line 266)
+PACKAGE_TARNAME = i3blocks
+# makefile (from 'Makefile', line 252)
+INSTALL_PROGRAM = ${INSTALL}
+# environment
+ZPLUG_PROTOCOL = HTTPS
+# environment
+GDK_BACKEND = x11
+# environment
+LC_ALL = C
+# environment
+NO_AT_BRIDGE = 1
+# environment
+ZPLUG_LOG_LOAD_FAILURE = false
+# makefile (from 'Makefile', line 261)
+OBJEXT = o
+# environment
+CHROME_EXECUTABLE = /usr/bin/brave
+# makefile (from 'Makefile', line 208)
+distdir = $(PACKAGE)-$(VERSION)
+# makefile (from 'Makefile', line 86)
+POST_INSTALL = :
+# makefile (from 'Makefile', line 94)
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) $(ACLOCAL_M4)
+# makefile (from 'Makefile', line 182)
+am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP) i3blocks-config.h.in
+# environment
+_ZPLUG_AWKPATH = /home/msa/.zplug/misc/contrib
+# environment
+ZPLUG_HOME = /home/msa/.zplug
+# environment
+I3SOCK = /run/user/1000/i3/ipc-socket.644
+# makefile (from 'Makefile', line 264)
+PACKAGE_NAME = i3blocks
+# makefile (from 'Makefile', line 221)
+AM_DISTCHECK_DVI_TARGET = dvi
+# makefile (from 'Makefile', line 104)
+am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(bashcompletiondir)" "$(DESTDIR)$(sysconfdir)"
+# makefile (from 'Makefile', line 111)
+i3blocks_LDADD = $(LDADD)
+# environment
+CSF_EXCEPTION_PROMPT = 1
+# makefile (from 'Makefile', line 139)
+LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-c14d787b-1ba2-44a0-861d-970fa8d9c8d0.sock
+# makefile (from 'Makefile', line 299)
+install_sh = ${SHELL} /home/msa/Applications/i3blocks/build-aux/install-sh
+# environment
+CSF_XmlOcafResource = /usr/share/opencascade/resources/XmlOcafResource
+# makefile (from 'Makefile', line 137)
+am__v_CC_1 = 
+# makefile (from 'Makefile', line 253)
+INSTALL_SCRIPT = ${INSTALL}
+# environment
+VSCODE_CWD = /home/msa/Applications/i3blocks
+# makefile (from 'Makefile', line 179)
+NROFF = nroff
+# environment
+WINDOWID = 79691782
+# makefile (from 'Makefile', line 136)
+am__v_CC_0 = @echo "  CC      " $@;
+# makefile (from 'Makefile', line 257)
+LIBS = 
+# makefile (from 'Makefile', line 162)
+am__nobase_list = $(am__nobase_strip_setup); for p in $$list; do echo "$$p $$p"; done | sed "s| $$srcdirstrip/| |;"' / .*\//!s/ .*/ ./; s,\( .*\)/[^/]*$$,\1,' | $(AWK) 'BEGIN { files["."] = "" } { files[$$2] = files[$$2] " " $$1; if (++n[$$2] == $(am__install_max)) { print $$2, files[$$2]; n[$$2] = 0; files[$$2] = "" } } END { for (dir in files) print dir, files[dir] }'
+# environment
+MMGT_CLEAR = 1
+# environment
+CSF_XCAFDefaults = /usr/share/opencascade/resources/StdResource
+# environment
+CSF_PluginDefaults = /usr/share/opencascade/resources/StdResource
+# environment
+PERIOD = 30
+# makefile (from 'Makefile', line 172)
+am__uninstall_files_from_dir = { test -z "$$files" || { test ! -d "$$dir" && test ! -f "$$dir" && test ! -r "$$dir"; } || { echo " ( cd '$$dir' && rm -f" $$files ")"; $(am__cd) "$$dir" && rm -f $$files; }; }
+# environment
+CASROOT = /usr
+# makefile (from 'Makefile', line 30)
+am__make_running_with_option = case $${target_option-} in ?) ;; *) echo "am__make_running_with_option: internal error: invalid" "target option '$${target_option-}' specified" >&2; exit 1;; esac; has_opt=no; sane_makeflags=$$MAKEFLAGS; if $(am__is_gnu_make); then sane_makeflags=$$MFLAGS; else case $$MAKEFLAGS in *\\[\ \	]*) bs=\\; sane_makeflags=`printf '%s\n' "$$MAKEFLAGS" | sed "s/$$bs$$bs[$$bs $$bs	]*//g"`;; esac; fi; skip_next=no; strip_trailopt () { flg=`printf '%s\n' "$$flg" | sed "s/$$1.*$$//"`; }; for flg in $$sane_makeflags; do test $$skip_next = yes && { skip_next=no; continue; }; case $$flg in *=*|--*) continue;; -*I) strip_trailopt 'I'; skip_next=yes;; -*I?*) strip_trailopt 'I';; -*O) strip_trailopt 'O'; skip_next=yes;; -*O?*) strip_trailopt 'O';; -*l) strip_trailopt 'l'; skip_next=yes;; -*l?*) strip_trailopt 'l';; -[dEDm]) skip_next=yes;; -[JT]) skip_next=yes;; esac; case $$flg in *$$target_option*) has_opt=yes; break;; esac; done; test $$has_opt = yes
+# makefile (from 'Makefile', line 117)
+am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 245)
+ECHO_C = 
+# makefile (from 'Makefile', line 308)
+prefix = /usr/local
+# makefile (from 'Makefile', line 207)
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+# default
+MAKE_COMMAND := make
+# environment
+GTK3_MODULES = xapp-gtk3-module
+# environment
+FPATH = /home/msa/.oh-my-zsh/plugins/colored-man-pages:/home/msa/.oh-my-zsh/plugins/thefuck:/home/msa/.oh-my-zsh/plugins/lol:/home/msa/.oh-my-zsh/custom/plugins/zsh-autosuggestions:/home/msa/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting:/home/msa/.oh-my-zsh/plugins/git:/home/msa/.oh-my-zsh/plugins/history:/home/msa/.oh-my-zsh/plugins/z:/home/msa/.oh-my-zsh/functions:/home/msa/.oh-my-zsh/completions:/home/msa/.oh-my-zsh/cache/completions:/home/msa/.zplug/misc/completions:/home/msa/.zplug/base/sources:/home/msa/.zplug/autoload:/home/msa/.zplug/base/utils:/home/msa/.zplug/base/job:/home/msa/.zplug/base/log:/home/msa/.zplug/base/io:/home/msa/.zplug/base/core:/home/msa/.zplug/base/base:/home/msa/.zplug/autoload/commands:/home/msa/.zplug/autoload/options:/home/msa/.zplug/autoload/tags:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/functions/Calendar:/usr/share/zsh/functions/Chpwd:/usr/share/zsh/functions/Completion:/usr/share/zsh/functions/Completion/Base:/usr/share/zsh/functions/Completion/Linux:/usr/share/zsh/functions/Completion/Unix:/usr/share/zsh/functions/Completion/X:/usr/share/zsh/functions/Completion/Zsh:/usr/share/zsh/functions/Exceptions:/usr/share/zsh/functions/Math:/usr/share/zsh/functions/MIME:/usr/share/zsh/functions/Misc:/usr/share/zsh/functions/Newuser:/usr/share/zsh/functions/Prompts:/usr/share/zsh/functions/TCP:/usr/share/zsh/functions/VCS_Info:/usr/share/zsh/functions/VCS_Info/Backends:/usr/share/zsh/functions/Zftp:/usr/share/zsh/functions/Zle
+# makefile (from 'Makefile', line 124)
+DEFAULT_INCLUDES = -I.
+# environment
+_ZPLUG_PREZTO = sorin-ionescu/prezto
+# makefile (from 'Makefile', line 143)
+am__v_CCLD_1 = 
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+ZPLUG_LOG_LOAD_SUCCESS = false
+# makefile (from 'Makefile', line 268)
+PACKAGE_VERSION = 1.5
+# makefile (from 'Makefile', line 112)
+AM_V_P = $(am__v_P_$(V))
+# makefile (from 'Makefile', line 243)
+DEFS = -DHAVE_CONFIG_H -DSYSCONFDIR=\"$(sysconfdir)\"
+# makefile (from 'Makefile', line 342)
+dist_man1_MANS = docs/i3blocks.1
+# environment
+ZPLUG_CACHE_DIR = /home/msa/.zplug/cache
+# makefile (from 'Makefile', line 248)
+ETAGS = etags
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# environment
+PWD = /home/msa/Applications/i3blocks
+# makefile (from 'Makefile', line 237)
+CCDEPMODE = depmode=gcc3
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# makefile (from 'Makefile', line 90)
+bin_PROGRAMS = i3blocks$(EXEEXT)
+# makefile (from 'Makefile', line 316)
+target_alias = 
+# environment
+ZPLUG_ERROR_LOG = /home/msa/.zplug/.error_log
+# environment
+LSCOLORS = Gxfxcxdxbxegedabagacad
+# environment
+ZPLUG_REPOS = /home/msa/.zplug/repos
+# environment
+MAIL = /var/spool/mail/msa
+# makefile (from 'Makefile', line 160)
+am__nobase_strip = for p in $$list; do echo "$$p"; done | sed -e "s|$$srcdirstrip/||"
+# makefile (from 'Makefile', line 270)
+PKG_CONFIG = /usr/bin/pkg-config
+# makefile (from 'Makefile', line 290)
+datadir = ${datarootdir}
+# environment
+OLDPWD = /home/msa
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'Makefile', line 135)
+am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# makefile (from 'Makefile', line 256)
+LIBOBJS = 
+# makefile (from 'Makefile', line 289)
+builddir = .
+# makefile (from 'Makefile', line 103)
+CONFIG_CLEAN_VPATH_FILES = 
+# environment
+VSCODE_CODE_CACHE_PATH = /home/msa/.config/Code/CachedData/899d46d82c4c95423fb7e10e68eba52050e30ba3
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+# environment
+CSF_ShadersDirectory = /usr/share/opencascade/resources/Shaders
+# environment
+LANG = C
+# environment
+XAUTHORITY = /home/msa/.Xauthority
+# makefile (from 'Makefile', line 310)
+psdir = ${docdir}
+# default
+.LOADED := 
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 304)
+mandir = ${datarootdir}/man
+# makefile
+MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 72)
+am__make_dryrun = (target_option=n; $(am__make_running_with_option))
+# environment
+ZPLUG_FILTER = fzf-tmux:fzf:peco:percol:fzy:zaw
+# makefile (from 'Makefile', line 152)
+am__vpath_adj = case $$p in $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; *) f=$$p;; esac;
+# makefile (from 'Makefile', line 235)
+BASH_COMPLETION_LIBS = 
+# makefile (from 'Makefile', line 272)
+PKG_CONFIG_PATH = 
+# environment
+_ZPLUG_CONFIG_SUBSHELL = :
+# makefile (from 'Makefile', line 242)
+CYGPATH_W = echo
+# makefile (from 'Makefile', line 210)
+am__remove_distdir = if test -d "$(distdir)"; then find "$(distdir)" -type d ! -perm -200 -exec chmod u+w {} ';' && rm -rf "$(distdir)" || { sleep 5 && rm -rf "$(distdir)"; }; else :; fi
+# makefile (from 'Makefile', line 123)
+am__v_at_1 = 
+# makefile (from 'Makefile', line 320)
+i3blocks_SOURCES = bar.c bar.h block.c block.h config.c config.h i3bar.c ini.c ini.h json.c json.h line.c line.h log.h main.c map.c map.h sys.c sys.h term.h
+# environment
+_ZPLUG_VERSION = 2.4.2
+# makefile
+CURDIR := /home/msa/Applications/i3blocks
+# makefile (from 'Makefile', line 96)
+DIST_COMMON = $(srcdir)/Makefile.am $(top_srcdir)/configure $(am__configure_deps) $(dist_sysconf_DATA) $(am__DIST_COMMON)
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# makefile (from 'Makefile', line 230)
+AUTOHEADER = ${SHELL} '/home/msa/Applications/i3blocks/build-aux/missing' autoheader
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'Makefile', line 276)
+VERSION = 1.5
+# makefile (from 'Makefile', line 301)
+libexecdir = ${exec_prefix}/libexec
+# environment
+ZPLUG_LOADFILE = /home/msa/.zplug/packages.zsh
+# makefile (from 'Makefile', line 118)
+ 
+am__v_GEN_0 = @echo "  GEN     " $@;
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# makefile (from 'Makefile', line 309)
+program_transform_name = s,x,x,
+# makefile (from 'Makefile', line 345)
+dist_sysconf_DATA = i3blocks.conf
+# environment
+CSF_MDTVTexturesDirectory = /usr/share/opencascade/resources/Textures
+# makefile (from 'Makefile', line 292)
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
+# environment
+MESA_GL_VERSION_OVERRIDE = 4.6
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+P9K_SSH = 0
+# makefile (from 'Makefile', line 282)
+am__include = include
+# environment
+XDG_SESSION_DESKTOP = i3
+# environment
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=4ec7e60b-31dd-43a8-b7cb-fe77d768bc62&iid=4ec7e60b-31dd-43a8-b7cb-fe77d768bc62&sid=4ec7e60b-31dd-43a8-b7cb-fe77d768bc62","uploadToServer":true}
+# makefile (from '.deps/sys.Po', line 1)
+MAKEFILE_LIST := Makefile .deps/bar.Po .deps/block.Po .deps/config.Po .deps/i3bar.Po .deps/ini.Po .deps/json.Po .deps/line.Po .deps/main.Po .deps/map.Po .deps/sys.Po
+# automatic
+@F = $(notdir $@)
+# environment
+ZSH = /home/msa/.oh-my-zsh
+# environment
+LC_COLLATE = C
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 246)
+ECHO_N = -n
+# environment
+VSCODE_PID = 43439
+# environment
+XDG_SESSION_TYPE = x11
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'Makefile', line 93)
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
+# makefile (from 'Makefile', line 295)
+host_alias = 
+# makefile (from 'Makefile', line 262)
+PACKAGE = i3blocks
+# environment
+CSF_XSMessage = /usr/share/opencascade/resources/XSMessage
+# makefile (from 'Makefile', line 106)
+PROGRAMS = $(bin_PROGRAMS)
+# makefile (from 'Makefile', line 121)
+am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+# makefile (from 'Makefile', line 145)
+DIST_SOURCES = $(i3blocks_SOURCES)
+# makefile (from 'Makefile', line 263)
+PACKAGE_BUGREPORT = 
+# makefile (from 'Makefile', line 250)
+INSTALL = /usr/bin/install -c
+# makefile (from 'Makefile', line 178)
+man1dir = $(mandir)/man1
+# environment
+_ZPLUG_OHMYZSH = robbyrussell/oh-my-zsh
+# environment
+DRAWDEFAULT = /usr/share/opencascade/resources/DrawResources/DrawDefault
+# makefile (from 'Makefile', line 78)
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+# makefile (from 'Makefile', line 288)
+build_alias = 
+# automatic
+*F = $(notdir $*)
+# makefile (from 'Makefile', line 232)
+AWK = gawk
+# makefile (from 'Makefile', line 98)
+am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log configure.lineno config.status.lineno
+# environment
+HISTORY_IGNORE = (ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)
+# environment
+QT_QPA_PLATFORMTHEME = qt5ct
+# makefile (from 'Makefile', line 254)
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+# makefile (from 'Makefile', line 247)
+ECHO_T = 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+CSF_SHMessage = /usr/share/opencascade/resources/SHMessage
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# makefile (from 'Makefile', line 157)
+am__install_max = 40
+# makefile (from 'Makefile', line 227)
+AMTAR = $${TAR-tar}
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# makefile (from 'Makefile', line 283)
+am__leading_dot = .
+# environment
+P9K_TTY = old
+# makefile (from 'Makefile', line 231)
+AUTOMAKE = ${SHELL} '/home/msa/Applications/i3blocks/build-aux/missing' automake-1.16
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+BREAKPAD_DUMP_LOCATION = /home/msa/.config/Code/exthost Crash Reports
+# makefile (from 'Makefile', line 260)
+MKDIR_P = /usr/bin/mkdir -p
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# makefile (from 'Makefile', line 280)
+abs_top_srcdir = /home/msa/Applications/i3blocks
+# makefile (from 'Makefile', line 85)
+PRE_INSTALL = :
+# makefile (from 'Makefile', line 274)
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 110)
+i3blocks_OBJECTS = $(am_i3blocks_OBJECTS)
+# default
+MAKECMDGOALS := all
+# environment
+PLATFORMIO_CALLER = vscode
+# makefile (from 'Makefile', line 306)
+oldincludedir = /usr/include
+# environment
+SHLVL = 2
+# makefile (from 'Makefile', line 315)
+sysconfdir = ${prefix}/etc
+# makefile (from 'Makefile', line 319)
+top_srcdir = .
+# environment
+CSF_TObjDefaults = /usr/share/opencascade/resources/StdResource
+# makefile (from 'Makefile', line 101)
+CONFIG_HEADER = i3blocks-config.h
+# environment
+MAKELEVEL := 0
+# makefile (from 'Makefile', line 92)
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+# makefile (from 'Makefile', line 127)
+am__depfiles_remade = ./$(DEPDIR)/bar.Po ./$(DEPDIR)/block.Po ./$(DEPDIR)/config.Po ./$(DEPDIR)/i3bar.Po ./$(DEPDIR)/ini.Po ./$(DEPDIR)/json.Po ./$(DEPDIR)/line.Po ./$(DEPDIR)/main.Po ./$(DEPDIR)/map.Po ./$(DEPDIR)/sys.Po
+# default
+MAKE = $(MAKE_COMMAND)
+# makefile (from 'Makefile', line 318)
+top_builddir = .
+# environment
+ZPLUG_USE_CACHE = true
+# environment
+PATH = /home/msa/.local/bin:/home/msa/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:/home/msa/.local/bin:/home/msa/.platformio/penv/bin:/home/msa/Applications/flutter/bin:/opt/OpenFOAM/OpenFOAM-9/bin/:/home/msa/msa/tools/scripts/
+# makefile (from 'Makefile', line 180)
+MANS = $(dist_man1_MANS)
+# makefile (from 'Makefile', line 241)
+ 
+CTAGS = ctags
+# makefile (from 'Makefile', line 348)
+bashcompletiondir = $(BASH_COMPLETION_DIR)
+# makefile (from 'Makefile', line 126)
+am__maybe_remake_depfiles = depfiles
+# default
+MAKEFILES := 
+# makefile (from 'Makefile', line 134)
+AM_V_CC = $(am__v_CC_$(V))
+# makefile (from 'Makefile', line 249)
+EXEEXT = 
+# makefile (from 'Makefile', line 225)
+distcleancheck_listfiles = find . -type f -print
+# makefile (from 'Makefile', line 269)
+PATH_SEPARATOR = :
+# makefile (from 'Makefile', line 298)
+infodir = ${datarootdir}/info
+# environment
+MOTD_SHOWN = pam
+# environment
+CSF_OCCTResourcePath = /usr/share/opencascade/resources
+# automatic
+^F = $(notdir $^)
+# makefile (from 'Makefile', line 138)
+CCLD = $(CC)
+# makefile (from 'Makefile', line 217)
+DIST_ARCHIVES = $(distdir).tar.gz
+# makefile (from 'Makefile', line 219)
+DIST_TARGETS = dist-gzip
+# makefile (from 'Makefile', line 265)
+PACKAGE_STRING = i3blocks 1.5
+# makefile (from 'Makefile', line 120)
+AM_V_at = $(am__v_at_$(V))
+# makefile (from 'Makefile', line 302)
+localedir = ${datarootdir}/locale
+# environment
+FOAM_INST_DIR = $HOME/.OpenFOAM
+# makefile (from 'Makefile', line 287)
+bindir = ${exec_prefix}/bin
+# makefile (from 'Makefile', line 82)
+INSTALL_HEADER = $(INSTALL_DATA)
+# makefile (from 'Makefile', line 240)
+CSCOPE = cscope
+# makefile (from 'Makefile', line 291)
+datarootdir = ${prefix}/share
+# makefile (from 'Makefile', line 142)
+am__v_CCLD_0 = @echo "  CCLD    " $@;
+# makefile (from 'Makefile', line 79)
+install_sh_DATA = $(install_sh) -c -m 644
+# makefile (from 'Makefile', line 19)
+am__is_gnu_make = { if test -z '$(MAKELEVEL)'; then false; elif test -n '$(MAKE_HOST)'; then true; elif test -n '$(MAKE_VERSION)' && test -n '$(CURDIR)'; then true; else false; fi; }
+# makefile (from 'Makefile', line 140)
+AM_V_CCLD = $(am__v_CCLD_$(V))
+# environment
+VSCODE_LOG_NATIVE = false
+# makefile (from 'Makefile', line 107)
+am_i3blocks_OBJECTS = bar.$(OBJEXT) block.$(OBJEXT) config.$(OBJEXT) i3bar.$(OBJEXT) ini.$(OBJEXT) json.$(OBJEXT) line.$(OBJEXT) main.$(OBJEXT) map.$(OBJEXT) sys.$(OBJEXT)
+# makefile (from 'Makefile', line 131)
+am__mv = mv -f
+# environment
+CSF_StandardLiteDefaults = /usr/share/opencascade/resources/StdResource
+# makefile (from 'Makefile', line 305)
+mkdir_p = $(MKDIR_P)
+# environment
+CSF_STEPDefaults = /usr/share/opencascade/resources/XSTEPResource
+# makefile (from 'Makefile', line 102)
+CONFIG_CLEAN_FILES = 
+# makefile (from 'Makefile', line 91)
+subdir = .
+# makefile (from 'Makefile', line 294)
+exec_prefix = ${prefix}
+# automatic
+?F = $(notdir $?)
+# makefile (from 'Makefile', line 76)
+pkglibdir = $(libdir)/i3blocks
+# environment
+ZPLUG_THREADS = 16
+# environment
+XDG_SEAT = seat0
+# makefile (from 'Makefile', line 156)
+am__strip_dir = f=`echo $$p | sed -e 's|^.*/||'`;
+# makefile (from 'Makefile', line 115)
+am__v_P_1 = :
+# environment
+NO_PROXY = 127.0.0.1
+# environment
+XDG_CURRENT_DESKTOP = i3
+# environment
+CSF_MIGRATION_TYPES = /usr/share/opencascade/resources/StdResource/MigrationSheet.txt
+# environment
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# automatic
++F = $(notdir $+)
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+LESS = -R
+# environment
+DESKTOP_SESSION = i3
+# makefile (from 'Makefile', line 234)
+BASH_COMPLETION_DIR = /usr/share/bash-completion/completions
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = i3
+# makefile (from 'Makefile', line 89)
+POST_UNINSTALL = :
+# makefile (from 'Makefile', line 285)
+am__tar = $${TAR-tar} chof - "$$tardir"
+# makefile (from 'Makefile', line 259)
+MAKEINFO = ${SHELL} '/home/msa/Applications/i3blocks/build-aux/missing' makeinfo
+# makefile (from 'Makefile', line 297)
+includedir = ${prefix}/include
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'Makefile', line 278)
+ 
+abs_srcdir = /home/msa/Applications/i3blocks
+# makefile (from 'Makefile', line 73)
+am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
+# makefile (from 'Makefile', line 314)
+srcdir = .
+# makefile (from 'Makefile', line 313)
+sharedstatedir = ${prefix}/com
+# makefile (from 'Makefile', line 273)
+SET_MAKE = 
+# environment
+ZPLUG_BIN = /home/msa/.zplug/bin
+# makefile (from 'Makefile', line 119)
+am__v_GEN_1 = 
+# makefile (from 'Makefile', line 200)
+AM_RECURSIVE_TARGETS = cscope
+# environment
+LOGNAME = msa
+# environment
+CSF_LANGUAGE = us
+# makefile (from 'Makefile', line 77)
+pkglibexecdir = $(libexecdir)/i3blocks
+# makefile (from 'Makefile', line 81)
+install_sh_SCRIPT = $(install_sh) -c
+# makefile (from 'Makefile', line 239)
+CPPFLAGS = 
+# environment
+PLATFORMIO_PATH = /home/msa/.platformio/python3/bin:/home/msa/.local/bin:/home/msa/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:/home/msa/.local/bin:/home/msa/.platformio/penv/bin:/home/msa/Applications/flutter/bin:/opt/OpenFOAM/OpenFOAM-9/bin/:/home/msa/msa/tools/scripts/
+# makefile (from 'Makefile', line 271)
+PKG_CONFIG_LIBDIR = 
+# makefile (from 'Makefile', line 258)
+LTLIBOBJS = 
+# environment
+XDG_VTNR = 7
+# makefile (from 'Makefile', line 113)
+am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
+# makefile
+.DEFAULT_GOAL := all
+# environment
+CSF_TObjMessage = /usr/share/opencascade/resources/TObj
+# makefile (from 'Makefile', line 80)
+install_sh_PROGRAM = $(install_sh) -c
+# makefile (from 'Makefile', line 222)
+distuninstallcheck_listfiles = find . -type f -print
+# environment
+EDITOR = vim
+# environment
+DISPLAY = :0
+# environment
+GTK_MODULES = canberra-gtk-module
+# environment
+USER = msa
+# makefile (from 'Makefile', line 284)
+am__quote = 
+# default
+MAKE_VERSION := 4.3
+# makefile (from 'Makefile', line 114)
+am__v_P_0 = false
+# makefile (from 'Makefile', line 279)
+abs_top_builddir = /home/msa/Applications/i3blocks
+# makefile (from 'Makefile', line 158)
+am__nobase_strip_setup = srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*|]/\\\\&/g'`
+# makefile (from 'Makefile', line 228)
+AM_DEFAULT_VERBOSITY = 1
+# makefile (from 'Makefile', line 125)
+depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
+# makefile (from 'Makefile', line 255)
+LDFLAGS = 
+# makefile (from 'Makefile', line 277)
+abs_builddir = /home/msa/Applications/i3blocks
+# makefile (from 'Makefile', line 122)
+am__v_at_0 = @
+# makefile (from 'Makefile', line 216)
+am__post_remove_distdir = $(am__remove_distdir)
+# makefile (from 'Makefile', line 132)
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+# makefile (from 'Makefile', line 307)
+pdfdir = ${docdir}
+# environment
+PAGER = less
+# makefile (from 'Makefile', line 88)
+PRE_UNINSTALL = :
+# environment
+_ = /usr/bin/make
+# makefile (from 'Makefile', line 229)
+AUTOCONF = ${SHELL} '/home/msa/Applications/i3blocks/build-aux/missing' autoconf
+# environment
+ZPLUG_ROOT = /home/msa/.zplug
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# makefile (from 'Makefile', line 238)
+CFLAGS = -g -O2
+# makefile (from 'Makefile', line 151)
+am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+# environment
+LIBGL_ALWAYS_SOFTWARE = 1
+# makefile (from 'Makefile', line 100)
+mkinstalldirs = $(install_sh) -d
+# makefile (from 'Makefile', line 201)
+am__DIST_COMMON = $(dist_man1_MANS) $(srcdir)/Makefile.in $(srcdir)/i3blocks-config.h.in $(top_srcdir)/build-aux/compile $(top_srcdir)/build-aux/depcomp $(top_srcdir)/build-aux/install-sh $(top_srcdir)/build-aux/missing COPYING build-aux/compile build-aux/depcomp build-aux/install-sh build-aux/missing
+# makefile (from 'Makefile', line 233)
+BASH_COMPLETION_CFLAGS = 
+# makefile (from 'Makefile', line 267)
+PACKAGE_URL = 
+# makefile (from 'Makefile', line 312)
+sbindir = ${exec_prefix}/sbin
+# environment
+ 
+CSF_DrawPluginDefaults = /usr/share/opencascade/resources/DrawResources
+# makefile (from 'Makefile', line 141)
+am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
+# environment
+CSF_IGESDefaults = /usr/share/opencascade/resources/XSTEPResource
+# environment
+VISUAL = emacsclient -c -a emacs
+# makefile (from 'Makefile', line 84)
+NORMAL_INSTALL = :
+# environment
+XDG_SESSION_CLASS = user
+# makefile (from 'Makefile', line 293)
+dvidir = ${docdir}
+# makefile (from 'Makefile', line 349)
+bashcompletion_DATA = bash-completion
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
+# environment
+PLATFORMIO_IDE = 2.4.0
+# environment
+HOME = /home/msa
+# makefile (from 'Makefile', line 226)
+ACLOCAL = ${SHELL} '/home/msa/Applications/i3blocks/build-aux/missing' aclocal-1.16
+# makefile (from 'Makefile', line 187)
+am__uniquify_input = $(AWK) ' BEGIN { nonempty = 0; } { items[$$0] = 1; nonempty = 1; } END { if (nonempty) { for (i in items) print i; }; } '
+# makefile (from 'Makefile', line 251)
+INSTALL_DATA = ${INSTALL} -m 644
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+DRAWHOME = /usr/share/opencascade/resources/DrawResources
+# environment
+VSCODE_IPC_HOOK = /run/user/1000/vscode-bee7cafa-1.63.2-main.sock
+# environment
+TERM = st-256color
+# environment
+HG = /usr/bin/hg
+# makefile (from 'Makefile', line 75)
+pkgincludedir = $(includedir)/i3blocks
+# makefile (from 'Makefile', line 87)
+NORMAL_UNINSTALL = :
+# environment
+XDG_SESSION_ID = 2
+# makefile (from 'Makefile', line 146)
+am__can_run_installinfo = case $$AM_UPDATE_INFO_DIR in n|no|NO) false;; *) (install-info --version) >/dev/null 2>&1;; esac
+# makefile (from 'Makefile', line 317)
+top_build_prefix = 
+# makefile (from 'Makefile', line 169)
+am__base_list = sed '$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g' | sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 223)
+am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) | sed 's|^\./|$(prefix)/|' | grep -v '$(infodir)/dir$$'
+# makefile (from 'Makefile', line 244)
+DEPDIR = .deps
+# default
+SUFFIXES := 
+# makefile (from 'Makefile', line 83)
+transform = $(program_transform_name)
+# makefile (from 'Makefile', line 311)
+runstatedir = ${localstatedir}/run
+# environment
+_P9K_TTY = /dev/pts/4
+# environment
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/msa
+# environment
+CSF_StandardDefaults = /usr/share/opencascade/resources/StdResource
+# makefile (from 'Makefile', line 195)
+am__define_uniq_tagged_files = list='$(am__tagged_files)'; unique=`for i in $$list; do if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; done | $(am__uniquify_input)`
+# makefile (from 'Makefile', line 275)
+STRIP = 
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# makefile (from 'Makefile', line 300)
+libdir = ${exec_prefix}/lib
+# makefile (from 'Makefile', line 209)
+top_distdir = $(distdir)
+# makefile (from 'Makefile', line 281)
+ac_ct_CC = gcc
+# makefile (from 'Makefile', line 236)
+CC = gcc
+# environment
+_ZPLUG_URL = https://github.com/zplug/zplug
+# makefile (from 'Makefile', line 144)
+SOURCES = $(i3blocks_SOURCES)
+# makefile (from 'Makefile', line 181)
+DATA = $(bashcompletion_DATA) $(dist_sysconf_DATA)
+# makefile (from 'Makefile', line 218)
+GZIP_ENV = --best
+# makefile (from 'Makefile', line 296)
+htmldir = ${docdir}
+# makefile (from 'Makefile', line 286)
+am__untar = $${TAR-tar} xf -
+# makefile (from 'Makefile', line 116)
+AM_V_GEN = $(am__v_GEN_$(V))
+# environment
+GDMSESSION = i3
+# variable set hash-table stats:
+# Load=350/1024=34%, Rehash=0, Collisions=195/554=35%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 25, inode 1275340): 56 files, no impossibilities.
+
+# 56 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+%.c:
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 474):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+%.obj: %.c
+#  recipe to execute (from 'Makefile', line 481):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+%.o:
+
+%.obj:
+
+# 5 implicit rules, 0 (0.0%) terminal.
+# Files
+
+distcleancheck: distclean
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 792):
+	@if test '$(srcdir)' = . ; then \
+	  echo "ERROR: distcleancheck can only run from a VPATH build" ; \
+	  exit 1 ; \
+	fi
+	@test `$(distcleancheck_listfiles) | wc -l` -eq 0 \
+	  || { echo "ERROR: files left in build directory after distclean:" ; \
+	       $(distcleancheck_listfiles) ; \
+	       exit 1; } >&2
+
+install-pdf: install-pdf-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+uninstall-man1:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 521):
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_man1_MANS)'; test -n "$(man1dir)" || exit 0; \
+	files=`{ for i in $$list; do echo "$$i"; done; \
+	} | sed -e 's,.*/,,;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
+	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,'`; \
+	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
+
+dist-bzip2: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 675):
+	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2
+	$(am__post_remove_distdir)
+
+ 
+# Not a target:
+ini.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist-zstd: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 687):
+	tardir=$(distdir) && $(am__tar) | zstd -c $${ZSTD_CLEVEL-$${ZSTD_OPT--19}} >$(distdir).tar.zst
+	$(am__post_remove_distdir)
+
+dist:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 710):
+	$(MAKE) $(AM_MAKEFLAGS) $(DIST_TARGETS) am__post_remove_distdir='@:'
+	$(am__post_remove_distdir)
+
+.deps/config.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.941473486
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+.c.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 474):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+install-info: install-info-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+check: check-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+distdir-am: Makefile.am configure configure.ac aclocal.m4 i3blocks.conf docs/i3blocks.1 Makefile.in i3blocks-config.h.in build-aux/compile build-aux/depcomp build-aux/install-sh build-aux/missing COPYING build-aux/compile build-aux/depcomp build-aux/install-sh build-aux/missing bar.c bar.h block.c block.h config.c config.h i3bar.c ini.c ini.h json.c json.h line.c line.h log.h main.c map.c map.h sys.c sys.h term.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 632):
+	$(am__remove_distdir)
+	test -d "$(distdir)" || mkdir "$(distdir)"
+	@srcdirstrip=`echo "$(srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
+	topsrcdirstrip=`echo "$(top_srcdir)" | sed 's/[].[^$$\\*]/\\\\&/g'`; \
+	list='$(DISTFILES)'; \
+	  dist_files=`for file in $$list; do echo $$file; done | \
+	  sed -e "s|^$$srcdirstrip/||;t" \
+	      -e "s|^$$topsrcdirstrip/|$(top_builddir)/|;t"`; \
+	case $$dist_files in \
+	  */*) $(MKDIR_P) `echo "$$dist_files" | \
+			   sed '/\//!d;s|^|$(distdir)/|;s,/[^/]*$$,,' | \
+			   sort -u` ;; \
+	esac; \
+	for file in $$dist_files; do \
+	  if test -f $$file || test -d $$file; then d=.; else d=$(srcdir); fi; \
+	  if test -d $$d/$$file; then \
+	    dir=`echo "/$$file" | sed -e 's,/[^/]*$$,,'`; \
+	    if test -d "$(distdir)/$$file"; then \
+	      find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
+	    fi; \
+	    if test -d $(srcdir)/$$file && test $$d != $(srcdir); then \
+	      cp -fpR $(srcdir)/$$file "$(distdir)$$dir" || exit 1; \
+	      find "$(distdir)/$$file" -type d ! -perm -700 -exec chmod u+rwx {} \;; \
+	    fi; \
+	    cp -fpR $$d/$$file "$(distdir)$$dir" || exit 1; \
+	  else \
+	    test -f "$(distdir)/$$file" \
+	    || cp -p $$d/$$file "$(distdir)/$$file" \
+	    || exit 1; \
+	  fi; \
+	done
+	-test -n "$(am__skip_mode_fix)" \
+	|| find "$(distdir)" -type d ! -perm -755 \
+		-exec chmod u+rwx,go+rx {} \; -o \
+	  ! -type d ! -perm -444 -links 1 -exec chmod a+r {} \; -o \
+	  ! -type d ! -perm -400 -exec chmod a+r {} \; -o \
+	  ! -type d ! -perm -444 -exec $(install_sh) -c -m a+r {} {} \; \
+	|| chmod -R a+r "$(distdir)"
+
+distclean: distclean-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 844):
+	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+		-rm -f ./$(DEPDIR)/bar.Po
+	-rm -f ./$(DEPDIR)/block.Po
+	-rm -f ./$(DEPDIR)/config.Po
+	-rm -f ./$(DEPDIR)/i3bar.Po
+	-rm -f ./$(DEPDIR)/ini.Po
+	-rm -f ./$(DEPDIR)/json.Po
+	-rm -f ./$(DEPDIR)/line.Po
+	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/map.Po
+	-rm -f ./$(DEPDIR)/sys.Po
+	-rm -f Makefile
+
+dist-gzip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 671):
+	tardir=$(distdir) && $(am__tar) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).tar.gz
+	$(am__post_remove_distdir)
+
+# Not a target:
+bar.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+config.c:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+distclean-compile:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 454):
+	-rm -f *.tab.c
+
+# Not a target:
+build-aux/missing:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+docs/i3blocks.1:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+installcheck-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+installcheck: installcheck-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+check-am: all-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-exec-am: install-binPROGRAMS install-dist_sysconfDATA
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+cscopelist-am: bar.c bar.h block.c block.h config.c config.h i3bar.c ini.c ini.h json.c json.h line.c line.h log.h main.c map.c map.h sys.c sys.h term.h i3blocks-config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 612):
+	list='$(am__tagged_files)'; \
+	case "$(srcdir)" in \
+	  [\\/]* | ?:[\\/]*) sdir="$(srcdir)" ;; \
+	  *) sdir=$(subdir)/$(srcdir) ;; \
+	esac; \
+	for i in $$list; do \
+	  if test -f "$$i"; then \
+	    echo "$(subdir)/$$i"; \
+	  else \
+	    echo "$$sdir/$$i"; \
+	  fi; \
+	done >> $(top_builddir)/cscope.files
+
+pdf-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+am--refresh: Makefile
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 356):
+	@:
+
+install-am: all-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 813):
+	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+
+pdf: pdf-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+distclean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 831):
+	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
+	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+
+html: html-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+uninstall-bashcompletionDATA:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 544):
+	@$(NORMAL_UNINSTALL)
+	@list='$(bashcompletion_DATA)'; test -n "$(bashcompletiondir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(bashcompletiondir)'; $(am__uninstall_files_from_dir)
+
+configure.ac:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2021-10-05 20:44:03.333332984
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+build-aux/compile:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-bashcompletionDATA: bash-completion
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 528):
+	@$(NORMAL_INSTALL)
+	@list='$(bashcompletion_DATA)'; test -n "$(bashcompletiondir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(bashcompletiondir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(bashcompletiondir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(bashcompletiondir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(bashcompletiondir)" || exit $$?; \
+	done
+
+clean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.PRECIOUS: Makefile
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/ini.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.948140153
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+uninstall-man: uninstall-man1
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+configure: configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:26.744806838
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 384):
+	$(am__cd) $(srcdir) && $(AUTOCONF)
+
+install-dist_sysconfDATA: i3blocks.conf
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 549):
+	@$(NORMAL_INSTALL)
+	@list='$(dist_sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(sysconfdir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(sysconfdir)" || exit 1; \
+	fi; \
+	for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; \
+	done | $(am__base_list) | \
+	while read files; do \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
+	done
+
+Makefile: Makefile.in config.status
+#  Precious file (prerequisite of .PRECIOUS).
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.908140153
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 371):
+	@case '$?' in \
+	  *config.status*) \
+	    echo ' $(SHELL) ./config.status'; \
+	    $(SHELL) ./config.status;; \
+	  *) \
+	    echo ' cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__maybe_remake_depfiles)'; \
+	    cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__maybe_remake_depfiles);; \
+	esac;
+
+distclean-hdr:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 402):
+	-rm -f i3blocks-config.h stamp-h1
+
+install-data-local:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 960):
+	( cd '$(DESTDIR)$(BASH_COMPLETION_DIR)' && mv bash-completion i3blocks )
+
+# Not a target:
+ini.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dvi: dvi-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ctags-am: bar.c bar.h block.c block.h config.c config.h i3bar.c ini.c ini.h json.c json.h line.c line.h log.h main.c map.c map.h sys.c sys.h term.h i3blocks-config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 594):
+	$(am__define_uniq_tagged_files); \
+	test -z "$(CTAGS_ARGS)$$unique" \
+	  || $(CTAGS) $(CTAGSFLAGS) $(AM_CTAGSFLAGS) $(CTAGS_ARGS) \
+	     $$unique
+
+am--depfiles: .deps/bar.Po .deps/block.Po .deps/config.Po .deps/i3bar.Po .deps/ini.Po .deps/json.Po .deps/line.Po .deps/main.Po .deps/map.Po .deps/sys.Po
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+distdir:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+ 
+#  recipe to execute (from 'Makefile', line 629):
+	$(MAKE) $(AM_MAKEFLAGS) distdir-am
+
+# Not a target:
+block.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+cscope: cscope.files
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 604):
+	test ! -s cscope.files \
+	  || $(CSCOPE) -b -q $(AM_CSCOPEFLAGS) $(CSCOPEFLAGS) -i cscope.files $(CSCOPE_ARGS)
+
+stamp-h1: i3blocks-config.h.in config.status
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.921473486
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
+#  recipe to execute (from 'Makefile', line 394):
+	@rm -f stamp-h1
+	cd $(top_builddir) && $(SHELL) ./config.status i3blocks-config.h
+
+install-pdf-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+bash-completion:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+map.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+uninstall: uninstall-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+dist-xz: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 683):
+	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz
+	$(am__post_remove_distdir)
+
+distclean-am: clean-am distclean-compile distclean-generic distclean-hdr distclean-tags
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+cscope.files: clean-cscope cscopelist
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+maintainer-clean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 835):
+	@echo "This command is intended for maintainers to use"
+	@echo "it deletes files that may require special tools to rebuild."
+
+ps-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+tags-am: bar.c bar.h block.c block.h config.c config.h i3bar.c ini.c ini.h json.c json.h line.c line.h log.h main.c map.c map.h sys.c sys.h term.h i3blocks-config.h.in
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 576):
+	set x; \
+	here=`pwd`; \
+	$(am__define_uniq_tagged_files); \
+	shift; \
+	if test -z "$(ETAGS_ARGS)$$*$$unique"; then :; else \
+	  test -n "$$unique" || unique=$$empty_fix; \
+	  if test $$# -gt 0; then \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      "$$@" $$unique; \
+	  else \
+	    $(ETAGS) $(ETAGSFLAGS) $(AM_ETAGSFLAGS) $(ETAGS_ARGS) \
+	      $$unique; \
+	  fi; \
+	fi
+
+mostlyclean-generic:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+ 
+#  File has not been updated.
+
+clean: clean-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+bar.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist-zip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 705):
+	-rm -f $(distdir).zip
+	zip -rq $(distdir).zip $(distdir)
+	$(am__post_remove_distdir)
+
+# Not a target:
+term.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dvi-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+COPYING:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dist-lzip: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 679):
+	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz
+	$(am__post_remove_distdir)
+
+.deps/i3bar.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.944806819
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+.deps/block.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.938140153
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+install-html: install-html-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ps: ps-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+maintainer-clean-am: distclean-am maintainer-clean-generic
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+info: info-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.c.obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 481):
+	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
+	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+
+# Not a target:
+sys.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all-am: Makefile i3blocks docs/i3blocks.1 bash-completion i3blocks.conf i3blocks-config.h
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+config.status: configure
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.811473487
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 381):
+	$(SHELL) ./config.status --recheck
+
+.deps/main.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.958140153
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+mostlyclean-compile:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 451):
+	-rm -f *.$(OBJEXT)
+
+TAGS: tags
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-data-am: install-bashcompletionDATA install-data-local install-man
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+i3blocks.conf:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+maintainer-clean: maintainer-clean-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 901):
+	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
+	-rm -rf $(top_srcdir)/autom4te.cache
+		-rm -f ./$(DEPDIR)/bar.Po
+	-rm -f ./$(DEPDIR)/block.Po
+	-rm -f ./$(DEPDIR)/config.Po
+	-rm -f ./$(DEPDIR)/i3bar.Po
+	-rm -f ./$(DEPDIR)/ini.Po
+	-rm -f ./$(DEPDIR)/json.Po
+	-rm -f ./$(DEPDIR)/line.Po
+	-rm -f ./$(DEPDIR)/main.Po
+	-rm -f ./$(DEPDIR)/map.Po
+	-rm -f ./$(DEPDIR)/sys.Po
+	-rm -f Makefile
+
+distclean-tags:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 626):
+	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+	-rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+
+# Not a target:
+json.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+i3blocks: bar.o block.o config.o i3bar.o ini.o json.o line.o main.o map.o sys.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 447):
+	@rm -f i3blocks$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(i3blocks_OBJECTS) $(i3blocks_LDADD) $(LIBS)
+
+# Not a target:
+sys.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+i3bar.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+line.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+distcheck: dist
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 717):
+	case '$(DIST_ARCHIVES)' in \
+	*.tar.gz*) \
+	  eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).tar.gz | $(am__untar) ;;\
+	*.tar.bz2*) \
+	  bzip2 -dc $(distdir).tar.bz2 | $(am__untar) ;;\
+	*.tar.lz*) \
+	  lzip -dc $(distdir).tar.lz | $(am__untar) ;;\
+	*.tar.xz*) \
+	  xz -dc $(distdir).tar.xz | $(am__untar) ;;\
+	*.tar.Z*) \
+	  uncompress -c $(distdir).tar.Z | $(am__untar) ;;\
+	*.shar.gz*) \
+	  eval GZIP= gzip $(GZIP_ENV) -dc $(distdir).shar.gz | unshar ;;\
+	*.zip*) \
+	  unzip $(distdir).zip ;;\
+	*.tar.zst*) \
+	  zstd -dc $(distdir).tar.zst | $(am__untar) ;;\
+	esac
+	chmod -R a-w $(distdir)
+	chmod u+w $(distdir)
+	mkdir $(distdir)/_build $(distdir)/_build/sub $(distdir)/_inst
+	chmod a-w $(distdir)
+	test -d $(distdir)/_build || exit 0; \
+	dc_install_base=`$(am__cd) $(distdir)/_inst && pwd | sed -e 's,^[^:\\/]:[\\/],/,'` \
+	  && dc_destdir="$${TMPDIR-/tmp}/am-dc-$$$$/" \
+	  && am__cwd=`pwd` \
+	  && $(am__cd) $(distdir)/_build/sub \
+	  && ../../configure \
+	    $(AM_DISTCHECK_CONFIGURE_FLAGS) \
+	    $(DISTCHECK_CONFIGURE_FLAGS) \
+	    --srcdir=../.. --prefix="$$dc_install_base" \
+	  && $(MAKE) $(AM_MAKEFLAGS) \
+	  && $(MAKE) $(AM_MAKEFLAGS) $(AM_DISTCHECK_DVI_TARGET) \
+	  && $(MAKE) $(AM_MAKEFLAGS) check \
+	  && $(MAKE) $(AM_MAKEFLAGS) install \
+	  && $(MAKE) $(AM_MAKEFLAGS) installcheck \
+	  && $(MAKE) $(AM_MAKEFLAGS) uninstall \
+	  && $(MAKE) $(AM_MAKEFLAGS) distuninstallcheck_dir="$$dc_install_base" \
+	        distuninstallcheck \
+	  && chmod -R a-w "$$dc_install_base" \
+	  && ({ \
+	       (cd ../.. && umask 077 && mkdir "$$dc_destdir") \
+	       && $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" install \
+	       && $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" uninstall \
+	       && $(MAKE) $(AM_MAKEFLAGS) DESTDIR="$$dc_destdir" \
+	            distuninstallcheck_dir="$$dc_destdir" distuninstallcheck; \
+	      } || { rm -rf "$$dc_destdir"; exit 1; }) \
+	  && rm -rf "$$dc_destdir" \
+	  && $(MAKE) $(AM_MAKEFLAGS) dist \
+	  && rm -rf $(DIST_ARCHIVES) \
+	  && $(MAKE) $(AM_MAKEFLAGS) distcleancheck \
+	  && cd "$$am__cwd" \
+	  || exit 1
+	$(am__post_remove_distdir)
+	@(echo "$(distdir) archives ready for distribution: "; \
+	  list='$(DIST_ARCHIVES)'; for i in $$list; do echo $$i; done) | \
+	  sed -e 1h -e 1s/./=/g -e 1p -e 1x -e '$$p' -e '$$x'
+
+all: i3blocks-config.h
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
+#  recipe to execute (from 'Makefile', line 351):
+	$(MAKE) $(AM_MAKEFLAGS) all-am
+
+dist-shar: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 698):
+	@echo WARNING: "Support for shar distribution archives is" \
+	               "deprecated." >&2
+	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
+	shar $(distdir) | eval GZIP= gzip $(GZIP_ENV) -c >$(distdir).shar.gz
+	$(am__post_remove_distdir)
+
+distuninstallcheck:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 775):
+	@test -n '$(distuninstallcheck_dir)' || { \
+	  echo 'ERROR: trying to run $@ with an empty' \
+	       '$$(distuninstallcheck_dir)' >&2; \
+	  exit 1; \
+	}; \
+	$(am__cd) '$(distuninstallcheck_dir)' || { \
+	  echo 'ERROR: cannot chdir into $(distuninstallcheck_dir)' >&2; \
+	  exit 1; \
+	}; \
+	test `$(am__distuninstallcheck_listfiles) | wc -l` -eq 0 \
+	   || { echo "ERROR: files left after uninstall:" ; \
+	        if test -n "$(DESTDIR)"; then \
+	          echo "  (check DESTDIR support)"; \
+	        fi ; \
+	        $(distuninstallcheck_listfiles) ; \
+	        exit 1; } >&2
+
+# Not a target:
+line.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+map.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-dvi: install-dvi-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+json.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Makefile.in: Makefile.am configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:29.444806827
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 358):
+	@for dep in $?; do \
+	  case '$(am__configure_deps)' in \
+	    *$$dep*) \
+	      echo ' cd $(srcdir) && $(AUTOMAKE) --foreign'; \
+	      $(am__cd) $(srcdir) && $(AUTOMAKE) --foreign \
+		&& exit 0; \
+	      exit 1;; \
+	  esac; \
+	done; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --foreign Makefile'; \
+	$(am__cd) $(top_srcdir) && \
+	  $(AUTOMAKE) --foreign Makefile
+
+install-binPROGRAMS: i3blocks
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 404):
+	@$(NORMAL_INSTALL)
+	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+	if test -n "$$list"; then \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(bindir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(bindir)" || exit 1; \
+	fi; \
+	for p in $$list; do echo "$$p $$p"; done | \
+	sed 's/$(EXEEXT)$$//' | \
+	while read p p1; do if test -f $$p \
+	  ; then echo "$$p"; echo "$$p"; else :; fi; \
+	done | \
+	sed -e 'p;s,.*/,,;n;h' \
+	    -e 's|.*|.|' \
+	    -e 'p;x;s,.*/,,;s/$(EXEEXT)$$//;$(transform);s/$$/$(EXEEXT)/' | \
+	sed 'N;N;N;s,\n, ,g' | \
+	$(AWK) 'BEGIN { files["."] = ""; dirs["."] = 1 } \
+	  { d=$$3; if (dirs[d] != 1) { print "d", d; dirs[d] = 1 } \
+	    if ($$2 == $$4) files[d] = files[d] " " $$1; \
+	    else { print "f", $$3 "/" $$4, $$1; } } \
+	  END { for (d in files) print "f", d, files[d] }' | \
+	while read type dir files; do \
+	    if test "$$dir" = .; then dir=; else dir=/$$dir; fi; \
+	    test -z "$$files" || { \
+	      echo " $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files '$(DESTDIR)$(bindir)$$dir'"; \
+	      $(INSTALL_PROGRAM_ENV) $(INSTALL_PROGRAM) $$files "$(DESTDIR)$(bindir)$$dir" || exit $$?; \
+	    } \
+	; done
+
+# Not a target:
+main.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+i3blocks-config.h.in: configure.ac aclocal.m4
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  Last modified 2021-10-05 20:44:12.956665754
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := i3blocks-config.h.in
+# automatic
+# * := 
+# automatic
+# < := configure.ac
+# automatic
+# + := configure.ac aclocal.m4
+# automatic
+# % := 
+# automatic
+# ^ := configure.ac aclocal.m4
+# automatic
+# ? := aclocal.m4
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
+#  recipe to execute (from 'Makefile', line 397):
+	($(am__cd) $(top_srcdir) && $(AUTOHEADER))
+	rm -f stamp-h1
+	touch $@
+
+CTAGS: ctags
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+mostlyclean: mostlyclean-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-man1: docs/i3blocks.1
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 487):
+	@$(NORMAL_INSTALL)
+	@list1='$(dist_man1_MANS)'; \
+	list2=''; \
+	test -n "$(man1dir)" \
+	  && test -n "`echo $$list1$$list2`" \
+	  || exit 0; \
+	echo " $(MKDIR_P) '$(DESTDIR)$(man1dir)'"; \
+	$(MKDIR_P) "$(DESTDIR)$(man1dir)" || exit 1; \
+	{ for i in $$list1; do echo "$$i"; done;  \
+	if test -n "$$list2"; then \
+	  for i in $$list2; do echo "$$i"; done \
+	    | sed -n '/\.1[a-z]*$$/p'; \
+	fi; \
+	} | while read p; do \
+	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
+	  echo "$$d$$p"; echo "$$p"; \
+	done | \
+	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^[^1][0-9a-z]*$$,1,;x' \
+	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,' | \
+	sed 'N;N;s,\n, ,g' | { \
+	list=; while read file base inst; do \
+	  if test "$$base" = "$$inst"; then list="$$list $$file"; else \
+	    echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
+	    $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst" || exit $$?; \
+	  fi; \
+	done; \
+	for i in $$list; do echo "$$i"; done | $(am__base_list) | \
+	while read files; do \
+	  test -z "$$files" || { \
+	    echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(man1dir)'"; \
+	    $(INSTALL_DATA) $$files "$(DESTDIR)$(man1dir)" || exit $$?; }; \
+	done; }
+
+# Not a target:
+log.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+i3bar.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-html-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.deps/map.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.961473486
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+install-ps-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.deps/bar.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.934806819
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+aclocal.m4: configure.ac
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:25.704806842
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 386):
+	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+
+# Not a target:
+bar.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+config.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+block.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
+#  File has not been updated.
+
+install-exec: install-exec-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.obj:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+Makefile.am:
+#  Implicit rule search has been done.
+#  Last modified 2021-10-05 20:44:03.32999965
+#  File has been updated.
+#  Successfully updated.
+
+dist-tarZ: distdir
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 691):
+	@echo WARNING: "Support for distribution archives compressed with" \
+		       "legacy program 'compress' is deprecated." >&2
+	@echo WARNING: "It will be removed altogether in Automake 2.0" >&2
+	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z
+	$(am__post_remove_distdir)
+
+install-ps: install-ps-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+line.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+installdirs:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 804):
+	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(bashcompletiondir)" "$(DESTDIR)$(sysconfdir)"; do \
+	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+	done
+
+install-data: install-data-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.deps/sys.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.961473486
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+install-strip:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 817):
+	if test -z '$(STRIP)'; then \
+	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	    install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+	      install; \
+	else \
+	  $(MAKE) $(AM_MAKEFLAGS) INSTALL_PROGRAM="$(INSTALL_STRIP_PROGRAM)" \
+	    install_sh_PROGRAM="$(INSTALL_STRIP_PROGRAM)" INSTALL_STRIP_FLAG=-s \
+	    "INSTALL_PROGRAM_ENV=STRIPPROG='$(STRIP)'" install; \
+	fi
+
+install: install-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+mostlyclean-am: mostlyclean-compile mostlyclean-generic
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ID: bar.c bar.h block.c block.h config.c config.h i3bar.c ini.c ini.h json.c json.h line.c line.h log.h main.c map.c map.h sys.c sys.h term.h i3blocks-config.h.in
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 571):
+	$(am__define_uniq_tagged_files); mkid -fID $$unique
+
+# Not a target:
+json.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install-dvi-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.deps/json.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.951473486
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+install-info-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ctags: ctags-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+install-man: install-man1
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+ 
+cscopelist: cscopelist-am
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+uninstall-local:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 963):
+	( cd '$(DESTDIR)$(BASH_COMPLETION_DIR)' && rm -rf i3blocks )
+
+info-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+.MAKE: all install-am install-strip
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.NOEXPORT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+uninstall-dist_sysconfDATA:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 565):
+	@$(NORMAL_UNINSTALL)
+	@list='$(dist_sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
+	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+	dir='$(DESTDIR)$(sysconfdir)'; $(am__uninstall_files_from_dir)
+
+.SUFFIXES: .c .o .obj
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+uninstall-am: uninstall-bashcompletionDATA uninstall-binPROGRAMS uninstall-dist_sysconfDATA uninstall-local uninstall-man
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+map.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.PHONY: CTAGS GTAGS TAGS all all-am am--depfiles am--refresh check check-am clean clean-binPROGRAMS clean-cscope clean-generic cscope cscopelist-am ctags ctags-am dist dist-all dist-bzip2 dist-gzip dist-lzip dist-shar dist-tarZ dist-xz dist-zip dist-zstd distcheck distclean distclean-compile distclean-generic distclean-hdr distclean-tags distcleancheck distdir distuninstallcheck dvi dvi-am html html-am info info-am install install-am install-bashcompletionDATA install-binPROGRAMS install-data install-data-am install-data-local install-dist_sysconfDATA install-dvi install-dvi-am install-exec install-exec-am install-html install-html-am install-info install-info-am install-man install-man1 install-pdf install-pdf-am install-ps install-ps-am install-strip installcheck installcheck-am installdirs maintainer-clean maintainer-clean-generic mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall uninstall-am uninstall-bashcompletionDATA uninstall-binPROGRAMS uninstall-dist_sysconfDATA uninstall-local uninstall-man uninstall-man1
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+uninstall-binPROGRAMS:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 433):
+	@$(NORMAL_UNINSTALL)
+	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
+	files=`for p in $$list; do echo "$$p"; done | \
+	  sed -e 'h;s,^.*/,,;s/$(EXEEXT)$$//;$(transform)' \
+	      -e 's/$$/$(EXEEXT)/' \
+	`; \
+	test -n "$$list" || exit 0; \
+	echo " ( cd '$(DESTDIR)$(bindir)' && rm -f" $$files ")"; \
+	cd "$(DESTDIR)$(bindir)" && rm -f $$files
+
+# Not a target:
+build-aux/depcomp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sys.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean-cscope:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 607):
+	-rm -f cscope.files
+
+html-am:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+
+clean-binPROGRAMS:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 444):
+	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+
+tags: tags-am
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+ 
+
+# Not a target:
+config.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ini.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build-aux/install-sh:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+block.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+GTAGS:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 600):
+	here=`$(am__cd) $(top_builddir) && pwd` \
+	  && $(am__cd) $(top_srcdir) \
+	  && gtags -i $(GTAGS_ARGS) "$$here"
+
+dist-all:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 710):
+	$(MAKE) $(AM_MAKEFLAGS) $(DIST_TARGETS) am__post_remove_distdir='@:'
+	$(am__post_remove_distdir)
+
+i3blocks-config.h: stamp-h1
+#  Implicit rule search has not been done.
+#  Last modified 2021-10-05 20:44:19.519998587
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
+#  recipe to execute (from 'Makefile', line 390):
+	@test -f $@ || rm -f stamp-h1
+	@test -f $@ || $(MAKE) $(AM_MAKEFLAGS) stamp-h1
+
+clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+.deps/line.Po:
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-07 14:22:30.954806819
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 468):
+	@$(MKDIR_P) $(@D)
+	@echo '# dummy' >$@-t && $(am__mv) $@-t $@
+
+# files hash-table stats:
+# Load=165/1024=16%, Rehash=0, Collisions=52/569=9%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 182 / storage = 1998 B / avg = 10 B
+# current buf: size = 8162 B / used = 1998 B / count = 182 / avg = 10 B
+
+# strcache performance: lookups = 664 / hit rate = 72%
+# hash-table stats:
+# Load=182/8192=2%, Rehash=0, Collisions=7/664=1%
+# Finished Make data base on Fri Jan  7 14:22:34 2022
+
+ 
