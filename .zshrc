@@ -234,7 +234,7 @@ alias vim=nvim
 alias cd..="cd .."
 alias xfcedit="nvim ~/.config/xfce4/xfconf/xfce-perchannel-xml/"
 
-alias wheather="curl -Ss  --ipv4 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo"
+alias wheather="curl -Ss  --ipv4 'https://wttr.in'"
 
 alias cryptDrive="rclone mount cryptDrive: /home/msa/Drive --daemon --user-agent mydrive --copy-links --no-gzip-encoding --no-check-certificate --vfs-cache-mode full --dir-cache-time 24h --poll-interval 10s --cache-dir=/home/msa/temp/cache/ --drive-pacer-min-sleep 10ms --drive-pacer-burst 1000 --vfs-cache-max-size 1G --vfs-cache-poll-interval 5m --vfs-read-ahead 2G --bwlimit-file 32M --umask 000"
 
