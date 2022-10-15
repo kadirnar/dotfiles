@@ -157,7 +157,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth; workspace back_and_forth
 
 bindsym $alt+Tab workspace next
-bindsym $alt+Tab workspace prev
+bindsym $alt+Shift+Tab workspace prev
 
 # split orientation
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
