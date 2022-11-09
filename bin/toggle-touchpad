@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TouchpadToggle=$(synclient | awk '/TouchpadOff/{print $3}')
+if [ $TouchpadToggle = "0" ]
+then
+    synclient TouchpadOff=1
+else
+    synclient TouchpadOff=0
+fi
+
