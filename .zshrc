@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.platformio/penv/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.platformio/penv/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools"
 
 # EXPORTS
 export ZSH="/home/msa/.oh-my-zsh"
@@ -129,7 +129,8 @@ alias yaysyu='yay -Syu --noconfirm'              # update standard pkgs and AUR 
 alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
 alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'  # remove orphaned packages
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-time=2d' # remove orphaned packages
+alias cleanup-pkg='sudo rm -rf HOME/.cache/paru/clone/* /var/cache/pacman/pkg/*'
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
