@@ -111,6 +111,9 @@ alias doompurge="~/.emacs.d/bin/doom purge"
 # bat
 # alias cat='bat'
 
+# evcxr_repl
+alias rust-repl='evcxr'
+
 # broot
 alias br='broot -dhp'
 alias bs='broot --sizes'
