@@ -75,8 +75,9 @@ bindsym XF86AudioPrev exec playerctl previous
 floating_modifier $mod
 
 # start a $myTerm
-set $myTerm st
-set $myTerm kitty
+# set $myTerm st
+# set $myTerm kitty
+set $myTerm alacritty
 bindsym $mod+Return exec $myTerm
 
 # start a terminal
