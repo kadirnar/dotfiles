@@ -73,10 +73,11 @@ bindsym XF86AudioPrev exec playerctl previous
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a $myTerm
-# set $myTerm st
-# set $myTerm kitty
-set $myTerm alacritty
+# start a $myTerm 
+# set $myTerm st 
+# set $myTerm alacritty
+
+set $myTerm kitty
 bindsym $mod+Return exec $myTerm
 
 # start a terminal
