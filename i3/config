@@ -14,7 +14,7 @@ set $alt Mod1
 
 exec --no-startup-id setxkbmap us
 exec --no-startup-id dunst
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --xrender-sync-fence
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id conky --config=$HOME/.dotfiles/conky/.conkyrc --daemonize --pause=0 --interval=1
 
@@ -234,6 +234,7 @@ for_window [class="spotify"] fullscreen enable
 for_window [class="brave"] fullscreen enable
 # for_window [class="tabby"] floating enable
 for_window [title="nomacs"] floating enable
+for_window [class="noambition"] floating enable
 for_window [title="Calculator"] floating enable
 for_window [class="Yad"] floating enable
 for_window [class="Telegram"] floating enable
@@ -572,4 +573,3 @@ mode "$systemLaunch" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
