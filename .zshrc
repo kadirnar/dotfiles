@@ -3,6 +3,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 RPROMPT='[%D{%L:%M:%S}] '$RPROMPT
 
 # OHMYZSH
@@ -141,7 +148,6 @@ expandTemp() {
 
 IFS=$SAVEIFS
 
-
 # ALIAS
 alias emacs="emacsclient -c --no-wait -a 'emacs'"
 alias emac="emacsclient -nw"
@@ -151,6 +157,8 @@ alias doomupgrade="~/.emacs.d/bin/doom upgrade"
 alias doompurge="~/.emacs.d/bin/doom purge"
 # bat
 # alias cat='bat'
+
+alias ssh-agent-run="eval '$(ssh-agent -s)'"
 
 # evcxr_repl
 alias rust-repl='evcxr'
