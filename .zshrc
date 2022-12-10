@@ -142,7 +142,7 @@ expandTemp() {
 IFS=$SAVEIFS
 
 
-# ALIASes
+# ALIAS
 alias emacs="emacsclient -c --no-wait -a 'emacs'"
 alias emac="emacsclient -nw"
 alias doomsync="~/.emacs.d/bin/doom sync"
@@ -154,6 +154,12 @@ alias doompurge="~/.emacs.d/bin/doom purge"
 
 # evcxr_repl
 alias rust-repl='evcxr'
+
+alias afk="i3exit lock"
+
+# diffing
+alias gitdiff="git difftool --no-symlinks --dir-diff"
+alias d="kitty +kitten diff"
 
 # broot
 alias br='broot -dhp'
