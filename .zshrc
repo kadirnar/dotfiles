@@ -23,6 +23,47 @@ export VISUAL="nvim"           # $VISUAL use Emacs in GUI mode
 export LIBGL_ALWAYS_SOFTWARE=1
 export MESA_GL_VERSION_OVERRIDE=4.6
 export CHROME_EXECUTABLE="/usr/bin/brave"
+shell="$(which zsh)";
+export SHELL="$shell";
+
+# Make vim the default editor
+export EDITOR=/usr/bin/nvim;
+export TERMINAL="kitty";
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=50000000;
+export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredups;
+# Make some commands not show up in history
+export HISTIGNORE=" *:ls:cd:cd -:pwd:exit:date:* --help:* -h:pony:pony add *:pony update *:pony save *:pony ls:pony ls *";
+
+# Prefer US English and use UTF-8
+export LANG="en_US.UTF-8";
+export LC_ALL="en_US.UTF-8";
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X";
+
+export TODOTXT_DEFAULT_ACTION=ls
+
+# hidpi for gtk apps
+export GDK_SCALE=1.5
+export GDK_DPI_SCALE=0.5
+export QT_DEVICE_PIXEL_RATIO=1.5
+
+# turn on go vendoring experiment
+export GO15VENDOREXPERIMENT=1
+
+export DOCKER_CONTENT_TRUST=1
+
+# if it's an ssh session export GPG_TTY
+if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
+	GPG_TTY=$(tty)
+	export GPG_TTY
+fi
+
+# set xdg data dirs for dmenu to source
+export XDG_DATA_DIRS=/usr/share/
 
 GCM_CREDENTIAL_STORE=secretservice
 DOTNET_CLI_TELEMETRY_OPTOUT=1
