@@ -90,7 +90,7 @@ promptinit
 ZSH_THEME="robbyrussell"
 
 # ZSHs PLUGINS
-plugins=(z history git zsh-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autojump autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode yarn npm gpg-agent)
+plugins=(z history git zsh-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autojump autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode yarn npm gpg-agent docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -172,6 +172,9 @@ alias d="kitty +kitten diff"
 # broot
 alias br='broot -dhp'
 alias bs='broot --sizes'
+
+# docker
+alias dri="docker run --rm -i -t -v "
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
