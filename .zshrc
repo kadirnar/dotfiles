@@ -174,7 +174,7 @@ alias br='broot -dhp'
 alias bs='broot --sizes'
 
 # docker
-alias dri="docker run --rm -i -t -v "
+alias dri="docker run --rm -i -t "
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
