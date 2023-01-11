@@ -50,17 +50,10 @@ export LC_ALL="en_US.UTF-8";
 
 # Don’t clear the screen after quitting a manual page
 export MANPAGER="less -X";
-
 export TODOTXT_DEFAULT_ACTION=ls
-
-# hidpi for gtk apps
-export GDK_SCALE=1.5
-export GDK_DPI_SCALE=0.5
-export QT_DEVICE_PIXEL_RATIO=1.5
 
 # turn on go vendoring experiment
 export GO15VENDOREXPERIMENT=1
-
 export DOCKER_CONTENT_TRUST=1
 
 # if it's an ssh session export GPG_TTY
