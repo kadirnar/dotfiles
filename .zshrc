@@ -201,9 +201,8 @@ alias fgrep='fgrep --color=auto'
 # confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
-alias rm=/usr/bin/move_to_trash
 alias rmfi='/usr/bin/rm -i -rf'
-alias rmf='/usr/bin/rm -rf'
+alias rmf='rip'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
