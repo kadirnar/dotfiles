@@ -157,6 +157,7 @@ alias ssh-agent-run="eval '$(ssh-agent -s)'"
 alias rust-repl='evcxr'
 
 alias afk="i3exit lock"
+alias tmux="zellij"
 
 # diffing
 alias gitdiff="git difftool --no-symlinks --dir-diff"
