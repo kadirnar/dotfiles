@@ -80,7 +80,7 @@ floating_modifier $mod
 
 set $myTerm kitty
 bindsym $mod+Return exec $myTerm
-
+bindsym $mod+$alt+Return exec $myTerm --name floating
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 
@@ -234,6 +234,7 @@ assign [class="spotify"] $ws9
 
 
 # Open specific applications in floating mode
+for_window [class="kitty" instance="floating"] floating enable border pixel 3, resize set height 800, resize set width 600
 for_window [class="tabby"] fullscreen enable
 for_window [class="spotify"] fullscreen enable
 for_window [class="brave"] fullscreen enable
