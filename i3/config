@@ -14,7 +14,7 @@ set $alt Mod1
 
 exec --no-startup-id setxkbmap us
 exec --no-startup-id dunst
-exec --no-startup-id imwheel
+exec --no-startup-id imwheel -b 45
 # exec_always --no-startup-id picom --xrender-sync-fence
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id conky --config=$HOME/.dotfiles/conky/.conkyrc --daemonize --pause=0 --interval=1
