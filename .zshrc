@@ -57,7 +57,7 @@ export GO15VENDOREXPERIMENT=1
 export DOCKER_CONTENT_TRUST=1
 
 # rip's grevyard (Trash)
-export $GRAVEYARD="$HOME/.local/share/Trash"
+export GRAVEYARD="$HOME/.local/share/Trash/files"
 
 # if it's an ssh session export GPG_TTY
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
