@@ -22,7 +22,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.platformio/penv/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin/"
 
 # EXPORTS
-export ZSH="/home/msa/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export TERM="xterm-256color"                      # getting proper colors
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export EDITOR="nvim"              # $EDITOR use Emacs in terminal
@@ -55,6 +55,9 @@ export TODOTXT_DEFAULT_ACTION=ls
 # turn on go vendoring experiment
 export GO15VENDOREXPERIMENT=1
 export DOCKER_CONTENT_TRUST=1
+
+# rip's grevyard (Trash)
+export $GRAVEYARD="$HOME/.local/share/Trash"
 
 # if it's an ssh session export GPG_TTY
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
