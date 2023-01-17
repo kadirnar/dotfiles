@@ -37,8 +37,7 @@ export SHELL="$shell";
 export EDITOR=/usr/bin/nvim;
 export TERMINAL="kitty";
 
-# Larger bash history (allow 32³ entries; default is 500)
-export HISTSIZE=50000000;
+export HISTSIZE=32768;
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
 # Make some commands not show up in history
