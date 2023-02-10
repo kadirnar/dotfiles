@@ -73,16 +73,18 @@ interval=10
 #color_critical=#d9534f
 
 [disk-io]
-command=/home/msa/Applications/i3blocks-contrib/disk-io/disk-io
-#command=$SCRIPT_DIR/disk-io -w 3 -M -P 0
+command=dstat --noheaders --nocolor --noupdate -d 3
 interval=persist
-markup=pango
+#command=/home/msa/Applications/i3blocks-contrib/disk-io/disk-io
+#command=$SCRIPT_DIR/disk-io -w 3 -M -P 0
+# interval=persist
+# markup=pango
 #LABEL=io
-#instance=/^sda/
+# instance=/^nvme/
 #DT=5
 #MB_ONLY=0 #0 or 1
 #KB_ONLY=0 #0 or 1
-WIDTH=1
+#WIDTH=1
 #MB_PRECISION=1
 #KB_PRECISION=0
 #REGEX=/^(s|h)d[a-zA-Z]+/
@@ -109,7 +111,7 @@ interval=1
 [bandwidth]
 command=/home/msa/Applications/i3blocks-contrib/bandwidth/bandwidth
 interval=1
-#INTERFACE=wlp7s0b1
+#INTERFACE=wlo1
 INLABEL=+
 OUTLABEL=-
 #TREAT_UNKNOWN_AS_UP=0
@@ -126,8 +128,8 @@ interval=1
 # LABEL= 
 DATEFMT=+%H:%M:%S
 # SHORTFMT=+%H:%M:%S
-HEIGHT=200
-WIDTH=400
+HEIGHT=250
+WIDTH=350
 
 [battery]
 command=/home/msa/Applications/i3blocks-contrib/battery/battery
@@ -154,12 +156,12 @@ NEUTRAL_COLOR=#000000
 [wifi]
 command=/home/msa/Applications/i3blocks-contrib/wifi/wifi
 #label=w:
-INTERFACE=wlp7s0b1
-interval=60
+INTERFACE=wlo1
+interval=30
 
 [wlan-dbm]
 command=/home/msa/Applications/i3blocks-contrib/wlan-dbm/wlan-dbm
-IFACE=wlp7s0b1
+IFACE=wlo1
 #USE_PERCENT=0
 interval=5
 
