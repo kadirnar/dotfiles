@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.platformio/penv/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin/"
+export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin/:$HOME/.platformio/penv/bin"
 
 # EXPORTS
 export ZSH="$HOME/.oh-my-zsh"
@@ -160,6 +160,9 @@ alias rust-repl='evcxr'
 
 alias afk="i3exit lock"
 alias tmux="zellij"
+
+# kvm vfio
+alias win10='virsh --connect=qemu:///system start win10; sleep 13; looking-glass-client -F -S -m 97 -f /dev/kvmfr0 -g OpenGL;'
 
 # diffing
 alias gitdiff="git difftool --no-symlinks --dir-diff"
