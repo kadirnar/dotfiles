@@ -14,11 +14,14 @@ set $alt Mod1
 
 exec --no-startup-id setxkbmap us
 exec --no-startup-id dunst
-exec --no-startup-id imwheel -b 45
+# exec --no-startup-id imwheel -b 45
 # exec_always --no-startup-id picom --xrender-sync-fence
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id conky --config=$HOME/.dotfiles/conky/.conkyrc --daemonize --pause=0 --interval=1
-
+exec --no-startup-id syndaemon -i 0.3 -t -K -R
+exec_always --no-startup-id libinput-gestures-setup start
+exec --no-startup-id rog-control-center
+exec --no-startup-id asusctltray
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 10
@@ -68,8 +71,13 @@ bindsym XF86ScreenSaver exec --no-startup-id lock
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioNext exec playerctl --player=spotify next
+bindsym XF86AudioPrev exec playerctl --player=spotify previous
+bindsym mod2+XF86Launch1 exec playerctl next
+bindsym mod2+Shift+XF86Launch1 exec playerctl previous
+bindsym mod2+XF86Launch3 exec playerctl --player=spotify play-pause
+bindsym Shift+mod2+XF86Launch3 exec playerctl play-pause
+bindsym Shift+mod2+XF86TouchpadToggle exec touchpad_toggle.sh
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -395,7 +403,8 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
 
-bindsym Print exec --no-startup-id flameshot gui
+# bindsym Print exec --no-startup-id flameshot gui
+bindsym Shift+Mod2+Mod4+s exec --no-startup-id flameshot gui
 
 # Apps Launched with <SUPER> + <KEYPAD 1-9>
 bindsym $mod+KP_End exec $myTerm -e lynx -cfg=~/.lynx.cfg -lss=~/.lynx.lss http://www.distrowatch.com
