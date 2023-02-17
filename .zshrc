@@ -155,6 +155,9 @@ alias doompurge="~/.emacs.d/bin/doom purge"
 
 alias ssh-agent-run="eval '$(ssh-agent -s)'"
 
+# alias for new-term here
+alias new-term="kitty &"
+
 # evcxr_repl
 alias rust-repl='evcxr'
 
