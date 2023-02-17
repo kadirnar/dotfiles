@@ -128,7 +128,7 @@ interval=1
 # LABEL= 
 DATEFMT=+%H:%M:%S
 # SHORTFMT=+%H:%M:%S
-HEIGHT=250
+HEIGHT=240
 WIDTH=350
 
 [battery]
