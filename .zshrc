@@ -196,6 +196,10 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-time=2d' # remove orphaned packages
 alias cleanup-pkg='sudo /usr/bin/rm -rf $HOME/.cache/paru/clone/* /var/cache/pacman/pkg/*'
 
+# bluetoothctl
+alias blr='bluetoothctl power off && bluetoothctl power on'
+alias blc='bluetoothctl connect'
+
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
 alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
