@@ -165,7 +165,8 @@ alias afk="i3exit lock"
 alias tmux="zellij"
 
 # kvm vfio
-alias win10='virsh --connect=qemu:///system start win10; sleep 13; looking-glass-client -F -S -m 97 -f /dev/kvmfr0 -g OpenGL;'
+alias win10='virsh --connect=qemu:///system start win10; sleep 13; looking-glass-client -F -S -m 97 -f /dev/kvmfr0 spice:audio=no -k;'
+alias win11='virsh --connect=qemu:///system start win11; sleep 13; looking-glass-client -F -S -m 97 -f /dev/kvmfr0 spice:audio=no -k;'
 
 # diffing
 alias gitdiff="git difftool --no-symlinks --dir-diff"
