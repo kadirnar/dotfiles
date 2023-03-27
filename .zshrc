@@ -85,7 +85,7 @@ promptinit
 ZSH_THEME="robbyrussell"
 
 # ZSHs PLUGINS
-plugins=(z history git zsh-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autojump autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode npm gpg-agent docker)
+plugins=(z history git zsh-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode npm gpg-agent docker autojump)
 
 source $ZSH/oh-my-zsh.sh
 
