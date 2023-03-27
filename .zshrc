@@ -1,11 +1,11 @@
 # POWER10K
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+    export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
@@ -60,8 +60,8 @@ export GRAVEYARD="$HOME/.local/share/Trash/files"
 
 # if it's an ssh session export GPG_TTY
 if [[ -n "$SSH_CLIENT" ]] || [[ -n "$SSH_TTY" ]]; then
-	GPG_TTY=$(tty)
-	export GPG_TTY
+    GPG_TTY=$(tty)
+    export GPG_TTY
 fi
 
 # set xdg data dirs for dmenu to source
@@ -96,40 +96,40 @@ SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
 
 function extract {
- if [ -z "$1" ]; then
-    # display usage if no parameters given
-    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
-    echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
- else
-    for n in "$@"
-    do
-      if [ -f "$n" ] ; then
-          case "${n%,}" in
-            *.cbt|*.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar)
-                         tar xvf "$n"       ;;
-            *.lzma)      unlzma ./"$n"      ;;
-            *.bz2)       bunzip2 ./"$n"     ;;
-            *.cbr|*.rar)       unrar x -ad ./"$n" ;;
-            *.gz)        gunzip ./"$n"      ;;
-            *.cbz|*.epub|*.zip)       unzip ./"$n"       ;;
-            *.z)         uncompress ./"$n"  ;;
-            *.7z|*.arj|*.cab|*.cb7|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.pkg|*.rpm|*.udf|*.wim|*.xar)
-                         7z x ./"$n"        ;;
-            *.xz)        unxz ./"$n"        ;;
-            *.exe)       cabextract ./"$n"  ;;
-            *.cpio)      cpio -id < ./"$n"  ;;
-            *.cba|*.ace)      unace x ./"$n"      ;;
-            *)
-                         echo "extract: '$n' - unknown archive method"
-                         return 1
-                         ;;
-          esac
-      else
-          echo "'$n' - file does not exist"
-          return 1
-      fi
-    done
-fi
+    if [ -z "$1" ]; then
+        # display usage if no parameters given
+        echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+        echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
+    else
+        for n in "$@"
+        do
+            if [ -f "$n" ] ; then
+                case "${n%,}" in
+                    *.cbt|*.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar)
+                        tar xvf "$n"       ;;
+                    *.lzma)      unlzma ./"$n"      ;;
+                    *.bz2)       bunzip2 ./"$n"     ;;
+                    *.cbr|*.rar)       unrar x -ad ./"$n" ;;
+                    *.gz)        gunzip ./"$n"      ;;
+                    *.cbz|*.epub|*.zip)       unzip ./"$n"       ;;
+                    *.z)         uncompress ./"$n"  ;;
+                    *.7z|*.arj|*.cab|*.cb7|*.chm|*.deb|*.dmg|*.iso|*.lzh|*.msi|*.pkg|*.rpm|*.udf|*.wim|*.xar)
+                        7z x ./"$n"        ;;
+                    *.xz)        unxz ./"$n"        ;;
+                    *.exe)       cabextract ./"$n"  ;;
+                    *.cpio)      cpio -id < ./"$n"  ;;
+                    *.cba|*.ace)      unace x ./"$n"      ;;
+                    *)
+                        echo "extract: '$n' - unknown archive method"
+                        return 1
+                        ;;
+                esac
+            else
+                echo "'$n' - file does not exist"
+                return 1
+            fi
+        done
+    fi
 }
 
 
@@ -228,10 +228,10 @@ alias mocp='mocp -M "$XDG_CONFIG_HOME"/moc -O MOCDir="$XDG_CONFIG_HOME"/moc'
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 
-memtop() { 
+memtop() {
     ps -eo size,pid,user,command --sort -size | \
-    awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' |\
-    cut -d "" -f2 | cut -d "-" -f1
+        awk '{ hr=$1/1024 ; printf("%13.2f Mb ",hr) } { for ( x=4 ; x<=NF ; x++ ) { printf("%s ",$x) } print "" }' |\
+        cut -d "" -f2 | cut -d "-" -f1
 }
 
 ## get top process eating cpu ##
@@ -353,44 +353,44 @@ export QSYS_ROOTDIR="/home/msa/.cache/paru/clone/quartus-free/pkg/quartus-free-q
 
 
 if type complete &>/dev/null; then
-  __flutter_completion() {
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           flutter completion -- "${COMP_WORDS[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  complete -F __flutter_completion flutter
+    __flutter_completion() {
+        local si="$IFS"
+        IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                    COMP_LINE="$COMP_LINE" \
+                    COMP_POINT="$COMP_POINT" \
+                    flutter completion -- "${COMP_WORDS[@]}" \
+            2>/dev/null)) || return $?
+        IFS="$si"
+    }
+    complete -F __flutter_completion flutter
 elif type compdef &>/dev/null; then
-  __flutter_completion() {
-    si=$IFS
-    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 flutter completion -- "${words[@]}" \
-                 2>/dev/null)
-    IFS=$si
-  }
-  compdef __flutter_completion flutter
+    __flutter_completion() {
+        si=$IFS
+        compadd -- $(COMP_CWORD=$((CURRENT-1)) \
+                COMP_LINE=$BUFFER \
+                COMP_POINT=0 \
+                flutter completion -- "${words[@]}" \
+            2>/dev/null)
+        IFS=$si
+    }
+    compdef __flutter_completion flutter
 elif type compctl &>/dev/null; then
-  __flutter_completion() {
-    local cword line point words si
-    read -Ac words
-    read -cn cword
-    let cword-=1
-    read -l line
-    read -ln point
-    si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       flutter completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  compctl -K __flutter_completion flutter
+    __flutter_completion() {
+        local cword line point words si
+        read -Ac words
+        read -cn cword
+        let cword-=1
+        read -l line
+        read -ln point
+        si="$IFS"
+        IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                    COMP_LINE="$line" \
+                    COMP_POINT="$point" \
+                    flutter completion -- "${words[@]}" \
+            2>/dev/null)) || return $?
+        IFS="$si"
+    }
+    compctl -K __flutter_completion flutter
 fi
 
 
@@ -413,36 +413,36 @@ export ATUIN_SESSION=$(atuin uuid)
 export ATUIN_HISTORY="atuin history list"
 
 _atuin_preexec(){
-	local id; id=$(atuin history start -- "$1")
-	export ATUIN_HISTORY_ID="$id"
+    local id; id=$(atuin history start -- "$1")
+    export ATUIN_HISTORY_ID="$id"
 }
 
 _atuin_precmd(){
-	local EXIT="$?"
+    local EXIT="$?"
 
-	[[ -z "${ATUIN_HISTORY_ID}" ]] && return
+    [[ -z "${ATUIN_HISTORY_ID}" ]] && return
 
 
-	(RUST_LOG=error atuin history end --exit $EXIT -- $ATUIN_HISTORY_ID &) > /dev/null 2>&1
+    (RUST_LOG=error atuin history end --exit $EXIT -- $ATUIN_HISTORY_ID &) > /dev/null 2>&1
 }
 
 _atuin_search(){
-	emulate -L zsh
-	zle -I
+    emulate -L zsh
+    zle -I
 
-	# Switch to cursor mode, then back to application
-	echoti rmkx
-	# swap stderr and stdout, so that the tui stuff works
-	# TODO: not this
-	output=$(RUST_LOG=error atuin search -i -- $BUFFER 3>&1 1>&2 2>&3)
-	echoti smkx
+    # Switch to cursor mode, then back to application
+    echoti rmkx
+    # swap stderr and stdout, so that the tui stuff works
+    # TODO: not this
+    output=$(RUST_LOG=error atuin search -i -- $BUFFER 3>&1 1>&2 2>&3)
+    echoti smkx
 
-	if [[ -n $output ]] ; then
-		RBUFFER=""
-		LBUFFER=$output
-	fi
+    if [[ -n $output ]] ; then
+        RBUFFER=""
+        LBUFFER=$output
+    fi
 
-	zle reset-prompt
+    zle reset-prompt
 }
 
 add-zsh-hook preexec _atuin_preexec
@@ -451,10 +451,10 @@ add-zsh-hook precmd _atuin_precmd
 zle -N _atuin_search_widget _atuin_search
 
 if [[ -z $ATUIN_NOBIND ]]; then
-	bindkey '^r' _atuin_search_widget
+    bindkey '^r' _atuin_search_widget
 
-	# depends on terminal mode
-	#bindkey '^[[A' _atuin_search_widget
-	#bindkey '^[OA' _atuin_search_widget
+    # depends on terminal mode
+    #bindkey '^[[A' _atuin_search_widget
+    #bindkey '^[OA' _atuin_search_widget
 fi
 #! End of the Atuin config
