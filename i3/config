@@ -14,8 +14,9 @@ set $alt Mod1
 
 exec --no-startup-id setxkbmap us
 exec --no-startup-id dunst
+# exec i3-layouts
 # exec --no-startup-id imwheel -b 45
-# exec_always --no-startup-id picom --xrender-sync-fence
+exec_always --no-startup-id picom --xrender-sync-fence
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec_always --no-startup-id conky --config=$HOME/.dotfiles/conky/.conkyrc --daemonize --pause=0 --interval=1
 exec --no-startup-id syndaemon -i 0.3 -t -K -R
@@ -286,7 +287,6 @@ for_window [urgent=latest] focus
 
 # reload the configuration file
 bindsym $mod+Shift+r restart
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 # bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -308,7 +308,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-
+bindsym $mod+r mode "resize"
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -333,8 +333,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
-bindsym $mod+r mode "resize"
 
 # Lock screen
 # bindsym $mod+ exec --no-startup-id blurlock
@@ -398,8 +396,8 @@ exec --no-startup-id volumeicon
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 5; notify-send 'brightness down'"
 
 
 bindsym $mod+d exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
@@ -553,10 +551,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-set $launchType Type: (a) user, (s) system
-set $userLaunch File Manager (f) Browser (b)
-set $systemLaunch Settings (s)
 bindsym $mod+Shift+p mode "$launchType"
+set $launchType Type: (a) user, (s) system
 
 mode "$launchType" {
         bindsym a      mode "$userLaunch"
@@ -564,6 +560,8 @@ mode "$launchType" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+set $userLaunch File Manager (f) Browser (b)
 mode "$userLaunch" {
         bindsym KP_Subtract gaps inner current minus 5
         bindsym KP_Add  gaps inner current plus 5
@@ -577,8 +575,10 @@ mode "$userLaunch" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+set $systemLaunch Settings (s)
 mode "$systemLaunch" {
-        bindsym i exec $myTerm -e nvim ~/.config/i3/config
+        bindsym i exec $myTerm -e nvim ~/.config/i3/config, mode "default"
         bindsym KP_Add  gaps outer current plus 5
         bindsym KP_Subtract gaps outer current minus 5
         bindsym 0     gaps outer current set 0
@@ -590,3 +590,26 @@ mode "$systemLaunch" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+bindsym $mod+Shift+w mode "$workspaceStack"
+set $workspaceStack Type: (v) vstack, (h) hstack, (s) spiral, (3) 3columns, (2) 2columns, (c) companion, (a) autosplit, (e) enable, (d) disable
+mode "$workspaceStack" {
+        bindsym v exec i3l vstack 0.6 && notify-send 'Layout vstack', mode "default"
+        # TODO
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# i3l vstack 0.6
+# i3l none
+
+# bindsym $mod+s exec i3l vstack 0.6 && notify-send 'Layout vstack'
+
+# set $i3l vstack to workspace $ws1
+# set $i3l hstack 0.6 up to workspace $ws2
+# set $i3l spiral 0.6 to workspace $ws3
+# set $i3l 3columns 0.66 0.5 2 left to workspace $ws4
+# set $i3l 2columns right to workspace $ws5
+# set $i3l companion 0.3 0.4 up to workspace $ws6
+# set $i3l autosplit to workspace $ws7
+
