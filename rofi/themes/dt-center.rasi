@@ -2,8 +2,8 @@
     background-color:            #282c34;
     border-color:                #282c34;
     text-color:                  #bbc2cf;
-    font:                        "SauceCodePro Nerd Font Mono 12";
-    prompt-font:                 "Ubuntu Bold 12";
+    font:                        "SauceCodePro Nerd Font Mono 10";
+    prompt-font:                 "Ubuntu Bold 10";
     prompt-background:           #51afef;
     prompt-foreground:           #282c34;
     prompt-padding:              4px;
@@ -16,7 +16,7 @@
 #window {
     border:  1;
     padding: 5;
-    width:25%;
+    width:20%;
 }
 #mainbox {
     border:  0;
