@@ -1,0 +1,219 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 5,
+  "modules-left": [
+    "custom/power_btn",
+    "custom/lock_screen",
+    "wlr/workspaces",
+    "custom/weather",
+    "cpu",
+    "memory",
+    "disk",
+    "network",
+    "bluetooth"
+  ],
+  "modules-center": [
+    "idle_inhibitor",
+    "clock",
+    "custom/updates"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "backlight",
+    "tray",
+    "temperature",
+    "custom/power_profile",
+    "battery",
+    "hyprland/language",
+    "custom/myhyprv",
+    "custom/light_dark"
+  ],
+  "include": [
+    "~/.config/HyprV/waybar/conf/mesu.jsonc",
+    "~/.config/HyprV/waybar/conf/asus-rog.jsonc",
+    "~/.config/HyprV/waybar/conf/hyprv-util.jsonc"
+  ],
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰛐",
+      "deactivated": "󰛑"
+    },
+    "tooltip": true
+  },
+  "hyprland/language": {
+    "interval": 30,
+    "format": " {}",
+    "keyboard-name": "asus-keyboard-2",
+    "on-click": "~/.config/HyprV/hyprv_util swkb",
+    "signal": 8
+  },
+  "custom/power_btn": {
+    "format": "",
+    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+    "tooltip": false
+  },
+  "custom/lock_screen": {
+    "format": "",
+    "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
+    "tooltip": false
+  },
+  "wlr/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "sort-by-number": true,
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
+    }
+  },
+  "cpu": {
+    "interval": 10,
+    "format": " {usage}%",
+    "max-length": 10,
+    "format-alt-click": "click-right",
+    "format-alt": " {usage}%",
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+  },
+  "disk": {
+    "interval": 30,
+    "format": "󰋊 {percentage_used}%",
+    "path": "/",
+    "tooltip": true,
+    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+  },
+  "temperature": {
+    "thermal-zone": 0
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    // "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C ",
+    // "format": "{temperatureC}°C "
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {}%",
+    "max-length": 10,
+    "tooltip": true,
+    "tooltip-format": "Memory - {used:0.1f}GB used",
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+  },
+  "network": {
+    "interval": 5,
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "  {signalStrength}% {bandwidthTotalBytes}",
+    "format-ethernet": "🖧  {bandwidthTotalBytes}",
+    "tooltip-format": "{essid} / {ipaddr}/{cidr} - {ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 20
+    },
+    "format": "{icon}",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt-click": "click-right",
+    "format-alt": "{icon} {capacity}%",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "",
+    "on-click": "~/.config/HyprV/waybar/scripts/volume --toggle",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --inc",
+    "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --dec",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "tooltip": true,
+    "tooltip-format": "{icon} at {volume}%"
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "on-click": "~/.config/HyprV/waybar/scripts/volume --toggle-mic",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --mic-inc",
+    "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --mic-dec",
+    "scroll-step": 5,
+    "tooltip": true,
+    "tooltip-format": " at {volume}%"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": " {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}",
+    "format-alt-click": "click-right",
+    "format-alt": "{icon} {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "~/.config/HyprV/waybar/scripts/brightness --inc",
+    "on-scroll-down": "~/.config/HyprV/waybar/scripts/brightness --dec"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+  "custom/updates": {
+    "format": "{}",
+    "exec": "~/.config/HyprV/waybar/scripts/update-sys",
+    "on-click": "~/.config/HyprV/waybar/scripts/update-sys update",
+    "interval": 300,
+    "tooltip": true
+  }
+}
