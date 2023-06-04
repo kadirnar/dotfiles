@@ -19,7 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # autojump
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-export PATH="$PATH:$HOME.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin/:$HOME/.platformio/penv/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin/:$HOME/.platformio/penv/bin:$HOME/.pub-cache/bin"
 
 # EXPORTS
 export ZSH="$HOME/.oh-my-zsh"
@@ -132,6 +132,9 @@ function extract {
     fi
 }
 
+function rustc_exec() {
+    rustc -o /tmp/"$1" "$1" && /tmp/"$1"
+}
 
 # EXPANDTEMP
 
@@ -192,6 +195,7 @@ alias yaysua='yay -Sua --noconfirm'              # update only AUR pkgs (yay)
 alias yaysyu='yay -Syu --noconfirm'              # update standard pkgs and AUR pkgs (yay)
 alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
 alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
+alias cargo-update-bin='cargo install $(cargo install --list | egrep "^[a-z0-9_-]+ v[0-9.]+:$" | cut -f1 -d" ")'
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq) && sudo journalctl --vacuum-time=2d' # remove orphaned packages
 alias cleanup-pkg='sudo /usr/bin/rm -rf $HOME/.cache/paru/clone/* /var/cache/pacman/pkg/*'
@@ -274,6 +278,9 @@ alias yta-opus="yt-dlp --extract-audio --audio-format opus "
 alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
 alias yta-wav="yt-dlp --extract-audio --audio-format wav "
 alias ytv-best="yt-dlp -f bestvideo+bestaudio "
+
+# parallel
+alias webp2png="parallel dwebp {} -o {.}.png ::: *.webp"
 
 # switch between shells
 # I do not recommend switching default SHELL from bash.
@@ -458,3 +465,18 @@ if [[ -z $ATUIN_NOBIND ]]; then
     #bindkey '^[OA' _atuin_search_widget
 fi
 #! End of the Atuin config
+
+source /home/msa/.config/broot/launcher/bash/br
+
+# pnpm
+export PNPM_HOME="/home/msa/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+## [Completion] 
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/msa/.dart-cli-completion/zsh-config.zsh ]] && . /home/msa/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
