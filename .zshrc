@@ -136,6 +136,14 @@ function rustc_exec() {
     rustc -o /tmp/"$1" "$1" && /tmp/"$1"
 }
 
+function gcc_exec() {
+    gcc -Wall -O3 -o /tmp/"$1" "$1" && /tmp/"$1"
+}
+
+function g++_exec() {
+    g++ -Wall -O3 -o /tmp/"$1" "$1" && /tmp/"$1"
+}
+
 # EXPANDTEMP
 
 # expandes temp for big-size compiling
@@ -182,12 +190,12 @@ alias bs='broot --sizes'
 # docker
 alias dri="docker run --rm -i -t "
 
-# Changing "ls" to "exa"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first'  # long format
-alias lt='exa -aT --color=always --group-directories-first' # tree listing
-alias l.='exa -a | egrep "^\."'
+# Changing "ls" to "eza"
+alias ls='eza -al --color=always --group-directories-first' # my preferred listing
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
+alias l.='eza -a | egrep "^\."'
 
 # pacman and yay
 alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
@@ -326,6 +334,13 @@ alias timestamp="python -c 'import time; print(time.time().__int__())'"
 # Shity ohMyZSH aliases
 unalias tldr
 
+function watchme {
+    # call: uberwatch <interval> <command>
+    while true; do
+        "${@:2}";
+        sleep $1;
+    done
+}
 
 # ZPLUG
 
