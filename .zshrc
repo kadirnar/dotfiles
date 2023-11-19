@@ -85,7 +85,7 @@ promptinit
 ZSH_THEME="robbyrussell"
 
 # ZSHs PLUGINS
-plugins=(z history git zsh-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode npm gpg-agent docker autojump)
+plugins=(z history git zsh-syntax-highlighting fast-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode npm gpg-agent docker autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -414,8 +414,6 @@ elif type compctl &>/dev/null; then
     }
     compctl -K __flutter_completion flutter
 fi
-
-
 #! end of the flutter completion
 #screenfetch
 
@@ -495,3 +493,55 @@ esac
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/msa/.dart-cli-completion/zsh-config.zsh ]] && . /home/msa/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
+
+  copilot_what-the-shell () {
+    TMPFILE=$(mktemp);
+    trap 'rm -f $TMPFILE' EXIT;
+    if /usr/bin/github-copilot-cli what-the-shell "$@" --shellout $TMPFILE; then
+      if [ -e "$TMPFILE" ]; then
+        FIXED_CMD=$(cat $TMPFILE);
+        print -s "$FIXED_CMD";
+        eval "$FIXED_CMD"
+      else
+        echo "Apologies! Extracting command failed"
+      fi
+    else
+      return 1
+    fi
+  };
+alias '??'='copilot_what-the-shell';
+
+  copilot_git-assist () {
+    TMPFILE=$(mktemp);
+    trap 'rm -f $TMPFILE' EXIT;
+    if /usr/bin/github-copilot-cli git-assist "$@" --shellout $TMPFILE; then
+      if [ -e "$TMPFILE" ]; then
+        FIXED_CMD=$(cat $TMPFILE);
+        print -s "$FIXED_CMD";
+        eval "$FIXED_CMD"
+      else
+        echo "Apologies! Extracting command failed"
+      fi
+    else
+      return 1
+    fi
+  };
+alias 'git?'='copilot_git-assist';
+
+  copilot_gh-assist () {
+    TMPFILE=$(mktemp);
+    trap 'rm -f $TMPFILE' EXIT;
+    if /usr/bin/github-copilot-cli gh-assist "$@" --shellout $TMPFILE; then
+      if [ -e "$TMPFILE" ]; then
+        FIXED_CMD=$(cat $TMPFILE);
+        print -s "$FIXED_CMD";
+        eval "$FIXED_CMD"
+      else
+        echo "Apologies! Extracting command failed"
+      fi
+    else
+      return 1
+    fi
+  };
+alias 'gh?'='copilot_gh-assist';
+alias 'wts'='copilot_what-the-shell';
