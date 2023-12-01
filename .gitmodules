@@ -1,0 +1,3 @@
+[submodule "astronvim_config"]
+	path = astronvim_config
+	url = https://github.com/imsakg/astronvim_config.git
