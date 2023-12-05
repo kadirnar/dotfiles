@@ -1,0 +1,40 @@
+1920x1200 screen: Window-Maximized=true
+2 screens: Window-Maximized=true
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAESAAAEefwCAAAAAvsAAAAiAFEAdQBpAGMAawBDAG8AbQBtAGEAbgBkAHMARABvAGMAawAAAAAoAAACDQAAAYgA////+wAAABwAUwBTAEgATQBhAG4AYQBnAGUAcgBEAG8AYwBrAAAAAAAAAAR5AAABFAD///8AAAfoAAAEyQAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAA=
+
+[Desktop Entry]
+DefaultProfile=msa_default.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+FocusFollowsMouse=true
+
+[MainWindow]
+1920x1200 screen: Height=1200
+1920x1200 screen: Width=1920
+1920x1200 screen: Window-Maximized=true
+1920x1200 screen: XPosition=0
+1920x1200 screen: YPosition=22
+2 screens: Height=1200
+2 screens: Width=1920
+2 screens: Window-Maximized=true
+2 screens: XPosition=1166
+2 screens: YPosition=1607
+DP-1 eDP-1=eDP-1
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAESAAAEefwCAAAAAvsAAAAiAFEAdQBpAGMAawBDAG8AbQBtAGEAbgBkAHMARABvAGMAawAAAAAoAAACDQAAAYgA////+wAAABwAUwBTAEgATQBhAG4AYQBnAGUAcgBEAG8AYwBrAAAAAAAAAAR5AAABFAD///8AAAOtAAAEeQAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAACAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAAAAABwAcwBlAHMAcwBpAG8AbgBUAG8AbwBsAGIAYQByAAAAAAD/////AAAAAAAAAAA=
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+
+[SplitView]
+SplitViewVisibility=AlwaysHideSplitHeader
+
+[TabBar]
+CloseTabOnMiddleMouseButton=true
+TabBarPosition=Bottom
+
+[UiSettings]
+ColorScheme=Breeze Dark
