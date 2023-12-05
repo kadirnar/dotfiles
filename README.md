@@ -1,27 +1,39 @@
-msa's dotfiles
-============
+# msa's dotfiles
 
 Will be some fancy text here.
 
 ### [Appearance](Appearance)
 
 #### Desktop
-![](Desktop.png)
-#### Kitty
-![](kitty.png)
-#### ST
-![](st.png)
-#### I3
-![](i3.png)
-#### VIm
-![](nvim.png)
-#### Emacs
-![](emacs.png)
-#### Ncspot
-![](ncspot.png)
 
+![](assets/Desktop.png)
+
+#### Kitty
+
+![](assets/kitty.png)
+
+#### ST
+
+![](assets/st.png)
+
+#### I3
+
+![](assets/i3.png)
+
+#### VIm
+
+![](assets/nvim.png)
+
+#### Emacs
+
+![](assets/emacs.png)
+
+#### Ncspot
+
+![](assets/ncspot.png)
 
 ##### TODOs
-* Wiki
-* Clean
-* Dependencies
+
+- Wiki
+- Clean
+- Dependencies
