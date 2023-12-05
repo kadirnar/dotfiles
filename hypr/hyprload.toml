@@ -1,4 +1,5 @@
 plugins = [
   # "Duckonaut/split-monitor-workspaces",
   # "outfoxxed/hy3",
+  #"horriblename/hyprgrass",
 ]

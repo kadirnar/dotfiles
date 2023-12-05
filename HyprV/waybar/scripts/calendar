@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+CUR_POS_X=$(hyprctl cursorpos | awk -F ', ' '{print $1}')
+CUR_POS_Y=$(hyprctl cursorpos | awk -F ', ' '{print $2}')
+WIDTH=300
+HEIGHT=300
+
+yad --calendar --fixed --width=$WIDTH --height=$HEIGHT --posx=$CUR_POS_X --posy=$CUR_POS_Y | wl-copy

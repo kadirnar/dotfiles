@@ -10,7 +10,7 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-RPROMPT='[%D{%L:%M:%S}] '$RPROMPT
+# RPROMPT='[%D{%L:%M:%S}] '$RPROMPT
 
 # OHMYZSH
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,7 +30,7 @@ export VISUAL="nvim"           # $VISUAL use Emacs in GUI mode
 export LIBGL_ALWAYS_SOFTWARE=1
 export MESA_GL_VERSION_OVERRIDE=4.6
 export CHROME_EXECUTABLE="/usr/bin/brave"
-shell="$(which zsh)";
+export shell="$(which zsh)";
 export SHELL="$shell";
 
 # Make vim the default editor
@@ -53,7 +53,6 @@ export TODOTXT_DEFAULT_ACTION=ls
 
 # turn on go vendoring experiment
 export GO15VENDOREXPERIMENT=1
-export DOCKER_CONTENT_TRUST=1
 
 # rip's grevyard (Trash)
 export GRAVEYARD="$HOME/.local/share/Trash/files"
@@ -80,9 +79,6 @@ source /etc/profile
 autoload -Uz compinit promptinit
 compinit
 promptinit
-
-# THEME
-ZSH_THEME="robbyrussell"
 
 # ZSHs PLUGINS
 plugins=(z history git zsh-syntax-highlighting fast-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode npm gpg-agent docker autojump)
@@ -177,7 +173,7 @@ alias tmux="zellij"
 
 # kvm vfio
 alias win10='virsh --connect=qemu:///system start win10; sleep 13; looking-glass-client -F -S -m 97 -f /dev/kvmfr0 spice:audio=no -k;'
-alias win11='virsh --connect=qemu:///system start win11; sleep 13; looking-glass-client -F -S -m 97 -f /dev/kvmfr0 spice:audio=no -k;'
+alias win11='virsh --connect=qemu:///system start win11-nvme; sleep 13; looking-glass-client -F -S -m 97 -f /dev/kvmfr0 spice:audio=no -k;'
 
 # diffing
 alias gitdiff="git difftool --no-symlinks --dir-diff"
@@ -188,14 +184,17 @@ alias br='broot -dhp'
 alias bs='broot --sizes'
 
 # docker
-alias dri="docker run --rm -i -t "
+alias dri="docker run --rm -i -t --env TERM=xterm-color "
+docker-ip() {
+  docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@"
+}
 
 # Changing "ls" to "eza"
-alias ls='eza -al --color=always --group-directories-first' # my preferred listing
-alias la='eza -a --color=always --group-directories-first'  # all files and dirs
-alias ll='eza -l --color=always --group-directories-first'  # long format
-alias lt='eza -aT --color=always --group-directories-first' # tree listing
-alias l.='eza -a | egrep "^\."'
+alias ls='eza -al --icons --git --octal-permissions --color=always --no-permissions --group-directories-first' # my preferred listing
+alias la='eza -a --icons --git --octal-permissions --color=always --no-permissions --group-directories-first'  # all files and dirs
+alias ll='eza -l --icons --git --octal-permissions --color=always --no-permissions --group-directories-first'  # long format
+alias lt='eza -aT --icons --git --octal-permissions --color=always --no-permissions --group-directories-first' # tree listing
+alias l.='eza -a --icons --git --octal-permissions | egrep "^\."'
 
 # pacman and yay
 alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
@@ -263,7 +262,6 @@ alias commit='git commit -m'
 alias fetch='git fetch'
 alias pull='git pull origin'
 alias push='git push origin'
-alias stat='git status'  # 'status' is protected name so using 'stat' instead
 alias tag='git tag'
 alias newtag='git tag -a'
 
