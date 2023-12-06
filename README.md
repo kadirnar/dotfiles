@@ -1,39 +1,40 @@
 # msa's dotfiles
 
-Will be some fancy text here.
 
-### [Appearance](Appearance)
+msa's holly dotfiles.
 
-#### Desktop
+![](assets/intro.gif)
+
+
+<details><summary>Old Apparance</summary>
+
+- Desktop
 
 ![](assets/Desktop.png)
 
-#### Kitty
+- Kitty
 
 ![](assets/kitty.png)
 
-#### ST
+- ST
 
 ![](assets/st.png)
 
-#### I3
+- I3
 
 ![](assets/i3.png)
 
-#### VIm
+- VIm
 
 ![](assets/nvim.png)
 
-#### Emacs
+- Emacs
 
 ![](assets/emacs.png)
 
-#### Ncspot
+- Ncspot
 
 ![](assets/ncspot.png)
 
-##### TODOs
 
-- Wiki
-- Clean
-- Dependencies
+</details>
