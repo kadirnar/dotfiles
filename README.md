@@ -1,10 +1,8 @@
 # msa's dotfiles
 
-
-msa's holly dotfiles.
+msa's holy dotfiles.
 
 ![](assets/intro.gif)
-
 
 <details><summary>Old Apparance</summary>
 
@@ -35,6 +33,5 @@ msa's holly dotfiles.
 - Ncspot
 
 ![](assets/ncspot.png)
-
 
 </details>
