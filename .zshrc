@@ -32,9 +32,6 @@ export MESA_GL_VERSION_OVERRIDE=4.6
 export CHROME_EXECUTABLE="/usr/bin/brave"
 export shell="$(which zsh)";
 export SHELL="$shell";
-
-# Make vim the default editor
-export EDITOR=/usr/bin/nvim;
 export TERMINAL="kitty";
 
 export HISTSIZE=32768;
@@ -315,10 +312,9 @@ alias kak="/usr/bin/kak -c mysession"
 alias kaks="/usr/bin/kak -s mysession"
 alias kakd="/usr/bin/kak -d -s mysession &"
 
-
 alias vim=nvim
+alias nv="nvim ."
 alias cd..="cd .."
-alias xfcedit="nvim ~/.config/xfce4/xfconf/xfce-perchannel-xml/"
 
 alias wheather="curl -Ss  --ipv4 'https://wttr.in'"
 
