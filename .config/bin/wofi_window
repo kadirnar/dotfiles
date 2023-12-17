@@ -7,16 +7,13 @@ active_window="$(hyprctl -j activewindow)"
 current_addr="$(echo "$active_window" | gojq -r '.address')"
 
 window="$(echo "$state" |
-	gojq -r '.[] | select(.monitor != -1 ) | "\(.workspace.name)    \(.title) | \(.address)"' |
+	gojq -r '.[] | select(.monitor != -1 ) | "\(.workspace.name) \(.class) \(.title) | \(.address)"' |
 	sed "s|$current_addr|focused ->|" |
 	sort -r |
 	wofi -d -p window -lines 0)"
 
 addr="$(echo "$window" | awk '{print $NF}')"
 ws="$(echo "$window" | awk '{print $2}')"
-echo $window
-echo "addr: $addr"
-echo "ws: $ws"
 
 if [[ "$addr" =~ focused* ]]; then
 	echo 'already focused, exiting'
@@ -26,7 +23,6 @@ fi
 fullscreen_on_same_ws="$(echo "$state" | gojq -r ".[] | select(.fullscreen == true) | select(.workspace.name == \"$ws\") | .address")"
 
 if [[ "$window" != "" ]]; then
-	echo "window: $window"
 	if [[ "$fullscreen_on_same_ws" == "" ]]; then
 		hyprctl dispatch focuswindow address:${addr}
 	else
