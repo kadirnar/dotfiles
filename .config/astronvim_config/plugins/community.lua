@@ -66,11 +66,16 @@ return {
   { import = "astrocommunity.pack.svelte" },
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.wgsl" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.zig" },
+  -- Markdown - Latex
+  { import = "astrocommunity.markdown-and-latex.peek-nvim" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.glow-nvim" },
   -- Themes
   { import = "astrocommunity.colorscheme.nightfox-nvim", enabled = false },
   { import = "astrocommunity.colorscheme.kanagawa-nvim", enabled = true },
@@ -108,11 +113,6 @@ return {
 
   { import = "astrocommunity.editing-support.suda-vim" },
   -- Personal Extensions
-  {
-    "wakatime/vim-wakatime",
-    lazy = false,
-  },
-
   {
     "frazrepo/vim-rainbow",
   },

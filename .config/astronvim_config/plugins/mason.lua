@@ -48,7 +48,7 @@ return {
         -- yaml
         "yamllint",
         -- c, c++
-        -- "clang-format",
+        "clang-format",
       })
     end,
   },
