@@ -1,3 +1,6 @@
+# profiling
+# zmodload zsh/zprof
+
 # POWER10K
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -17,9 +20,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # PATHs
 # autojump
-[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+# [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 
-export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/Applications/flutter/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin/:$HOME/.platformio/penv/bin:$HOME/.pub-cache/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/usr/lib/jvm/default/bin:$HOME/.local/bin:$HOME/.emacs.d/bin:$HOME/go/bin:$HOME/.dotnet/tools:$HOME/.cargo/bin/:$HOME/.platformio/penv/bin:$HOME/.pub-cache/bin"
 
 # EXPORTS
 export ZSH="$HOME/.oh-my-zsh"
@@ -27,12 +30,13 @@ export TERM="xterm-256color"                      # getting proper colors
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export EDITOR="nvim"              # $EDITOR use Emacs in terminal
 export VISUAL="nvim"           # $VISUAL use Emacs in GUI mode
-export LIBGL_ALWAYS_SOFTWARE=1
-export MESA_GL_VERSION_OVERRIDE=4.6
+export BROWSER="brave"           # $BROWSER use Brave as default browser
+# export LIBGL_ALWAYS_SOFTWARE=1
+# export MESA_GL_VERSION_OVERRIDE=4.6
 export CHROME_EXECUTABLE="/usr/bin/brave"
 export shell="$(which zsh)";
 export SHELL="$shell";
-export TERMINAL="kitty";
+export TERMINAL="alacritty";
 
 export HISTSIZE=32768;
 export HISTFILESIZE=$HISTSIZE;
@@ -73,9 +77,9 @@ source /etc/profile
 [ -f .aliases ] && source .aliases
 [ -f .env ] && source .env
 
-autoload -Uz compinit promptinit
-compinit
-promptinit
+# autoload -Uz compinit promptinit
+# compinit
+# promptinit
 
 # ZSHs PLUGINS
 plugins=(z fzf history git zsh-syntax-highlighting fast-syntax-highlighting zsh-autosuggestions lol colored-man-pages rust systemd colorize gitignore aliases alias-finder archlinux autopep8 command-not-found copybuffer copyfile copypath dotnet encode64 gh gnu-utils golang httpie jump isodate node pep8 percol poetry ripgrep redis-cli rsync screen thefuck timer torrent urltools vscode npm gpg-agent docker autojump timer rust)
@@ -366,284 +370,10 @@ bindkey "\033[4~" end-of-line
 
 export QSYS_ROOTDIR="/home/msa/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
 
-#! flutter completion
-
-
-if type complete &>/dev/null; then
-    __flutter_completion() {
-        local si="$IFS"
-        IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
-                    COMP_LINE="$COMP_LINE" \
-                    COMP_POINT="$COMP_POINT" \
-                    flutter completion -- "${COMP_WORDS[@]}" \
-            2>/dev/null)) || return $?
-        IFS="$si"
-    }
-    complete -F __flutter_completion flutter
-elif type compdef &>/dev/null; then
-    __flutter_completion() {
-        si=$IFS
-        compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                COMP_LINE=$BUFFER \
-                COMP_POINT=0 \
-                flutter completion -- "${words[@]}" \
-            2>/dev/null)
-        IFS=$si
-    }
-    compdef __flutter_completion flutter
-elif type compctl &>/dev/null; then
-    __flutter_completion() {
-        local cword line point words si
-        read -Ac words
-        read -cn cword
-        let cword-=1
-        read -l line
-        read -ln point
-        si="$IFS"
-        IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                    COMP_LINE="$line" \
-                    COMP_POINT="$point" \
-                    flutter completion -- "${words[@]}" \
-            2>/dev/null)) || return $?
-        IFS="$si"
-    }
-    compctl -K __flutter_completion flutter
-fi
-#! end of the flutter completion
-#screenfetch
-
-#! Begin of the Atuin config
-# shellcheck disable=SC2034,SC2153,SC2086,SC2155
-
-# Above line is because shellcheck doesn't support zsh, per
-# https://github.com/koalaman/shellcheck/wiki/SC1071, and the ignore: param in
-# ludeeus/action-shellcheck only supports _directories_, not _files_. So
-# instead, we manually add any error the shellcheck step finds in the file to
-# the above line ...
-
-# Source this in your ~/.zshrc
-autoload -U add-zsh-hook
-
-export ATUIN_SESSION=$(atuin uuid)
-export ATUIN_HISTORY="atuin history list"
-
-_atuin_preexec(){
-    local id; id=$(atuin history start -- "$1")
-    export ATUIN_HISTORY_ID="$id"
-}
-
-_atuin_precmd(){
-    local EXIT="$?"
-
-    [[ -z "${ATUIN_HISTORY_ID}" ]] && return
-
-
-    (RUST_LOG=error atuin history end --exit $EXIT -- $ATUIN_HISTORY_ID &) > /dev/null 2>&1
-}
-
-_atuin_search(){
-    emulate -L zsh
-    zle -I
-
-    # Switch to cursor mode, then back to application
-    echoti rmkx
-    # swap stderr and stdout, so that the tui stuff works
-    # TODO: not this
-    output=$(RUST_LOG=error atuin search -i -- $BUFFER 3>&1 1>&2 2>&3)
-    echoti smkx
-
-    if [[ -n $output ]] ; then
-        RBUFFER=""
-        LBUFFER=$output
-    fi
-
-    zle reset-prompt
-}
-
-add-zsh-hook preexec _atuin_preexec
-add-zsh-hook precmd _atuin_precmd
-
-zle -N _atuin_search_widget _atuin_search
-
-if [[ -z $ATUIN_NOBIND ]]; then
-    bindkey '^r' _atuin_search_widget
-
-    # depends on terminal mode
-    #bindkey '^[[A' _atuin_search_widget
-    #bindkey '^[OA' _atuin_search_widget
-fi
-#! End of the Atuin config
+source ~/.zsh_completions
+# autoload -U +X bashcompinit && bashcompinit
 
 source /home/msa/.config/broot/launcher/bash/br
 
-# pnpm
-export PNPM_HOME="/home/msa/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-## [Completion] 
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/msa/.dart-cli-completion/zsh-config.zsh ]] && . /home/msa/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
-  copilot_what-the-shell () {
-    TMPFILE=$(mktemp);
-    trap 'rm -f $TMPFILE' EXIT;
-    if /usr/bin/github-copilot-cli what-the-shell "$@" --shellout $TMPFILE; then
-      if [ -e "$TMPFILE" ]; then
-        FIXED_CMD=$(cat $TMPFILE);
-        print -s "$FIXED_CMD";
-        eval "$FIXED_CMD"
-      else
-        echo "Apologies! Extracting command failed"
-      fi
-    else
-      return 1
-    fi
-  };
-alias '??'='copilot_what-the-shell';
-
-  copilot_git-assist () {
-    TMPFILE=$(mktemp);
-    trap 'rm -f $TMPFILE' EXIT;
-    if /usr/bin/github-copilot-cli git-assist "$@" --shellout $TMPFILE; then
-      if [ -e "$TMPFILE" ]; then
-        FIXED_CMD=$(cat $TMPFILE);
-        print -s "$FIXED_CMD";
-        eval "$FIXED_CMD"
-      else
-        echo "Apologies! Extracting command failed"
-      fi
-    else
-      return 1
-    fi
-  };
-alias 'git?'='copilot_git-assist';
-
-  copilot_gh-assist () {
-    TMPFILE=$(mktemp);
-    trap 'rm -f $TMPFILE' EXIT;
-    if /usr/bin/github-copilot-cli gh-assist "$@" --shellout $TMPFILE; then
-      if [ -e "$TMPFILE" ]; then
-        FIXED_CMD=$(cat $TMPFILE);
-        print -s "$FIXED_CMD";
-        eval "$FIXED_CMD"
-      else
-        echo "Apologies! Extracting command failed"
-      fi
-    else
-      return 1
-    fi
-  };
-alias 'gh?'='copilot_gh-assist';
-alias 'wts'='copilot_what-the-shell';
-
-# FZF KeyBindings
-
-# Removes omz's fzf plugin
-# Cause Atuin has been using for <C> + R
-DISABLE_FZF_KEY_BINDINGS="true" 
-
-#     ____      ____
-#    / __/___  / __/
-#   / /_/_  / / /_
-#  / __/ / /_/ __/
-# /_/   /___/_/ key-bindings.zsh
-#
-# - $FZF_TMUX_OPTS
-# - $FZF_CTRL_T_COMMAND
-# - $FZF_CTRL_T_OPTS
-# - $FZF_CTRL_R_OPTS
-# - $FZF_ALT_C_COMMAND
-# - $FZF_ALT_C_OPTS
-
-[[ -o interactive ]] || return 0
-
-
-# Key bindings
-# ------------
-
-# The code at the top and the bottom of this file is the same as in completion.zsh.
-# Refer to that file for explanation.
-if 'zmodload' 'zsh/parameter' 2>'/dev/null' && (( ${+options} )); then
-  __fzf_key_bindings_options="options=(${(j: :)${(kv)options[@]}})"
-else
-  () {
-    __fzf_key_bindings_options="setopt"
-    'local' '__fzf_opt'
-    for __fzf_opt in "${(@)${(@f)$(set -o)}%% *}"; do
-      if [[ -o "$__fzf_opt" ]]; then
-        __fzf_key_bindings_options+=" -o $__fzf_opt"
-      else
-        __fzf_key_bindings_options+=" +o $__fzf_opt"
-      fi
-    done
-  }
-fi
-
-'builtin' 'emulate' 'zsh' && 'builtin' 'setopt' 'no_aliases'
-
-{
-
-# CTRL-T - Paste the selected file path(s) into the command line
-__fsel() {
-  local cmd="${FZF_CTRL_T_COMMAND:-"command find -L . -mindepth 1 \\( -path '*/.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
-    -o -type f -print \
-    -o -type d -print \
-    -o -type l -print 2> /dev/null | cut -b3-"}"
-  setopt localoptions pipefail no_aliases 2> /dev/null
-  local item
-  eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --scheme=path --bind=ctrl-z:ignore ${FZF_DEFAULT_OPTS-} ${FZF_CTRL_T_OPTS-}" $(__fzfcmd) -m "$@" | while read item; do
-    echo -n "${(q)item} "
-  done
-  local ret=$?
-  echo
-  return $ret
-}
-
-__fzfcmd() {
-  [ -n "${TMUX_PANE-}" ] && { [ "${FZF_TMUX:-0}" != 0 ] || [ -n "${FZF_TMUX_OPTS-}" ]; } &&
-    echo "fzf-tmux ${FZF_TMUX_OPTS:--d${FZF_TMUX_HEIGHT:-40%}} -- " || echo "fzf"
-}
-
-fzf-file-widget() {
-  LBUFFER="${LBUFFER}$(__fsel)"
-  local ret=$?
-  zle reset-prompt
-  return $ret
-}
-zle     -N            fzf-file-widget
-bindkey -M emacs '^T' fzf-file-widget
-bindkey -M vicmd '^T' fzf-file-widget
-bindkey -M viins '^T' fzf-file-widget
-
-# ALT-C - cd into the selected directory
-fzf-cd-widget() {
-  local cmd="${FZF_ALT_C_COMMAND:-"command find -L . -mindepth 1 \\( -path '*/.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
-    -o -type d -print 2> /dev/null | cut -b3-"}"
-  setopt localoptions pipefail no_aliases 2> /dev/null
-  local dir="$(eval "$cmd" | FZF_DEFAULT_OPTS="--height ${FZF_TMUX_HEIGHT:-40%} --reverse --scheme=path --bind=ctrl-z:ignore ${FZF_DEFAULT_OPTS-} ${FZF_ALT_C_OPTS-}" $(__fzfcmd) +m)"
-  if [[ -z "$dir" ]]; then
-    zle redisplay
-    return 0
-  fi
-  zle push-line # Clear buffer. Auto-restored on next prompt.
-  BUFFER="builtin cd -- ${(q)dir}"
-  zle accept-line
-  local ret=$?
-  unset dir # ensure this doesn't end up appearing in prompt expansion
-  zle reset-prompt
-  return $ret
-}
-zle     -N             fzf-cd-widget
-bindkey -M emacs '\ec' fzf-cd-widget
-bindkey -M vicmd '\ec' fzf-cd-widget
-bindkey -M viins '\ec' fzf-cd-widget
-
-} always {
-  eval $__fzf_key_bindings_options
-  'unset' '__fzf_key_bindings_options'
-}
+# profiling
+# zprof

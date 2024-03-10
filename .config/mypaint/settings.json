@@ -23,8 +23,8 @@
     "main_toolbar": true,
     "menubar": true
   },
-  "ui.feedback.scale": true,
-  "ui.feedback.last_pos": true,
+  "ui.feedback.scale": false,
+  "ui.feedback.last_pos": false,
   "ui.toolbar_items": {
     "toolbar1_file": true,
     "toolbar1_scrap": false,
@@ -39,7 +39,7 @@
   "ui.dark_theme_variant": true,
   "ui.rendered_tile_cache_size": 16384,
   "saving.default_format": "openraster",
-  "brushmanager.selected_brush": "classic/dry_brush",
+  "brushmanager.selected_brush": "classic/brush",
   "brushmanager.selected_groups": [],
   "frame.color_rgba": [
     0.12,
@@ -57,6 +57,16 @@
     "left_sidebar": {
       "groups": [
         {
+          "tools": [],
+          "active_page": -1
+        }
+      ],
+      "w": 21,
+      "h": 1062
+    },
+    "right_sidebar": {
+      "groups": [
+        {
           "tools": [
             [
               "MyPaintBrushGroupTool",
@@ -64,67 +74,44 @@
             ]
           ],
           "active_page": 0,
-          "w": 316,
-          "h": 314
+          "w": 235,
+          "h": 161
         },
         {
           "tools": [
             [
-              "MyPaintModeOptionsTool"
+              "MyPaintBrushGroupTool",
+              "Deevad"
             ]
           ],
           "active_page": 0,
-          "w": 316,
-          "h": 436
+          "w": 235,
+          "h": 85
+        },
+        {
+          "tools": [
+            [
+              "MyPaintBrushGroupTool",
+              "Kaerhon"
+            ]
+          ],
+          "active_page": 0,
+          "w": 235,
+          "h": 399
         },
         {
           "tools": [],
           "active_page": -1
         }
       ],
-      "w": 316,
-      "h": 940
-    },
-    "right_sidebar": {
-      "groups": [
-        {
-          "tools": [
-            [
-              "MyPaintPaletteTool"
-            ]
-          ],
-          "active_page": 0,
-          "w": 320,
-          "h": 364
-        },
-        {
-          "tools": [
-            [
-              "MyPaintLayersTool"
-            ]
-          ],
-          "active_page": 0,
-          "w": 320,
-          "h": 415
-        },
-        {
-          "tools": [],
-          "active_page": -1
-        }
-      ],
-      "w": 320,
-      "h": 940
+      "w": 235,
+      "h": 1062
     },
     "floating": [],
-    "position": {
-      "x": 0,
-      "y": 18,
-      "w": 1920,
-      "h": 1043
-    },
+    "position": {},
     "autohide": true,
     "fullscreen": false,
-    "maximized": false
+    "maximized": true
   },
   "input.button_mapping": {
     "Button2": "PanViewMode",
@@ -149,12 +136,18 @@
   },
   "command.max_undo_stack_size": 40,
   "input.devices": {
-    "Corsair CORSAIR DARK CORE RGB PRO Gaming Dongle:mouse:4": {},
-    "Corsair CORSAIR DARK CORE RGB PRO Gaming Dongle Keyboard:mouse:4": {},
-    "SynPS/2 Synaptics TouchPad:mouse:4": {},
+    "ASUE120D:00 04F3:31FB Touchpad:mouse:5": {},
+    "ASUE120D:00 04F3:31FB Mouse:mouse:4": {},
+    "Asus Keyboard:mouse:4": {},
+    "Corsair CORSAIR SLIPSTREAM WIRELESS USB Receiver Keyboard:mouse:4": {},
+    "Corsair CORSAIR SLIPSTREAM WIRELESS USB Receiver:mouse:4": {},
+    "Corsair CORSAIR SABRE RGB PRO WIRELESS Gaming Mouse:mouse:4": {},
     "Virtual core XTEST pointer:mouse:2": {},
-    "Corsair CORSAIR DARK CORE RGB PRO Gaming Mouse:mouse:4": {},
-    "Corsair CORSAIR DARK CORE RGB PRO Gaming Mouse Keyboard:mouse:4": {}
+    "WingCool Inc. TouchScreen:touchscreen:4": {},
+    "Wayland Pointer:mouse:2": {},
+    "Wayland Touch:touchscreen:2": {},
+    "Wayland Wheel Scrolling:mouse:2": {},
+    "Wayland Finger Scrolling:touchpad:2": {}
   },
   "colors.current": "#003153",
   "colors.palette": {
@@ -476,15 +469,15 @@
   "ui.file_compat_warning_mild": true,
   "ui.file_compat_warning_severe": true,
   "colors.history": [
+    "#ee3333",
+    "#336699",
+    "#44aa66",
     "#aa6633",
-    "#686dd0",
-    "#000000",
-    "#d10000",
     "#003153"
   ],
-  "brush_chooser.default.window_size": [
+  "color_chooser.default.window_size": [
     256,
-    306
+    258
   ],
   "scratchpad.last_opened": "/home/msa/.local/share/mypaint/scratchpads/autosave.ora"
 }

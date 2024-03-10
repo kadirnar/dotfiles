@@ -1,0 +1,4 @@
+Config(
+  prefix: ":kk",
+  max_entries: 3,
+)

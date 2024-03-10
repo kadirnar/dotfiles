@@ -1,0 +1,63 @@
+2 screens: Window-Maximized=true
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAADaAAAF4fwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgEAAAAoAAAF4QAAASMA///+AAAEDwAABeEAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+eDP-1=eDP-1
+eDP-1 Height 1920x1200 eDP-1=1177
+eDP-1 Width 1920x1200 eDP-1=1920
+eDP-1 XPosition 1920x1200 eDP-1=0
+eDP-1 YPosition 1920x1200 eDP-1=0
+
+[Desktop Entry]
+FullScreen=false
+shouldShowMenuBarComingFromFullScreen=false
+shouldShowToolBarComingFromFullScreen=false
+
+[General]
+LockSidebar=true
+ShowSidebar=true
+
+[MainWindow]
+1920x1200 screen: Height=1200
+1920x1200 screen: Width=1920
+1920x1200 screen: Window-Maximized=true
+1920x1200 screen: XPosition=644
+1920x1200 screen: YPosition=7
+2 screens: Height=1280
+2 screens: Width=2048
+2 screens: Window-Maximized=true
+2 screens: XPosition=1286
+2 screens: YPosition=7
+DP-1 eDP-1=DP-1
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAF2AAACZfwCAAAAAfsAAAAcAG8AawB1AGwAYQByAF8AcwBpAGQAZQBiAGEAcgEAAAAAAAACZQAAASYA///+AAACeAAAAmUAAAAEAAAABAAAAAgAAAAI/AAAAAMAAAABAAAAAQAAACwAcQB1AGkAYwBrAEEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgIAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+eDP-1=eDP-1
+eDP-1 Height 1920x1200 eDP-1=1163
+eDP-1 Width 1920x1200 eDP-1=947
+eDP-1 XPosition 1920x1200 eDP-1=966
+eDP-1 YPosition 1920x1200 eDP-1=7
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/drive-download-20231223T084838Z-001/ESP32-CAM-S014_TF_IO Configuration Table.pdf
+File10[$e]=$HOME/msa/personal/monetizing/Content Magic V2.0 (8).pdf
+File2[$e]=$HOME/Downloads/drive-download-20231223T084838Z-001/ESP32-CAM-S014_TF_Debugging tutorial.pdf
+File3[$e]=$HOME/Downloads/drive-download-20231223T084838Z-001/ESP32-CAM-S014_TF_specification.pdf
+File4[$e]=$HOME/Downloads/drive-download-20231223T084838Z-001/S014_TF_Schematic Diagram.pdf
+File5[$e]=$HOME/mnt/google_drive_msaistaken/adastra/KAVRAMSAL_TASARIM_RAPORU-OXALIS.pdf
+File6[$e]=$HOME/Downloads/100 Mental Models - Naval & Taleb.pdf
+File7[$e]=$HOME/Downloads/Mental Models for Better Thinking PDF.pdf
+File8[$e]=$HOME/Downloads/The Rabbit Hole - Book summaries by Blas Moros.pdf
+File9[$e]=$HOME/Documents/karsilastirma.pdf
+Name1[$e]=ESP32-CAM-S014_TF_IO Configuration Table.pdf
+Name10[$e]=Content Magic V2.0 (8).pdf
+Name2[$e]=ESP32-CAM-S014_TF_Debugging tutorial.pdf
+Name3[$e]=ESP32-CAM-S014_TF_specification.pdf
+Name4[$e]=S014_TF_Schematic Diagram.pdf
+Name5[$e]=KAVRAMSAL_TASARIM_RAPORU-OXALIS.pdf
+Name6[$e]=100 Mental Models - Naval & Taleb.pdf
+Name7[$e]=Mental Models for Better Thinking PDF.pdf
+Name8[$e]=The Rabbit Hole - Book summaries by Blas Moros.pdf
+Name9[$e]=karsilastirma.pdf
+
+[UiSettings]
+ColorScheme=KvArcDark

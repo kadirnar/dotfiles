@@ -5,11 +5,11 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 5,
+  "height": 0,
   "modules-left": [
     "custom/power_btn",
     "custom/lock_screen",
-    "wlr/workspaces",
+    "hyprland/workspaces",
     "custom/weather",
     "cpu",
     "memory",
@@ -64,28 +64,73 @@
     "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
     "tooltip": false
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
+    // "format": "{name}.{icon}",
+    // "format-icons": {
+    //   "1": "",
+    //   "2": "",
+    //   "3": "",
+    //   "4": "",
+    //   "5": "",
+    //   "active": "",
+    //   "default": ""
+    // },
     "disable-scroll": true,
     "all-outputs": true,
     "on-click": "activate",
     "sort-by-number": true,
     "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": []
+      // "1": [],
+      // "2": [],
+      // "3": [],
+      // "4": [],
+      // "5": [],
+      // "6": [],
+      // "7": [],
+      // "8": [],
+      // "9": [],
+      // "10": []
     }
   },
+  "clock": {
+    "format": "{:%H:%M:%S}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "interval": 1,
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  /*
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M:%S}",
+    "max-length": 25,
+    "on-click": "~/.config/HyprV/waybar/scripts/calendar"
+  },
+  */
   "cpu": {
     "interval": 10,
-    "format": " {usage}%",
-    "max-length": 10,
+    "format": " {avg_frequency} | {usage}%",
+    "max-length": 12,
     "format-alt-click": "click-right",
     "format-alt": " {usage}%",
     "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
@@ -129,11 +174,11 @@
       "warning": 30,
       "critical": 20
     },
-    "format": "{icon}",
+    "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt-click": "click-right",
-    "format-alt": "{icon} {capacity}%",
+    "format-alt": "{icon}",
     "format-icons": [
       "󰂎",
       "󰁺",
@@ -202,6 +247,7 @@
       "󰃟",
       "󰃠"
     ],
+    "on-click": "~/.config/HyprV/waybar/scripts/brightness --nightlight",
     "on-scroll-up": "~/.config/HyprV/waybar/scripts/brightness --inc",
     "on-scroll-down": "~/.config/HyprV/waybar/scripts/brightness --dec"
   },

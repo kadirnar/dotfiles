@@ -1,46 +1,46 @@
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font";
-    font-weight: bold;
-    font-size: 16px;
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #f6f7fc;
+  background: rgba(21, 18, 27, 0);
+  color: #f6f7fc;
 }
 
 tooltip {
-    background: #e7e7ec;
-    opacity: 0.8;
-    border-radius: 10px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #11111b;
+  background: #e7e7ec;
+  opacity: 0.8;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #11111b;
 }
 
-tooltip label{
-    color: #2b2b2c;
+tooltip label {
+  color: #2b2b2c;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: #f6f7fc;
-    margin-right: 5px;
+  padding: 3px;
+  color: #f6f7fc;
+  margin-right: 5px;
 }
 
 #workspaces button.active {
-    color: #000000;
-    background: #a6e3a1;
-    border-radius: 10px;
+  color: #000000;
+  background: #a6e3a1;
+  border-radius: 10px;
 }
 
 #workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-    border-radius: 10px;
+  background: #11111b;
+  color: #cdd6f4;
+  border-radius: 10px;
 }
 
 #custom-launch_wofi,
@@ -68,42 +68,41 @@ tooltip label{
 #workspaces,
 #idle_inhibitor,
 #backlight {
-    background: rgba(21, 18, 27, 0);
-    opacity: 0.8;
-    padding: 0px 8px;
-    margin: 0px 3px;
-    border: 0px;
+  background: rgba(21, 18, 27, 0);
+  opacity: 0.8;
+  padding: 0px 8px;
+  margin: 0px 3px;
+  border: 0px;
 }
 
 #temperature.critical {
-    color: #e92d4d;
+  color: #e92d4d;
 }
 
-
 #workspaces {
-    padding-right: 0px;
-    padding-left: 5px;
+  padding-right: 0px;
+  padding-left: 5px;
 }
 
 #window {
-    border-radius: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-#custom-launch_firefox, 
+#custom-launch_firefox,
 #custom-launch_thunderbird,
 #custom-launch_thunar,
 #custom-launch_wofi,
 #custom-launch_kitty,
 #custom-weather {
-    margin-left: 0px;
-    border-right: 0px;
-    font-size: 24px;
-    margin-right: 20px;
+  margin-left: 0px;
+  border-right: 0px;
+  font-size: 16px;
+  margin-right: 20px;
 }
 
-#custom-launch_firefox, 
+#custom-launch_firefox,
 #custom-launch_kitty {
-    font-size: 20px;
+  font-size: 20px;
 }

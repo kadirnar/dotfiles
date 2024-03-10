@@ -22,6 +22,7 @@ return {
     local hop = telescope.extensions.hop
     return require("astronvim.utils").extend_tbl(opts, {
       defaults = {
+        file_ignore_patterns = { "node_modules", "target", ".svelte-kit", ".git" },
         results_title = "",
         selection_caret = "  ",
         layout_config = {

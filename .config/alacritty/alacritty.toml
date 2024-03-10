@@ -1,0 +1,106 @@
+live_config_reload = true
+working_directory = "None"
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1"
+
+[window]
+dynamic_padding = true
+decorations = "full"
+title = "Alacritty@msa"
+opacity = 0.8
+decorations_theme_variant = "Dark"
+
+[window.dimensions]
+columns = 100
+lines = 30
+
+[window.class]
+instance = "Alacritty"
+general = "Alacritty"
+
+[scrolling]
+history = 32000
+multiplier = 3
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.primary]
+background = "#101216"
+foreground = "#FFFFFF"
+
+[colors.normal]
+black = "#000000"
+red = "#F78166"
+green = "#56D364"
+yellow = "#E3B341"
+blue = "#6CA4F8"
+magenta = "#DB61A2"
+cyan = "#2B7489"
+white = "#FFFFFF"
+
+[colors.bright]
+black = "#8F8F8F"
+red = "#F78166"
+green = "#56D364"
+yellow = "#E3B341"
+blue = "#6CA4F8"
+magenta = "#DB61A2"
+cyan = "#2B7489"
+white = "#FFFFFF"
+
+[font]
+size = 10
+
+[font.normal]
+family = "jetbrains mono nerd font"
+style = "Regular"
+
+[font.bold]
+family = "jetbrains mono nerd font"
+style = "Bold"
+
+[font.italic]
+family = "jetbrains mono nerd font"
+style = "Italic"
+
+[font.bold_italic]
+family = "jetbrains mono nerd font"
+style = "Bold Italic"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>	"
+save_to_clipboard = true
+
+[cursor]
+vi_mode_style = "None"
+unfocused_hollow = true
+thickness = 0.15
+
+[cursor.style]
+shape = "Block"
+blinking = "On"
+
+[mouse]
+hide_when_typing = true
+bindings = [{ mouse = "Middle", action = "PasteSelection" }]
+
+[keyboard]
+bindings = [
+    { key = "Paste", action = "Paste" },
+    { key = "Copy", action = "Copy" },
+    { key = "L", mods = "Control", action = "ClearLogNotice" },
+    { key = "L", mods = "Control", mode = "~Vi", chars = "\f" },
+    { key = "PageUp", mods = "Shift", mode = "~Alt", action = "ScrollPageUp" },
+    { key = "PageDown", mods = "Shift", mode = "~Alt", action = "ScrollPageDown" },
+    { key = "Home", mods = "Shift", mode = "~Alt", action = "ScrollToTop" },
+    { key = "End", mods = "Shift", mode = "~Alt", action = "ScrollToBottom" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "F", mods = "Control|Shift", action = "SearchForward" },
+    { key = "B", mods = "Control|Shift", action = "SearchBackward" },
+    { key = "C", mods = "Control|Shift", mode = "Vi", action = "ClearSelection" },
+    { key = "Key0", mods = "Control", action = "ResetFontSize" },
+]

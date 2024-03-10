@@ -32,12 +32,19 @@ notify_user() {
 
 # Increase brightness
 inc_backlight() {
-	brightnessctl set 10%+ && get_icon && notify_user
+	brightnessctl set 5%+ && get_icon && notify_user
 }
 
 # Decrease brightness
 dec_backlight() {
-	brightnessctl set 10%- && get_icon && notify_user
+	brightnessctl set 5%- && get_icon && notify_user
+}
+
+# Nightlight
+nightlight() {
+	if [[ "$(brightnessctl g)" -ge "50" ]]; then
+		wlsunset
+	fi
 }
 
 # Execute accordingly
@@ -47,6 +54,12 @@ elif [[ "$1" == "--inc" ]]; then
 	inc_backlight
 elif [[ "$1" == "--dec" ]]; then
 	dec_backlight
+elif [[ "$1" == "--nightlight" ]]; then
+	if ps aux | grep -v grep | grep -q "wlsunset"; then
+		killall wlsunset
+	else
+		wlsunset
+	fi
 else
 	get_backlight
 fi

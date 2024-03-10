@@ -100,6 +100,8 @@ return {
   },
 
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  { import = "astrocommunity.project.nvim-spectre" },
+
   {
     "m4xshen/smartcolumn.nvim",
     opts = {
